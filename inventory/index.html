@@ -8,7 +8,7 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
   <meta name="description" content="IP26 Inventaris Lapangan - Realtime Tactical Inventory Checklist & Logistics Field Operations Portal UKK UNNES 2026" />
   
-  <title>📦 Inventaris Lapangan - Checklist & Inventaris Realtime | IP26 UKK UNNES</title>
+  <title>Inventaris Lapangan - Checklist & Inventaris Realtime | IP26 UKK UNNES</title>
   
   <!-- Favicon -->
   <link rel="icon" type="image/svg+xml" href="../favicon.svg" />
@@ -97,7 +97,7 @@
         <span class="lockout-pulse-dot pulse-amber"></span>
         <span>KHUSUS SMARTPHONE</span>
       </div>
-      <div class="lockout-icon">📱</div>
+      <div class="lockout-icon"><svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="5" y="2" width="14" height="20" rx="2" ry="2"/><line x1="12" y1="18" x2="12.01" y2="18"/></svg></div>
       <h2 class="lockout-title">Hanya Dapat Dibuka di HP / Smartphone</h2>
       <p class="lockout-desc">
         Halaman <strong>Inventaris Lapangan</strong> hanya dapat diakses melalui smartphone untuk operasional kru di lapangan.
@@ -146,7 +146,7 @@
         <div class="inventory-hero-card">
           <div class="inventory-title-row">
             <h1 class="inventory-title">
-              <span class="text-gradient">📦 INVENTARIS LAPANGAN</span>
+              <span class="text-gradient">INVENTARIS LAPANGAN</span>
             </h1>
             <span class="presence-badge">
               <span class="status-pulse-dot connected"></span> Kru Lapangan
@@ -163,7 +163,7 @@
         <!-- Inventory Search & Filter Controls -->
         <div class="inventory-controls">
           <div class="search-bar-wrapper">
-            <span class="search-icon">🔍</span>
+            <span class="search-icon"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg></span>
             <input type="text" id="inv-search-input" class="search-input" placeholder="Cari barang / vendor (Sony, HDMI, dll)..." autocomplete="off" />
             <button id="clear-search-btn" class="clear-btn" aria-label="Clear search">✕</button>
           </div>
@@ -195,8 +195,8 @@
           <div class="filter-pills-scroll status-filter-pills" id="status-filter-group">
             <span class="filter-group-label">Filter Checklist:</span>
             <button class="status-pill active" data-status-filter="all">Semua Status</button>
-            <button class="status-pill" data-status-filter="unloaded">⏳ Belum Centang</button>
-            <button class="status-pill" data-status-filter="loaded">✅ Sudah Centang</button>
+            <button class="status-pill" data-status-filter="unloaded">Belum Centang</button>
+            <button class="status-pill" data-status-filter="loaded">Sudah Centang</button>
           </div>
         </div>
 
@@ -206,7 +206,7 @@
             <div class="sync-status-indicator">
               <span class="status-pulse-dot" id="sync-status-dot"></span>
               <span class="sync-status-text" id="sync-status-text">🟡 Memeriksa Koneksi Database...</span>
-              <span class="presence-badge" id="presence-badge">👥 <strong id="online-crew-count">1</strong> Kru Aktif</span>
+              <span class="presence-badge" id="presence-badge"><strong id="online-crew-count">1</strong> Kru Aktif</span>
             </div>
             <div class="sync-actions">
               <button class="btn btn-sm btn-outline" id="btn-batch-check-all" title="Tandai Semua Barang">
@@ -216,7 +216,7 @@
                 ↺ Reset Ceklis
               </button>
               <button class="btn btn-sm btn-outline" id="btn-copy-summary" title="Salin Ringkasan Progress Checklist">
-                📋 Salin Ringkasan
+                Salin Ringkasan
               </button>
             </div>
           </div>
@@ -235,7 +235,7 @@
             <div class="sync-progress-grid" style="grid-template-columns: 1fr;">
               <div class="progress-box progress-loading">
                 <div class="progress-header">
-                  <span class="progress-title">📦 Progress Pemasangan Barang (Hari H)</span>
+                  <span class="progress-title">Progress Pemasangan Barang (Hari H)</span>
                   <span class="progress-counter" id="loading-counter-display">0 / 150 (0%)</span>
                 </div>
                 <div class="progress-bar-track">
@@ -250,7 +250,7 @@
         <div class="inventory-summary-bar">
           <span>Menampilkan <strong id="inv-count-display">150</strong> entri barang</span>
           <span class="legend-badges">
-            <span class="badge badge-emerald">✅ Terpasang</span>
+            <span class="badge badge-emerald">Terpasang</span>
             <span class="badge badge-slate">⏳ Belum Terpasang</span>
           </span>
         </div>
@@ -1973,14 +1973,56 @@
   </main>
 
   <!-- Clean Footer -->
-  <footer class="desktop-footer" style="padding: var(--space-5) 0 var(--space-6) 0; border-top: 1px solid var(--border-subtle); margin-top: var(--space-6);">
-    <div class="container text-center" style="display: flex; flex-direction: column; align-items: center; gap: 8px;">
-      <p style="font-size: 0.85rem; color: var(--text-muted); margin: 0;">
-        📦 <strong>IP26 Inventaris Lapangan</strong> &bull; Ibadah Perdana UKK UNNES 2026
-      </p>
-      <p style="font-size: 0.8rem; color: var(--text-tertiary); margin: 0;">
-        Sinkronisasi Realtime Supabase Cloud &bull; <a href="../index.html" style="color: var(--accent-cyan); text-decoration: none;">Buka Portal Utama Master Pipeline &rarr;</a>
-      </p>
+    <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand-col">
+          <div class="footer-brand">
+            <span class="brand-badge">IP26</span>
+            <span class="brand-title">UKK UNNES 2026</span>
+          </div>
+          <p class="footer-desc">
+            Checklist inventaris logistik 19 sumber peminjaman (158 item) Ibadah Perdana UKK UNNES 2026 di Auditorium Prof. Wuryanto.
+          </p>
+          <div class="footer-meta-pill">
+            <span>Sinkronisasi Realtime Supabase Cloud</span>
+          </div>
+        </div>
+
+        <div class="footer-links-col">
+          <h4 class="footer-col-title">Navigasi Modul</h4>
+          <ul class="footer-links">
+            <li><a href="../index.html">Hasil Siaran &amp; Media Release</a></li>
+            <li><a href="../archive.html">Arsip Teknis Produksi</a></li>
+            <li><a href="../switcher.html">Simulator Switcher V1</a></li>
+            <li><a href="../presenter.html">Simulator ProPresenter 7</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-links-col">
+          <h4 class="footer-col-title">Vendor &amp; Sumber</h4>
+          <ul class="footer-links">
+            <li><a href="#vendor-OWL">Inventaris OWL</a></li>
+            <li><a href="#vendor-ABON">Inventaris ABON</a></li>
+            <li><a href="#vendor-GIA">GIA Deliksari</a></li>
+            <li><a href="#vendor-GKJ">GKJ Ngaliyan</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-links-col">
+          <h4 class="footer-col-title">Kanal Resmi</h4>
+          <ul class="footer-links">
+            <li><a href="https://www.youtube.com/@ukkunnes" target="_blank" rel="noopener noreferrer">YouTube UKK UNNES ↗</a></li>
+            <li><a href="https://www.youtube.com/playlist?list=PLEVOqIQGdsZw" target="_blank" rel="noopener noreferrer">Playlist Ibadah Perdana 2026 ↗</a></li>
+            <li><a href="https://github.com/zzdree/ip26-production" target="_blank" rel="noopener noreferrer">GitHub Repository ↗</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p class="copyright">&copy; 2026 Unit Kerohanian Kristen (UKK) Universitas Negeri Semarang. All rights reserved.</p>
+        <p class="confidential-badge">Diselenggarakan oleh Panitia Ibadah Perdana UKK UNNES 2026 &bull; Tim Multimedia &amp; Live Broadcast</p>
+      </div>
     </div>
   </footer>
 

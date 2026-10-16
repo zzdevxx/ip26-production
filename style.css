@@ -48,14 +48,14 @@
   --bg-surface-elevated: #262626;
   --bg-surface-hover: #303030;
 
-  --border-subtle: #333333;
-  --border-strong: #484848;
+  --border-subtle: #2b3042;
+  --border-strong: #3f455e;
   --border-focus: #00d2ff;
 
-  --text-primary: #f5f5f5;
-  --text-secondary: #cccccc;
-  --text-muted: #8e8e8e;
-  --text-inverse: #121212;
+  --text-primary: #f8fafc;
+  --text-secondary: #e2e8f0;
+  --text-muted: #94a3b8;
+  --text-inverse: #0c0d11;
 
   --accent-cyan: #00d2ff;
   --accent-cyan-subtle: rgba(0, 210, 255, 0.12);
@@ -86,14 +86,14 @@
   --bg-surface-elevated: #262626;
   --bg-surface-hover: #303030;
 
-  --border-subtle: #333333;
-  --border-strong: #484848;
+  --border-subtle: #2b3042;
+  --border-strong: #3f455e;
   --border-focus: #00d2ff;
 
-  --text-primary: #f5f5f5;
-  --text-secondary: #cccccc;
-  --text-muted: #8e8e8e;
-  --text-inverse: #121212;
+  --text-primary: #f8fafc;
+  --text-secondary: #e2e8f0;
+  --text-muted: #94a3b8;
+  --text-inverse: #0c0d11;
 
   --accent-cyan: #00d2ff;
   --accent-cyan-subtle: rgba(0, 210, 255, 0.12);
@@ -1771,56 +1771,108 @@ code {
 }
 
 /* --------------------------------------------------------------------------
-   13. FOOTER
+   13. FOOTER (High-Contrast Minimalist Universal Footer)
    -------------------------------------------------------------------------- */
 .site-footer {
-  background: var(--bg-secondary);
-  border-top: 1px solid var(--border-subtle);
-  padding: var(--space-12) 0 calc(var(--dock-height) + var(--space-8));
+  background: #090a0f;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  padding: 4.5rem 0 calc(var(--dock-height, 68px) + 2.5rem);
+  width: 100%;
+  position: relative;
+  z-index: 10;
 }
 
 @media (min-width: 769px) {
   .site-footer {
-    padding-bottom: var(--space-12);
+    padding-bottom: 4rem;
   }
+}
+
+.site-footer .container,
+.site-footer .footer-container {
+  width: 100%;
+  max-width: var(--max-width);
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: var(--space-6);
+  padding-right: var(--space-6);
 }
 
 .footer-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-  gap: var(--space-8);
-  margin-bottom: var(--space-8);
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 2.5rem;
+  margin-bottom: 3rem;
+}
+
+.footer-brand {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  margin-bottom: var(--space-3);
 }
 
 .footer-desc {
   font-size: 0.88rem;
-  color: var(--text-muted);
-}
-
-.footer-heading {
-  font-size: 1rem;
+  color: #94a3b8;
+  line-height: 1.6;
   margin-bottom: var(--space-3);
 }
 
-.footer-links ul {
+.footer-meta-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  padding: 4px 10px;
+  border-radius: var(--radius-sm);
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  color: #94a3b8;
+}
+
+.footer-heading,
+.footer-col-title {
+  font-family: var(--font-display);
+  font-size: 0.96rem;
+  font-weight: 700;
+  color: #f8fafc;
+  letter-spacing: -0.01em;
+  margin-bottom: 1.1rem;
+}
+
+.footer-links ul,
+ul.footer-links {
   display: flex;
   flex-direction: column;
-  gap: var(--space-2);
+  gap: 10px;
+  list-style: none;
+  padding: 0;
+  margin: 0;
 }
 
-.footer-links a {
+.footer-links a,
+.footer-links-col a {
   font-size: 0.88rem;
-  color: var(--text-muted);
+  color: #cbd5e1;
+  text-decoration: none;
+  transition: color 150ms ease, transform 150ms ease;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
 }
 
-.footer-links a:hover {
-  color: var(--text-primary);
+.footer-links a:hover,
+.footer-links-col a:hover {
+  color: var(--accent-cyan);
+  transform: translateX(2px);
 }
 
 .footer-policy-text {
   font-size: 0.82rem;
-  color: var(--text-muted);
-  line-height: 1.5;
+  color: #94a3b8;
+  line-height: 1.55;
 }
 
 .footer-bottom {
@@ -1828,11 +1880,22 @@ code {
   justify-content: space-between;
   align-items: center;
   flex-wrap: wrap;
-  gap: var(--space-3);
+  gap: var(--space-4);
   padding-top: var(--space-6);
-  border-top: 1px solid var(--border-subtle);
-  font-size: 0.8rem;
-  color: var(--text-muted);
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  font-size: 0.82rem;
+  color: #94a3b8;
+}
+
+.footer-bottom .copyright {
+  color: #94a3b8;
+  margin: 0;
+}
+
+.footer-bottom .confidential-badge {
+  color: #64748b;
+  margin: 0;
+  font-size: 0.76rem;
 }
 
 /* --------------------------------------------------------------------------
