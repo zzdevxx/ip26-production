@@ -121,6 +121,17 @@ The visual language is inspired by high-end professional broadcast control rooms
 - **Bottom-Right Toast Notifications (`.toast-container`):** Stacked non-intrusive notifications positioned at the bottom-right corner across desktop and mobile.
 - **5-Clause ASCII Legal & Operational License Modal:** Verbatim governance modal with monospace readability and accessible keyboard dismissal (Escape key).
 
+### F. Landing Page — Official Media Release (`landing.css`)
+Halaman hasil publik (`index.html`) memakai bahasa visual yang sama (Utilitarian Broadcast Command) namun dengan penekanan *media showcase*:
+- **Media Hero (`.media-hero`):** Latar radial cyan halus di atas gradient surface→primary dengan grid halus; status pill hijau berdenyut (`EVENT COMPLETED`), judul display hingga `clamp(2.2rem, 5.5vw, 3.8rem)`, venue tag monospace, 3 CTA (primary cyan, secondary surface, archive amber), dan 4 kartu telemetri (`.stat-card` dengan angka `tabular-nums`).
+- **Featured Master Player (`.featured-player-card`):** Bingkai `radius-xl` dengan bayangan dalam, baris tab feed (`.player-tab`) dengan durasi monospace, viewport iframe 16:9 (`padding-top: 56.25%`), dan meta bar (judul aktif, subtitle, tombol YouTube merah).
+- **Timeline Cues (`.rundown-cues-card`):** Grid penanda waktu klik-lompat. Setiap `.cue-item` menampilkan `.cue-time` (monospace, cyan) + `.cue-label` satu baris ellipsis, dengan hover outline cyan.
+- **Katalog Video (`.video-grid` → `.video-card`):** Kartu thumbnail 16:9 dengan overlay play-circle saat hover, pill durasi, tag kategori berwarna (broadcast biru / praise amber / worship emerald / hymn ungu / persembahan pink), judul display, dan footer dua tombol (*Putar di Sini* + *YouTube ↗*). Grid `auto-fill minmax(320px, 1fr)`.
+- **Filter Pills & Search:** Pill kategori `radius-full` dengan count monospace (aktif = fill cyan penuh), input pencarian dengan ikon kiri + tombol clear kanan + badge jumlah hasil.
+- **Ekosistem & Simulator:** `.pillar-card` (4 pilar teknologi) dan `.sim-card` (tautan simulator) dengan garis aksen atas `--sim-accent` per kartu.
+- **Archive Banner (`.archive-banner`):** Banner amber `border-bottom` dengan badge, teks status, dan tombol kembali ke landing — hanya di `archive.html`.
+- **Empty State (`.catalog-empty-state`):** Kartu dashed dengan ikon pencarian + judul + deskripsi saat filter/pencarian tidak menemukan hasil.
+
 ---
 
 ## 5. Responsive Breakpoints

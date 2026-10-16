@@ -13,13 +13,10 @@
 
 document.addEventListener('DOMContentLoaded', () => {
   // Check if running on Inventory checklist view (Mobile Field Mode)
-  const isInventoryPage = window.location.pathname.includes('inventory') || 
-                          window.location.pathname.includes('database') || 
-                          window.location.pathname.includes('satset') || 
-                          document.body.classList.contains('inventory-page') || 
-                          document.body.classList.contains('satset-page') || 
-                          Boolean(document.querySelector('.inv-table-inventory')) || 
-                          Boolean(document.querySelector('.inv-table-satset'));
+  const isInventoryPage = window.location.pathname.includes('inventory') ||
+                          document.body.classList.contains('inventory-page') ||
+                          Boolean(document.querySelector('.inv-table-inventory')) ||
+                          Boolean(document.querySelector('.inv-table-field'));
 
   // Desktop lock screen bypass (for FOH laptops / station monitoring)
   const btnBypassLock = document.getElementById('btn-bypass-desktop-lock');

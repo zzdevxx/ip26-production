@@ -41,13 +41,13 @@
       }
     }
 
-    .satset-page-header {
+    .inventory-page-header {
       padding: 12px 0 6px 0;
       position: relative;
       z-index: 1;
     }
 
-    .satset-hero-card {
+    .inventory-hero-card {
       background: var(--bg-surface);
       border: 1px solid var(--border-subtle);
       border-radius: var(--radius-lg);
@@ -59,14 +59,14 @@
       box-shadow: var(--shadow-sm);
     }
 
-    .satset-title-row {
+    .inventory-title-row {
       display: flex;
       align-items: center;
       justify-content: space-between;
       gap: var(--space-2);
     }
 
-    .satset-title {
+    .inventory-title {
       font-family: var(--font-display);
       font-size: 1.25rem;
       font-weight: 800;
@@ -77,7 +77,7 @@
       gap: 8px;
     }
 
-    .satset-subtitle {
+    .inventory-subtitle {
       font-family: var(--font-body);
       font-size: 0.85rem;
       color: var(--text-secondary);
@@ -85,7 +85,7 @@
     }
   </style>
 </head>
-<body class="inventory-page satset-page">
+<body class="inventory-page inventory-page">
 
   <!-- Background Technical Grid (Home Harmonized) -->
   <div class="hero-bg-grid" style="position:fixed; z-index:0; pointer-events:none;"></div>
@@ -142,17 +142,17 @@
     <div class="container">
       
       <!-- Inventory Header Card -->
-      <div class="satset-page-header">
-        <div class="satset-hero-card">
-          <div class="satset-title-row">
-            <h1 class="satset-title">
+      <div class="inventory-page-header">
+        <div class="inventory-hero-card">
+          <div class="inventory-title-row">
+            <h1 class="inventory-title">
               <span class="text-gradient">📦 INVENTARIS LAPANGAN</span>
             </h1>
             <span class="presence-badge">
               <span class="status-pulse-dot connected"></span> Kru Lapangan
             </span>
           </div>
-          <p class="satset-subtitle">
+          <p class="inventory-subtitle">
             Inventaris logistik 19 sumber peminjaman (158 item) Hari H. Tersinkronisasi cloud realtime multi-perangkat.
           </p>
         </div>
@@ -260,8 +260,8 @@
           <!-- OWL -->
           <div class="vendor-block" data-vendor="OWL">
             <h3 class="vendor-title"><span class="vendor-dot"></span> 1. Peminjaman dari OWL</h3>
-            <div class="satset-responsive">
-              <table class="data-table inv-table inv-table-inventory inv-table-satset">
+            <div class="inventory-responsive">
+              <table class="data-table inv-table inv-table-inventory inv-table-field">
                 <thead>
                   <tr>
                     <th class="col-nama">Nama Barang</th>
@@ -440,8 +440,8 @@
           <!-- ABON -->
           <div class="vendor-block" data-vendor="ABON">
             <h3 class="vendor-title"><span class="vendor-dot"></span> 2. Peminjaman dari ABON</h3>
-            <div class="satset-responsive">
-              <table class="data-table inv-table inv-table-inventory inv-table-satset">
+            <div class="inventory-responsive">
+              <table class="data-table inv-table inv-table-inventory inv-table-field">
                 <thead>
                   <tr>
                     <th class="col-nama">Nama Barang</th>
@@ -485,8 +485,8 @@
           <!-- Andreas -->
           <div class="vendor-block" data-vendor="Andreas">
             <h3 class="vendor-title"><span class="vendor-dot"></span> 3. Peminjaman dari Andreas</h3>
-            <div class="satset-responsive">
-              <table class="data-table inv-table inv-table-inventory inv-table-satset">
+            <div class="inventory-responsive">
+              <table class="data-table inv-table inv-table-inventory inv-table-field">
                 <thead>
                   <tr>
                     <th class="col-nama">Nama Barang</th>
@@ -980,8 +980,8 @@
           <!-- GIA -->
           <div class="vendor-block" data-vendor="GIA">
             <h3 class="vendor-title"><span class="vendor-dot"></span> 4. Peminjaman dari GIA Deliksari</h3>
-            <div class="satset-responsive">
-              <table class="data-table inv-table inv-table-inventory inv-table-satset">
+            <div class="inventory-responsive">
+              <table class="data-table inv-table inv-table-inventory inv-table-field">
                 <thead>
                   <tr>
                     <th class="col-nama">Nama Barang</th>
@@ -1115,8 +1115,8 @@
           <!-- GKJ -->
           <div class="vendor-block" data-vendor="GKJ">
             <h3 class="vendor-title"><span class="vendor-dot"></span> 5. Peminjaman dari GKJ Ngaliyan</h3>
-            <div class="satset-responsive">
-              <table class="data-table inv-table inv-table-inventory inv-table-satset">
+            <div class="inventory-responsive">
+              <table class="data-table inv-table inv-table-inventory inv-table-field">
                 <thead>
                   <tr>
                     <th class="col-nama">Nama Barang</th>
@@ -1205,8 +1205,8 @@
           <!-- UKK -->
           <div class="vendor-block" data-vendor="UKK">
             <h3 class="vendor-title"><span class="vendor-dot"></span> 6. Peminjaman dari UKK UNNES</h3>
-            <div class="satset-responsive">
-              <table class="data-table inv-table inv-table-inventory inv-table-satset">
+            <div class="inventory-responsive">
+              <table class="data-table inv-table inv-table-inventory inv-table-field">
                 <thead>
                   <tr>
                     <th class="col-nama">Nama Barang</th>
@@ -1349,8 +1349,8 @@
           <!-- Jordan -->
           <div class="vendor-block" data-vendor="Jordan">
             <h3 class="vendor-title"><span class="vendor-dot"></span> 7. Peminjaman dari Jordan</h3>
-            <div class="satset-responsive">
-              <table class="data-table inv-table inv-table-inventory inv-table-satset">
+            <div class="inventory-responsive">
+              <table class="data-table inv-table inv-table-inventory inv-table-field">
                 <thead>
                   <tr>
                     <th class="col-nama">Nama Barang</th>
@@ -1484,8 +1484,8 @@
           <!-- Kiel -->
           <div class="vendor-block" data-vendor="Kiel">
             <h3 class="vendor-title"><span class="vendor-dot"></span> 8. Peminjaman dari Kiel</h3>
-            <div class="satset-responsive">
-              <table class="data-table inv-table inv-table-inventory inv-table-satset">
+            <div class="inventory-responsive">
+              <table class="data-table inv-table inv-table-inventory inv-table-field">
                 <thead>
                   <tr>
                     <th class="col-nama">Nama Barang</th>
@@ -1574,8 +1574,8 @@
           <!-- Nico -->
           <div class="vendor-block" data-vendor="Nico">
             <h3 class="vendor-title"><span class="vendor-dot"></span> 9. Peminjaman dari Nico</h3>
-            <div class="satset-responsive">
-              <table class="data-table inv-table inv-table-inventory inv-table-satset">
+            <div class="inventory-responsive">
+              <table class="data-table inv-table inv-table-inventory inv-table-field">
                 <thead>
                   <tr>
                     <th class="col-nama">Nama Barang</th>
@@ -1646,8 +1646,8 @@
           <!-- Lio -->
           <div class="vendor-block" data-vendor="Lio">
             <h3 class="vendor-title"><span class="vendor-dot"></span> 10. Peminjaman dari Lio</h3>
-            <div class="satset-responsive">
-              <table class="data-table inv-table inv-table-inventory inv-table-satset">
+            <div class="inventory-responsive">
+              <table class="data-table inv-table inv-table-inventory inv-table-field">
                 <thead>
                   <tr>
                     <th class="col-nama">Nama Barang</th>
@@ -1673,8 +1673,8 @@
           <!-- Darrel -->
           <div class="vendor-block" data-vendor="Darrel">
             <h3 class="vendor-title"><span class="vendor-dot"></span> 11. Peminjaman dari Darrel</h3>
-            <div class="satset-responsive">
-              <table class="data-table inv-table inv-table-inventory inv-table-satset">
+            <div class="inventory-responsive">
+              <table class="data-table inv-table inv-table-inventory inv-table-field">
                 <thead>
                   <tr>
                     <th class="col-nama">Nama Barang</th>
@@ -1700,8 +1700,8 @@
           <!-- Jennifer -->
           <div class="vendor-block" data-vendor="Jennifer">
             <h3 class="vendor-title"><span class="vendor-dot"></span> 12. Peminjaman dari Jennifer</h3>
-            <div class="satset-responsive">
-              <table class="data-table inv-table inv-table-inventory inv-table-satset">
+            <div class="inventory-responsive">
+              <table class="data-table inv-table inv-table-inventory inv-table-field">
                 <thead>
                   <tr>
                     <th class="col-nama">Nama Barang</th>
@@ -1736,8 +1736,8 @@
           <!-- Filia -->
           <div class="vendor-block" data-vendor="Filia">
             <h3 class="vendor-title"><span class="vendor-dot"></span> 13. Peminjaman dari Filia</h3>
-            <div class="satset-responsive">
-              <table class="data-table inv-table inv-table-inventory inv-table-satset">
+            <div class="inventory-responsive">
+              <table class="data-table inv-table inv-table-inventory inv-table-field">
                 <thead>
                   <tr>
                     <th class="col-nama">Nama Barang</th>
@@ -1763,8 +1763,8 @@
           <!-- Alex -->
           <div class="vendor-block" data-vendor="Alex">
             <h3 class="vendor-title"><span class="vendor-dot"></span> 14. Peminjaman dari Alex</h3>
-            <div class="satset-responsive">
-              <table class="data-table inv-table inv-table-inventory inv-table-satset">
+            <div class="inventory-responsive">
+              <table class="data-table inv-table inv-table-inventory inv-table-field">
                 <thead>
                   <tr>
                     <th class="col-nama">Nama Barang</th>
@@ -1790,8 +1790,8 @@
           <!-- Bayu -->
           <div class="vendor-block" data-vendor="Bayu">
             <h3 class="vendor-title"><span class="vendor-dot"></span> 15. Peminjaman dari Bayu</h3>
-            <div class="satset-responsive">
-              <table class="data-table inv-table inv-table-inventory inv-table-satset">
+            <div class="inventory-responsive">
+              <table class="data-table inv-table inv-table-inventory inv-table-field">
                 <thead>
                   <tr>
                     <th class="col-nama">Nama Barang</th>
@@ -1826,8 +1826,8 @@
           <!-- Wilfred -->
           <div class="vendor-block" data-vendor="Wilfred">
             <h3 class="vendor-title"><span class="vendor-dot"></span> 16. Peminjaman dari Wilfred</h3>
-            <div class="satset-responsive">
-              <table class="data-table inv-table inv-table-inventory inv-table-satset">
+            <div class="inventory-responsive">
+              <table class="data-table inv-table inv-table-inventory inv-table-field">
                 <thead>
                   <tr>
                     <th class="col-nama">Nama Barang</th>
@@ -1862,8 +1862,8 @@
           <!-- Evan -->
           <div class="vendor-block" data-vendor="Evan">
             <h3 class="vendor-title"><span class="vendor-dot"></span> 17. Peminjaman dari Evan</h3>
-            <div class="satset-responsive">
-              <table class="data-table inv-table inv-table-inventory inv-table-satset">
+            <div class="inventory-responsive">
+              <table class="data-table inv-table inv-table-inventory inv-table-field">
                 <thead>
                   <tr>
                     <th class="col-nama">Nama Barang</th>
@@ -1898,8 +1898,8 @@
           <!-- PlayStation -->
           <div class="vendor-block" data-vendor="PlayStation">
             <h3 class="vendor-title"><span class="vendor-dot"></span> 18. Peminjaman dari PlayStation</h3>
-            <div class="satset-responsive">
-              <table class="data-table inv-table inv-table-inventory inv-table-satset">
+            <div class="inventory-responsive">
+              <table class="data-table inv-table inv-table-inventory inv-table-field">
                 <thead>
                   <tr>
                     <th class="col-nama">Nama Barang</th>
@@ -1934,8 +1934,8 @@
           <!-- Panitia -->
           <div class="vendor-block" data-vendor="Panitia">
             <h3 class="vendor-title"><span class="vendor-dot"></span> 19. Peminjaman dari Panitia</h3>
-            <div class="satset-responsive">
-              <table class="data-table inv-table inv-table-inventory inv-table-satset">
+            <div class="inventory-responsive">
+              <table class="data-table inv-table inv-table-inventory inv-table-field">
                 <thead>
                   <tr>
                     <th class="col-nama">Nama Barang</th>
@@ -2000,22 +2000,31 @@
 
     <div class="drawer-content">
       <div class="drawer-section-label">MENU UTAMA</div>
-      <ul class="drawer-nav-list">
+            <ul class="drawer-nav-list">
         <li>
           <a href="index.html" class="drawer-nav-link">
             <span class="drawer-link-icon">🏠</span>
             <div class="drawer-link-text">
               <strong>Home</strong>
-              <small>Portal Utama Master Pipeline</small>
+              <small>Hasil Siaran &amp; Playlist Video</small>
+            </div>
+          </a>
+        </li>
+        <li>
+          <a href="archive.html" class="drawer-nav-link">
+            <span class="drawer-link-icon">📦</span>
+            <div class="drawer-link-text">
+              <strong>Archive</strong>
+              <small>Arsip Teknis &amp; Sistem Produksi</small>
             </div>
           </a>
         </li>
         <li>
           <a href="inventory.html" class="drawer-nav-link active">
-            <span class="drawer-link-icon">📦</span>
+            <span class="drawer-link-icon">📋</span>
             <div class="drawer-link-text">
               <strong>Inventory</strong>
-              <small>Checklist Lapangan Realtime</small>
+              <small>Checklist Lapangan 19 Vendor</small>
             </div>
           </a>
         </li>
@@ -2024,7 +2033,7 @@
             <span class="drawer-link-icon">🎛️</span>
             <div class="drawer-link-text">
               <strong>Switcher</strong>
-              <small>Simulator Switcher Cinelive V1</small>
+              <small>Simulator Cinelive V1 Desktop</small>
             </div>
           </a>
         </li>
@@ -2033,7 +2042,7 @@
             <span class="drawer-link-icon">🎶</span>
             <div class="drawer-link-text">
               <strong>Presenter</strong>
-              <small>Simulator ProPresenter Live Lyrics</small>
+              <small>Simulator ProPresenter 7</small>
             </div>
           </a>
         </li>

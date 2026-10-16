@@ -2374,15 +2374,15 @@ code {
 }
 
 /* Tactile Inventory Checkboxes & Strict Fixed Column Alignment (Master Portal) */
-body:not(.satset-page) .data-table.inv-table {
+body:not(.inventory-page) .data-table.inv-table {
   table-layout: fixed;
   width: 100%;
   min-width: 820px;
 }
 
 /* Col 1: Nama Barang */
-body:not(.satset-page) .data-table.inv-table th:nth-child(1),
-body:not(.satset-page) .data-table.inv-table td:nth-child(1) {
+body:not(.inventory-page) .data-table.inv-table th:nth-child(1),
+body:not(.inventory-page) .data-table.inv-table td:nth-child(1) {
   width: 26%;
   font-weight: 600;
   color: var(--text-primary);
@@ -2392,8 +2392,8 @@ body:not(.satset-page) .data-table.inv-table td:nth-child(1) {
 }
 
 /* Col 2: Jumlah */
-body:not(.satset-page) .data-table.inv-table th:nth-child(2),
-body:not(.satset-page) .data-table.inv-table td:nth-child(2) {
+body:not(.inventory-page) .data-table.inv-table th:nth-child(2),
+body:not(.inventory-page) .data-table.inv-table td:nth-child(2) {
   width: 11%;
   font-family: var(--font-mono);
   font-size: 0.82rem;
@@ -2401,16 +2401,16 @@ body:not(.satset-page) .data-table.inv-table td:nth-child(2) {
 }
 
 /* Col 3: Status */
-body:not(.satset-page) .data-table.inv-table th:nth-child(3),
-body:not(.satset-page) .data-table.inv-table td:nth-child(3) {
+body:not(.inventory-page) .data-table.inv-table th:nth-child(3),
+body:not(.inventory-page) .data-table.inv-table td:nth-child(3) {
   width: 8%;
   text-align: center;
   white-space: nowrap;
 }
 
 /* Col 4 & 5: Pasang & Kemas Checkboxes (Hydrated by JS) */
-body:not(.satset-page) .data-table.inv-table th.th-sync,
-body:not(.satset-page) .data-table.inv-table td.sync-td {
+body:not(.inventory-page) .data-table.inv-table th.th-sync,
+body:not(.inventory-page) .data-table.inv-table td.sync-td {
   width: 80px;
   min-width: 80px;
   max-width: 80px;
@@ -2419,8 +2419,8 @@ body:not(.satset-page) .data-table.inv-table td.sync-td {
 }
 
 /* Col 6: Keterangan Penggunaan (Strictly 1 Single Line) */
-body:not(.satset-page) .data-table.inv-table th:nth-child(6),
-body:not(.satset-page) .data-table.inv-table td:nth-child(6) {
+body:not(.inventory-page) .data-table.inv-table th:nth-child(6),
+body:not(.inventory-page) .data-table.inv-table td:nth-child(6) {
   width: 39%;
   color: var(--text-secondary);
   font-size: 0.84rem;
@@ -2430,8 +2430,8 @@ body:not(.satset-page) .data-table.inv-table td:nth-child(6) {
 }
 
 /* Col 4 Fallback before sync columns inserted */
-body:not(.satset-page) .data-table.inv-table th:nth-child(4):last-child,
-body:not(.satset-page) .data-table.inv-table td:nth-child(4):last-child {
+body:not(.inventory-page) .data-table.inv-table th:nth-child(4):last-child,
+body:not(.inventory-page) .data-table.inv-table td:nth-child(4):last-child {
   width: 55%;
   color: var(--text-secondary);
   font-size: 0.84rem;
@@ -3184,16 +3184,16 @@ tr.remote-updated {
     -webkit-overflow-scrolling: touch;
   }
 
-  body:not(.satset-page) .table-responsive .data-table {
+  body:not(.inventory-page) .table-responsive .data-table {
     min-width: 660px; /* Device matrix and generic tables get smooth horizontal scroll */
   }
 
-  body:not(.satset-page) .table-responsive .inv-table {
+  body:not(.inventory-page) .table-responsive .inv-table {
     min-width: 820px; /* Master inventory 6-column fixed table */
   }
 
-  body:not(.satset-page) .inv-table th,
-  body:not(.satset-page) .inv-table td {
+  body:not(.inventory-page) .inv-table th,
+  body:not(.inventory-page) .inv-table td {
     padding: 10px 8px;
     font-size: 0.8rem;
   }
@@ -3356,26 +3356,26 @@ tr.remote-updated {
     gap: 4px;
   }
 
-  body.satset-page .satset-title {
+  body.inventory-page .inventory-title {
     font-size: 1.05rem !important;
   }
 
-  body.satset-page .data-table.inv-table-satset th.col-qty,
-  body.satset-page .data-table.inv-table-satset td.col-qty {
+  body.inventory-page .data-table.inv-table-field th.col-qty,
+  body.inventory-page .data-table.inv-table-field td.col-qty {
     width: 60px !important;
     min-width: 60px !important;
     max-width: 60px !important;
     font-size: 0.74rem !important;
   }
 
-  body.satset-page .data-table.inv-table-satset th.col-ceklist,
-  body.satset-page .data-table.inv-table-satset td.col-ceklist {
+  body.inventory-page .data-table.inv-table-field th.col-ceklist,
+  body.inventory-page .data-table.inv-table-field td.col-ceklist {
     width: 46px !important;
     min-width: 46px !important;
     max-width: 46px !important;
   }
 
-  body.satset-page .data-table.inv-table-satset .inv-checkbox-btn {
+  body.inventory-page .data-table.inv-table-field .inv-checkbox-btn {
     width: 32px !important;
     height: 32px !important;
     min-width: 32px !important;
@@ -3388,14 +3388,14 @@ tr.remote-updated {
    14. SATSET MOBILE PORTAL STYLES (3 Columns: Nama, Jumlah, Centang)
    Desain visual konsisten dengan Master Portal, lega, tidak disunat / padet.
    -------------------------------------------------------------------------- */
-body.satset-page {
+body.inventory-page {
   overflow-x: hidden !important;
   max-width: 100vw !important;
   background-color: var(--bg-primary);
   padding-bottom: calc(32px + env(safe-area-inset-bottom, 12px)) !important;
 }
 
-body.satset-page .container {
+body.inventory-page .container {
   width: 100% !important;
   max-width: 100% !important;
   padding-left: 10px !important;
@@ -3403,13 +3403,13 @@ body.satset-page .container {
   overflow-x: hidden !important;
 }
 
-body.satset-page .satset-page-header {
+body.inventory-page .inventory-page-header {
   padding: 8px 0 4px 0 !important;
 }
 
-body.satset-page .satset-hero-card,
-body.satset-page .cloud-sync-card,
-body.satset-page .vendor-block {
+body.inventory-page .inventory-hero-card,
+body.inventory-page .cloud-sync-card,
+body.inventory-page .vendor-block {
   padding: 12px 10px !important;
   margin-bottom: 12px !important;
   border-radius: 12px !important;
@@ -3418,20 +3418,20 @@ body.satset-page .vendor-block {
   box-shadow: var(--shadow-sm);
 }
 
-body.satset-page .satset-hero-card {
+body.inventory-page .inventory-hero-card {
   gap: 6px;
 }
 
-body.satset-page .satset-title {
+body.inventory-page .inventory-title {
   font-size: 1.15rem !important;
 }
 
-body.satset-page .satset-subtitle {
+body.inventory-page .inventory-subtitle {
   font-size: 0.8rem !important;
   line-height: 1.35 !important;
 }
 
-body.satset-page .vendor-title {
+body.inventory-page .vendor-title {
   font-size: 0.98rem !important;
   font-weight: 700 !important;
   color: var(--text-primary);
@@ -3441,7 +3441,7 @@ body.satset-page .vendor-title {
   gap: var(--space-2);
 }
 
-.satset-responsive {
+.inventory-responsive {
   width: 100% !important;
   max-width: 100% !important;
   overflow-x: hidden !important; /* Zero horizontal scrolling on mobile */
@@ -3452,7 +3452,7 @@ body.satset-page .vendor-title {
   margin-bottom: 2px;
 }
 
-.data-table.inv-table-satset {
+.data-table.inv-table-field {
   width: 100% !important;
   min-width: 0 !important;
   max-width: 100% !important;
@@ -3461,7 +3461,7 @@ body.satset-page .vendor-title {
   font-size: 0.88rem;
 }
 
-.data-table.inv-table-satset th {
+.data-table.inv-table-field th {
   background: var(--bg-surface-elevated);
   font-family: var(--font-mono);
   font-size: 0.72rem;
@@ -3474,15 +3474,15 @@ body.satset-page .vendor-title {
   box-sizing: border-box;
 }
 
-.data-table.inv-table-satset td {
+.data-table.inv-table-field td {
   padding: 9px 6px !important;
   border-bottom: 1px solid var(--border-subtle);
   vertical-align: middle;
   box-sizing: border-box;
 }
 
-.data-table.inv-table-satset th.col-nama,
-.data-table.inv-table-satset td.col-nama {
+.data-table.inv-table-field th.col-nama,
+.data-table.inv-table-field td.col-nama {
   width: auto !important;
   text-align: left;
   font-size: 0.88rem;
@@ -3495,8 +3495,8 @@ body.satset-page .vendor-title {
   padding: 9px 8px !important;
 }
 
-.data-table.inv-table-satset th.col-qty,
-.data-table.inv-table-satset td.col-qty {
+.data-table.inv-table-field th.col-qty,
+.data-table.inv-table-field td.col-qty {
   width: 68px !important;
   min-width: 68px !important;
   max-width: 68px !important;
@@ -3511,8 +3511,8 @@ body.satset-page .vendor-title {
   padding: 9px 4px !important;
 }
 
-.data-table.inv-table-satset th.col-ceklist,
-.data-table.inv-table-satset td.col-ceklist {
+.data-table.inv-table-field th.col-ceklist,
+.data-table.inv-table-field td.col-ceklist {
   width: 52px !important;
   min-width: 52px !important;
   max-width: 52px !important;
@@ -3521,29 +3521,29 @@ body.satset-page .vendor-title {
   white-space: nowrap;
 }
 
-.data-table.inv-table-satset tbody tr {
+.data-table.inv-table-field tbody tr {
   transition: background 160ms cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-.data-table.inv-table-satset tbody tr:hover {
+.data-table.inv-table-field tbody tr:hover {
   background: var(--bg-surface-hover);
 }
 
-.data-table.inv-table-satset tbody tr:last-child td {
+.data-table.inv-table-field tbody tr:last-child td {
   border-bottom: none;
 }
 
 /* Row Highlight when checked (matching Pasang cyan glow) */
-.data-table.inv-table-satset tr.is-loaded {
+.data-table.inv-table-field tr.is-loaded {
   background: rgba(0, 210, 255, 0.08) !important;
 }
 
-.data-table.inv-table-satset tr.is-loaded td.col-nama {
+.data-table.inv-table-field tr.is-loaded td.col-nama {
   color: var(--accent-cyan) !important;
 }
 
 /* Touch-optimized tactile checkbox button matching page utama */
-.data-table.inv-table-satset .inv-checkbox-btn {
+.data-table.inv-table-field .inv-checkbox-btn {
   width: 36px !important;
   height: 36px !important;
   min-width: 36px !important;
@@ -3564,17 +3564,17 @@ body.satset-page .vendor-title {
   -webkit-tap-highlight-color: transparent;
 }
 
-.data-table.inv-table-satset .inv-checkbox-btn:hover {
+.data-table.inv-table-field .inv-checkbox-btn:hover {
   border-color: var(--border-strong);
   background: var(--bg-surface-hover);
   transform: scale(1.06);
 }
 
-.data-table.inv-table-satset .inv-checkbox-btn:active {
+.data-table.inv-table-field .inv-checkbox-btn:active {
   transform: scale(0.92);
 }
 
-.data-table.inv-table-satset .inv-checkbox-btn .check-svg {
+.data-table.inv-table-field .inv-checkbox-btn .check-svg {
   width: 20px;
   height: 20px;
   stroke: currentColor;
@@ -3587,14 +3587,14 @@ body.satset-page .vendor-title {
 }
 
 /* Checked state: match Pasang (Loading) button cyan style from main page */
-.data-table.inv-table-satset .inv-checkbox-btn.checked {
+.data-table.inv-table-field .inv-checkbox-btn.checked {
   background: var(--accent-cyan) !important;
   border-color: var(--accent-cyan) !important;
   color: #000 !important;
   box-shadow: 0 0 12px rgba(0, 210, 255, 0.4) !important;
 }
 
-.data-table.inv-table-satset .inv-checkbox-btn.checked .check-svg {
+.data-table.inv-table-field .inv-checkbox-btn.checked .check-svg {
   transform: scale(1);
 }
 
@@ -3772,3 +3772,77 @@ body.satset-page .vendor-title {
 }
 
 
+
+
+/* ==========================================================================
+   ARCHIVE STATUS BANNER (for archive.html & archive/index.html)
+   ========================================================================== */
+.archive-banner {
+  background: linear-gradient(90deg, rgba(245, 158, 11, 0.15) 0%, rgba(0, 210, 255, 0.1) 100%);
+  border-bottom: 1px solid var(--accent-amber);
+  padding: 12px 16px;
+  position: relative;
+  z-index: 99;
+}
+
+.archive-banner-container {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.archive-banner-content {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.archive-banner-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: var(--accent-amber);
+  color: #000;
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  font-weight: 800;
+  padding: 3px 8px;
+  border-radius: var(--radius-sm);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  white-space: nowrap;
+}
+
+.archive-banner-text {
+  font-family: var(--font-body);
+  font-size: 0.88rem;
+  color: var(--text-primary);
+  margin: 0;
+  line-height: 1.4;
+}
+
+.archive-banner-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: var(--accent-cyan);
+  color: #000;
+  font-family: var(--font-body);
+  font-size: 0.82rem;
+  font-weight: 700;
+  padding: 6px 14px;
+  border-radius: var(--radius-md);
+  text-decoration: none;
+  transition: all var(--transition-fast);
+  white-space: nowrap;
+}
+
+.archive-banner-btn:hover {
+  filter: brightness(1.1);
+  transform: translateY(-1px);
+}

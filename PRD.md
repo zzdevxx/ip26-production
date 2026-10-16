@@ -55,9 +55,24 @@ The portal provides instant, frictionless, mobile-optimized access to master sig
 ---
 
 ### 5. Information Architecture & Content Hierarchy
-1. **Top Navigation Header:** Progress bar, single-word anchors, live status badge, theme toggle, and cloud status.
-2. **Hero Section:** Event title, venue badge, real-time telemetry stats, live crew presence, and action triggers.
-3. **Command & Organization:** 3 Leadership team cards, 5 Technical Assignment Golden Rules, and Mermaid Org Flowchart.
+
+> **Arsitektur Pasca-Event (v2):** Setelah Ibadah Perdana 2026 sukses terlaksana, situs direstrukturisasi menjadi **dua wajah**: (A) **Landing Page Hasil Publik** (`index.html`) yang menampilkan output rekaman & playlist video untuk jemaat umum, dan (B) **Arsip Teknis Produksi** (`archive.html`) yang mempertahankan seluruh dokumentasi teknis pra-event untuk kru.
+
+#### A. Landing Page — Official Media Release (`index.html`)
+1. **Top Header:** Brand "Media & Output Portal", in-page nav (Full Live / Timeline / Video / Sistem / Simulator), tombol "Arsip Teknis", theme toggle, hamburger mobile.
+2. **Hero Media Release:** Status "Event Completed", judul event, venue, 3 CTA (Putar Master 4 Jam / Telusuri 23 Video / Arsip Teknis), dan 4 kartu telemetri (durasi master, jumlah video, jumlah lagu, resolusi).
+3. **Featured Master Live Player:** Pemutar YouTube embedded dengan 5 tab feed (Full Live Master, Full Live Raw, Opening, Countdown, Profile) + meta bar & tombol buka YouTube.
+4. **Timeline Rundown Interaktif:** 8 penanda waktu (klik untuk melompat ke bagian video master pada detik tertentu).
+5. **Katalog Video & Pencarian:** 6 pill filter kategori (Semua/Siaran/Praise/Worship/Kidung/Persembahan) + input pencarian real-time (judul/artis/kategori) + grid kartu 23 video dengan thumbnail, durasi, tag kategori, tombol "Putar di Sini" & "YouTube ↗".
+6. **Ekosistem Produksi:** 4 kartu pilar teknologi (Switcher Cinelive V1, ProPresenter/Resolume, Audio FOH/Submix, 19 Vendor Logistik).
+7. **Akses Simulator & Arsip:** 4 kartu tautan (Master Command Portal/Arsip, Switcher, ProPresenter, Inventaris).
+8. **Footer & Mobile Dock:** Info event, tautan navigasi/modul/kanal resmi, dock mobile (Home/Videos/Arsip/Menu).
+
+#### B. Arsip Teknis Produksi (`archive.html`)
+Diawali **banner arsip amber** (status event selesai + tombol kembali ke landing), lalu:
+1. **Top Navigation Header:** Progress bar, single-word anchors, live status badge, theme toggle, dan cloud status.
+2. **Hero Section:** Event title, venue badge, real-time telemetry stats, live crew presence, dan action triggers.
+3. **Command & Organization:** 3 Leadership team cards, 5 Technical Assignment Golden Rules, dan Mermaid Org Flowchart.
 4. **Master Architecture & Signal Flow:** 4-Stage interactive board + Master Mermaid Signal Flow Diagram.
 5. **6 Sub-System Deep-Dives (2-Column Grid):** (1) Wireless Cameras (CAM 2 & 3), (2) Wired Cameras (CAM 1 & 4), (3) Video & LED Mapping, (4) Audio Routing & Streaming, (5) Stage Effects (Smoke Fogger), and (6) Electrical Power Distribution (each with its dedicated compact `flowchart LR` Mermaid diagram & technical explanation).
 6. **Camera Acquisition Systems:** 2-Column Broadcast (CAM 1–4) & 3-Column Documentation camera specifications.
@@ -65,4 +80,4 @@ The portal provides instant, frictionless, mobile-optimized access to master sig
 8. **Master Inventory Directory:** Live search, 19 vendor filter pills, strict fixed-column tables with single-line ellipsis, dual-action realtime checklist (`[v] Pasang` & `[v] Kemas`), batch bulk actions ("✓ Ceklis Semua" & "↺ Reset Ceklis"), dynamic progress gauges, and clipboard summary exporter.
 9. **Rundown & Screen Mapping:** 3-Phase structured timeline (Pre-Ibadah, Main Ibadah, Post-Ibadah) with multimedia asset distribution targets.
 10. **Footer & Governance:** Operational charter and 5-clause ASCII license modal.
-11. **Mobile Bottom Dock:** 5 touch-friendly quick-access tabs with active scrollspy tracking.
+11. **Mobile Bottom Dock:** Tanpa dock di arsip (banner + drawer cukup).

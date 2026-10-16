@@ -32,10 +32,19 @@
 
 | Layanan / Modul | URL Live (GitHub Pages) | File Lokal / Direktori | Deskripsi & Fungsi |
 | :--- | :--- | :--- | :--- |
-| 🌐 **Master Command Portal** | [https://zzdree.github.io/ip26-production/](https://zzdree.github.io/ip26-production/) | [`index.html`](./index.html) | Portal komando lengkap: arsitektur sistem, 8 diagram sinyal, tabel 158 logistik, device matrix, & rundown. |
-| 📦 **Inventaris Lapangan (Mobile)** | [https://zzdree.github.io/ip26-production/inventory.html](https://zzdree.github.io/ip26-production/inventory.html) | [`inventory.html`](./inventory.html) & [`inventory/`](./inventory/index.html) | Mode taktis smartphone kru hari H: checklist inventaris alat & logistik 19 vendor, centang cepat pemasangan (*Loading-In*) & pengemasan (*Packing-Out*). |
+| ⭐ **Official Media Release (Landing)** | [https://zzdree.github.io/ip26-production/](https://zzdree.github.io/ip26-production/) | [`index.html`](./index.html) + [`landing.css`](./landing.css) + [`landing.js`](./landing.js) | **Halaman utama pasca-event:** pemutar Full Live Master 4 jam, timeline rundown interaktif, katalog 23 video (filter kategori + pencarian), ekosistem produksi, & akses simulator. |
+| 📦 **Arsip Teknis Produksi** | [https://zzdree.github.io/ip26-production/archive.html](https://zzdree.github.io/ip26-production/archive.html) | [`archive.html`](./archive.html) & [`archive/`](./archive/index.html) | Arsip dokumentasi teknis pra-event: arsitektur sistem, 8 diagram sinyal, tabel 158 logistik, device matrix, & rundown master. Diawali banner status "event selesai". |
+| 📋 **Inventaris Lapangan (Mobile)** | [https://zzdree.github.io/ip26-production/inventory.html](https://zzdree.github.io/ip26-production/inventory.html) | [`inventory.html`](./inventory.html) & [`inventory/`](./inventory/index.html) | Mode taktis smartphone kru hari H: checklist inventaris alat & logistik 19 vendor, centang cepat pemasangan (*Loading-In*) & pengemasan (*Packing-Out*). |
 | 🎛️ **Switcher Cinelive V1 (Desktop)** | [https://zzdree.github.io/ip26-production/switcher/](https://zzdree.github.io/ip26-production/switcher/) atau [switcher.html](https://zzdree.github.io/ip26-production/switcher.html) | [`switcher.html`](./switcher.html) & [`switcher/`](./switcher/index.html) | Simulator hardware Cinetreak Cinelive V1 (*Desktop Only*): 1 baris tombol fisik CAM 1-4 dual tally (Merah=PGM, Hijau=PVW cue/cut), kalibrasi VU meter audio broadcast (-12dB nominal / AFV / Mute), LCD 5.5", HDMI 2 AUX Monitor (MV 6-split / ISO / PGM / PVW), T-Bar 10-LED ladder meter, rotary menu encoder OSD, CUT/AUTO, PIP, FTB. |
 | 🎶 **ProPresenter Simulator (Desktop)** | [https://zzdree.github.io/ip26-production/presenter/](https://zzdree.github.io/ip26-production/presenter/) atau [presenter.html](https://zzdree.github.io/ip26-production/presenter.html) | [`presenter.html`](./presenter.html) & [`presenter/`](./presenter/index.html) | Simulator ProPresenter 7 (*Desktop Only*): unified output preview monitor dengan screen selector tabs (`[Audience LED]`, `[Stage Display]`, `[Stream L3]`), 3-column workstation, 15 lagu dari `Assets/Lyrics/Statics`, pemutar YouTube backing track sinkron, dan slides 1-2 baris. |
+
+### 📺 Sumber Data Playlist (YouTube)
+
+Katalog landing page dibangun dari hasil scrape playlist resmi kanal YouTube **UKK UNNES** (`@ukkunnes`), lalu disimpan sebagai data statis:
+- **Playlist:** [Ibadah Perdana | UKK UNNES 2026](https://www.youtube.com/playlist?list=PLEVOqIQGdsZw) — 22 video.
+- **+1 video profil** kanal (`Profile Video | UKK UNNES 2026`) → total **23 video** di katalog.
+- **File data:** [`data/playlist.json`](./data/playlist.json) (raw) & [`data/playlist.js`](./data/playlist.js) (dimuat langsung tanpa build).
+- **Regenerate:** `yt-dlp --force-ipv4 --flat-playlist -J "https://www.youtube.com/playlist?list=PLEVOqIQGdsZw"` lalu jalankan ulang skrip pemetaan kategori.
 
 | Atribut | Keterangan |
 | :--- | :--- |

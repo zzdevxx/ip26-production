@@ -3,6 +3,8 @@ const path = require('path');
 
 const files = [
   'index.html',
+  'archive.html',
+  'archive/index.html',
   'inventory.html',
   'inventory/index.html',
   'switcher.html',
@@ -10,6 +12,8 @@ const files = [
   'presenter.html',
   'presenter/index.html'
 ];
+
+const EXPECTED_DRAWER = ['Home', 'Archive', 'Inventory', 'Switcher', 'Presenter'];
 
 let allPassed = true;
 
@@ -52,7 +56,7 @@ files.forEach(file => {
     const drawerHtml = drawerMatch[0];
     const linkMatches = [...drawerHtml.matchAll(/<strong>(.*?)<\/strong>/g)].map(m => m[1]);
     console.log('  Drawer menus in ' + file + ':', linkMatches.join(', '));
-    const expected = ['Home', 'Inventory', 'Switcher', 'Presenter'];
+    const expected = EXPECTED_DRAWER;
     if (JSON.stringify(linkMatches) !== JSON.stringify(expected)) {
       console.error('FAIL: expected [' + expected.join(', ') + '] but got [' + linkMatches.join(', ') + ']');
       allPassed = false;
