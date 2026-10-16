@@ -1,21 +1,17 @@
 /**
  * IP26 MEDIA OUTPUT & RECAP LANDING PAGE
- * Client Application Logic
- * Frosted Glassmorphism, Fluid Spring Animations, Ambient Canvas & Cinema Mode
+ * High-performance client logic: ambient aurora canvas, gliding pill slider,
+ * bias lighting, cinema mode, and responsive video filtering.
  */
 
 document.addEventListener("DOMContentLoaded", () => {
   const playlist = window.IP26_PLAYLIST || { videos: [] };
   const videos = playlist.videos;
 
-  // =========================================================================
-  // 1. PERMANENT DARK THEME
-  // =========================================================================
+  // Dark theme is the permanent architectural default for the broadcast portal.
   document.documentElement.setAttribute("data-theme", "dark");
 
-  // =========================================================================
-  // 2. HERO AMBIENT AURORA & PARTICLE CANVAS
-  // =========================================================================
+  // Hero ambient aurora canvas (30fps throttled, paused when offscreen or hidden)
   const heroCanvas = document.getElementById("hero-ambient-canvas");
   if (heroCanvas) {
     const ctx = heroCanvas.getContext("2d");
@@ -27,21 +23,23 @@ document.addEventListener("DOMContentLoaded", () => {
     let targetMouseY = 0.5;
     let animId = null;
     let isVisible = true;
+    let isTabActive = !document.hidden;
+    let lastRenderTime = 0;
 
     const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
-    // 5 Organic Floating Aurora Blobs (Cyan, Purple, Cobalt, Amber, White Core)
+    // 3 harmonic floating color nodes (Cyan, Purple, Blue) for low GPU footprint
     const auroraNodes = [
-      { x: 0.25, y: 0.35, r: 380, color: "rgba(0, 210, 255, 0.16)", speed: 0.0009, phase: 0 },
-      { x: 0.75, y: 0.45, r: 420, color: "rgba(168, 85, 247, 0.12)", speed: 0.0007, phase: 2.1 },
-      { x: 0.50, y: 0.25, r: 320, color: "rgba(59, 130, 246, 0.10)", speed: 0.0012, phase: 4.3 },
-      { x: 0.35, y: 0.70, r: 280, color: "rgba(245, 158, 11, 0.07)", speed: 0.0008, phase: 1.6 },
-      { x: 0.65, y: 0.65, r: 240, color: "rgba(255, 255, 255, 0.03)", speed: 0.0010, phase: 3.2 }
+      { x: 0.25, y: 0.35, r: 360, color: "rgba(0, 210, 255, 0.14)", speed: 0.0008, phase: 0 },
+      { x: 0.75, y: 0.45, r: 400, color: "rgba(168, 85, 247, 0.11)", speed: 0.0006, phase: 2.1 },
+      { x: 0.50, y: 0.25, r: 300, color: "rgba(59, 130, 246, 0.09)", speed: 0.0010, phase: 4.3 }
     ];
 
     function resizeHeroCanvas() {
       if (!heroCanvas) return;
-      const rect = heroCanvas.parentElement ? heroCanvas.parentElement.getBoundingClientRect() : { width: window.innerWidth, height: 600 };
+      const rect = heroCanvas.parentElement
+        ? heroCanvas.parentElement.getBoundingClientRect()
+        : { width: window.innerWidth, height: 600 };
       const dpr = Math.min(window.devicePixelRatio || 1, 2);
       width = heroCanvas.width = rect.width * dpr;
       height = heroCanvas.height = rect.height * dpr;
@@ -56,27 +54,46 @@ document.addEventListener("DOMContentLoaded", () => {
       targetMouseY = e.clientY / window.innerHeight;
     }, { passive: true });
 
-    // Pause canvas render loop when offscreen
+    // Halt canvas loop when hero scrolls out of view
     const heroObserver = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
         isVisible = entry.isIntersecting;
-        if (isVisible && !animId && !reducedMotion) {
-          animId = requestAnimationFrame(renderAurora);
-        } else if (!isVisible && animId) {
-          cancelAnimationFrame(animId);
-          animId = null;
-        }
+        syncCanvasLoop();
       });
     }, { threshold: 0.05 });
     heroObserver.observe(heroCanvas);
 
+    // Halt canvas loop when browser tab is inactive to preserve battery
+    document.addEventListener("visibilitychange", () => {
+      isTabActive = !document.hidden;
+      syncCanvasLoop();
+    });
+
+    function syncCanvasLoop() {
+      const shouldRun = isVisible && isTabActive && !reducedMotion;
+      if (shouldRun && !animId) {
+        lastRenderTime = performance.now();
+        animId = requestAnimationFrame(renderAurora);
+      } else if (!shouldRun && animId) {
+        cancelAnimationFrame(animId);
+        animId = null;
+      }
+    }
+
     function renderAurora(time) {
-      if (!isVisible) {
+      if (!isVisible || !isTabActive) {
         animId = null;
         return;
       }
 
-      // Smooth mouse lerp
+      // 30 FPS frame rate pacing (every ~33ms) to eliminate background CPU/GPU spikes
+      if (time - lastRenderTime < 33) {
+        animId = requestAnimationFrame(renderAurora);
+        return;
+      }
+      lastRenderTime = time;
+
+      // Mouse lerp interpolation
       mouseX += (targetMouseX - mouseX) * 0.04;
       mouseY += (targetMouseY - mouseY) * 0.04;
 
@@ -88,8 +105,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
       auroraNodes.forEach(node => {
         const t = time || 0;
-        const offsetX = Math.sin(t * node.speed + node.phase) * 70 + (mouseX - 0.5) * 80;
-        const offsetY = Math.cos(t * node.speed + node.phase) * 45 + (mouseY - 0.5) * 60;
+        const offsetX = Math.sin(t * node.speed + node.phase) * 60 + (mouseX - 0.5) * 60;
+        const offsetY = Math.cos(t * node.speed + node.phase) * 40 + (mouseY - 0.5) * 50;
         const cx = displayW * node.x + offsetX;
         const cy = displayH * node.y + offsetY;
 
@@ -115,9 +132,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   }
 
-  // =========================================================================
-  // 3. MOBILE NAVIGATION DRAWER
-  // =========================================================================
+  // Mobile navigation drawer toggle
   const mobileToggle = document.getElementById("mobile-menu-toggle");
   const drawer = document.getElementById("mobile-nav-drawer");
   const backdrop = document.getElementById("mobile-drawer-backdrop");
@@ -155,9 +170,7 @@ document.addEventListener("DOMContentLoaded", () => {
     link.addEventListener("click", closeDrawer);
   });
 
-  // =========================================================================
-  // 4. FEATURED MASTER VIDEO PLAYER & AMBIENT BIAS LIGHTING
-  // =========================================================================
+  // Featured master video player and ambient bias lighting
   const playerIframe = document.getElementById("featured-player-iframe");
   const playerTitle = document.getElementById("player-active-title");
   const playerSubtitle = document.getElementById("player-active-subtitle");
@@ -166,11 +179,11 @@ document.addEventListener("DOMContentLoaded", () => {
   const playerAmbientGlow = document.getElementById("player-ambient-glow");
 
   const categoryGlowColors = {
-    broadcast: "rgba(0, 210, 255, 0.45)",
-    praise: "rgba(245, 158, 11, 0.40)",
-    worship: "rgba(16, 185, 129, 0.40)",
-    hymn: "rgba(168, 85, 247, 0.45)",
-    persembahan: "rgba(244, 63, 94, 0.40)"
+    broadcast: "rgba(0, 210, 255, 0.40)",
+    praise: "rgba(245, 158, 11, 0.35)",
+    worship: "rgba(16, 185, 129, 0.35)",
+    hymn: "rgba(168, 85, 247, 0.40)",
+    persembahan: "rgba(244, 63, 94, 0.35)"
   };
 
   function updateAmbientGlow(category = "broadcast") {
@@ -194,7 +207,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
     updateAmbientGlow(category);
 
-    // Update active tab if matches
     playerTabs.forEach(tab => {
       if (tab.dataset.videoId === videoId) {
         tab.classList.add("active");
@@ -216,7 +228,7 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 
-  // Timeline cues jump markers
+  // Timeline cues: jump master video to specific offset
   document.querySelectorAll(".cue-item").forEach(cue => {
     cue.addEventListener("click", () => {
       const timeSec = cue.dataset.seconds || 0;
@@ -227,7 +239,7 @@ document.addEventListener("DOMContentLoaded", () => {
       const timeLbl = cue.querySelector(".cue-time")?.textContent || "";
       const nameLbl = cue.querySelector(".cue-label")?.textContent || "";
 
-      if (playerTitle) playerTitle.textContent = `Full Live Master — ${nameLbl}`;
+      if (playerTitle) playerTitle.textContent = `Full Live Master: ${nameLbl}`;
       if (playerSubtitle) {
         playerSubtitle.innerHTML = `<span>Bagian ${timeLbl}</span> &bull; <span>04:00:50 Total</span>`;
       }
@@ -247,14 +259,11 @@ document.addEventListener("DOMContentLoaded", () => {
         }
       });
 
-      // Smooth scroll to player
       document.getElementById("featured-live")?.scrollIntoView({ behavior: "smooth" });
     });
   });
 
-  // =========================================================================
-  // 5. CINEMA / THEATER MODE EXPANSION
-  // =========================================================================
+  // Cinema mode expansion
   const theaterBtn = document.getElementById("btn-theater-mode");
   const theaterBtnText = document.getElementById("theater-btn-text");
   const cinemaBackdrop = document.getElementById("cinema-backdrop");
@@ -292,16 +301,14 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   });
 
-  // =========================================================================
-  // 6. FRAMER-MOTION GLIDING PILL SLIDER
-  // =========================================================================
+  // Gliding active filter pill indicator (Framer-Motion spring effect)
   const filterPillsContainer = document.getElementById("category-filter-pills");
   const filterGlider = document.getElementById("filter-glider");
   const filterPills = document.querySelectorAll(".filter-pill");
 
   function updateFilterGlider(activeBtn) {
     if (!filterPillsContainer || !filterGlider || !activeBtn) return;
-    if (window.innerWidth <= 768) return; // Disables glider on scrollable mobile dock
+    if (window.innerWidth <= 768) return;
 
     const containerRect = filterPillsContainer.getBoundingClientRect();
     const btnRect = activeBtn.getBoundingClientRect();
@@ -313,51 +320,30 @@ document.addEventListener("DOMContentLoaded", () => {
     filterGlider.style.width = `${width}px`;
   }
 
-  // Update glider on resize
   window.addEventListener("resize", () => {
     const activePill = filterPillsContainer?.querySelector(".filter-pill.active");
     if (activePill) updateFilterGlider(activePill);
   }, { passive: true });
 
-  // =========================================================================
-  // 7. MOUSE-TRACKING SPOTLIGHT & 3D TILT CARDS
-  // =========================================================================
+  // Lightweight spotlight tracking: uses offsetX/Y to eliminate getBoundingClientRect layout thrashing
   function initCardSpotlights() {
-    const isFinePointer = window.matchMedia("(hover: hover) and (pointer: fine)").matches;
-    const cards = document.querySelectorAll(".video-card, .stat-card, .pillar-card, .sim-card");
+    if (!window.matchMedia("(hover: hover) and (pointer: fine)").matches) return;
 
+    const cards = document.querySelectorAll(".video-card, .stat-card, .pillar-card, .sim-card");
     cards.forEach(card => {
       card.addEventListener("pointermove", (e) => {
-        const rect = card.getBoundingClientRect();
-        const x = e.clientX - rect.left;
-        const y = e.clientY - rect.top;
-
-        card.style.setProperty("--mouse-x", `${x}px`);
-        card.style.setProperty("--mouse-y", `${y}px`);
-
-        // Subtle 3D tilt on video cards
-        if (isFinePointer && card.classList.contains("video-card")) {
-          const cx = rect.width / 2;
-          const cy = rect.height / 2;
-          const rotX = -((y - cy) / cy) * 4;
-          const rotY = ((x - cx) / cx) * 4;
-          card.style.transform = `perspective(900px) rotateX(${rotX.toFixed(2)}deg) rotateY(${rotY.toFixed(2)}deg) translateY(-6px) scale(1.015)`;
-        }
-      });
+        card.style.setProperty("--mouse-x", `${e.offsetX}px`);
+        card.style.setProperty("--mouse-y", `${e.offsetY}px`);
+      }, { passive: true });
 
       card.addEventListener("pointerleave", () => {
         card.style.setProperty("--mouse-x", `-999px`);
         card.style.setProperty("--mouse-y", `-999px`);
-        if (card.classList.contains("video-card")) {
-          card.style.transform = "";
-        }
-      });
+      }, { passive: true });
     });
   }
 
-  // =========================================================================
-  // 8. CATALOGUE FILTERING & SEARCH
-  // =========================================================================
+  // Catalogue filtering and live text search
   const searchInput = document.getElementById("catalog-search-input");
   const searchClear = document.getElementById("search-clear-btn");
   const countBadge = document.getElementById("search-count-badge");
@@ -370,11 +356,9 @@ document.addEventListener("DOMContentLoaded", () => {
     if (!videoGrid) return;
 
     const filtered = videos.filter(v => {
-      // Category filter
       const matchesCat = (activeCategory === "all") || (v.category === activeCategory);
       if (!matchesCat) return false;
 
-      // Search query
       if (searchQuery.trim() === "") return true;
       const q = searchQuery.toLowerCase();
       return (
@@ -460,7 +444,6 @@ document.addEventListener("DOMContentLoaded", () => {
       `;
     }).join("");
 
-    // Bind card play buttons and card thumb clicks
     videoGrid.querySelectorAll(".video-card").forEach(card => {
       const playBtn = card.querySelector(".card-play-btn");
       const thumb = card.querySelector(".video-thumb-container");
@@ -480,7 +463,6 @@ document.addEventListener("DOMContentLoaded", () => {
       if (thumb) thumb.addEventListener("click", handlePlay);
     });
 
-    // Re-initialize spotlights on newly rendered cards
     initCardSpotlights();
   }
 
@@ -505,7 +487,6 @@ document.addEventListener("DOMContentLoaded", () => {
       .replace(/'/g, "&#039;");
   }
 
-  // Filter pills event listeners with glider animation
   filterPills.forEach(pill => {
     pill.addEventListener("click", () => {
       filterPills.forEach(p => p.classList.remove("active"));
@@ -516,7 +497,6 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 
-  // Search input with debounce
   if (searchInput) {
     searchInput.addEventListener("input", (e) => {
       searchQuery = e.target.value;
@@ -539,7 +519,6 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
-  // Initial render of videos & glider position
   renderVideos();
   initCardSpotlights();
 
