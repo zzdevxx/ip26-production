@@ -124,6 +124,7 @@
   <!-- ========================================================================= -->
   <main id="main-content" role="main">
     <section class="media-hero" id="hero">
+      <canvas id="hero-ambient-canvas" class="hero-ambient-canvas" aria-hidden="true"></canvas>
       <div class="media-hero-container">
         <div class="hero-status-pill">
           <span class="pulse-dot"></span>
@@ -192,9 +193,11 @@
           <p class="section-desc">Pilih versi tayangan master (dengan audio sub-mix FOH terkalibrasi) atau feed live raw camera switcher.</p>
         </div>
 
-        <div class="featured-player-card">
-          <!-- Feed Tabs -->
-          <div class="player-nav-tabs" role="tablist" aria-label="Pilihan Tayangan Video">
+        <div class="player-wrapper-outer" id="player-wrapper-outer">
+          <div class="player-ambient-glow" id="player-ambient-glow" aria-hidden="true"></div>
+          <div class="featured-player-card" id="featured-player-card">
+            <!-- Feed Tabs -->
+            <div class="player-nav-tabs" role="tablist" aria-label="Pilihan Tayangan Video">
             <button
               type="button"
               class="player-tab active"
@@ -285,20 +288,57 @@
               <div id="player-active-subtitle" class="player-active-subtitle">
                 <span>Broadcast Switcher + Submix Audio FOH</span> &bull; <span>04:00:50</span>
               </div>
+
+              <!-- Live Broadcast Audio Spectrum EQ Visualizer -->
+              <div class="audio-spectrum-indicator" aria-label="Visualizer Audio FOH Broadcast">
+                <div class="spectrum-bars" id="spectrum-bars" aria-hidden="true">
+                  <span class="eq-bar" style="--d: 0.1s; --h: 65%;"></span>
+                  <span class="eq-bar" style="--d: 0.3s; --h: 85%;"></span>
+                  <span class="eq-bar" style="--d: 0.2s; --h: 40%;"></span>
+                  <span class="eq-bar" style="--d: 0.5s; --h: 90%;"></span>
+                  <span class="eq-bar" style="--d: 0.15s; --h: 70%;"></span>
+                  <span class="eq-bar" style="--d: 0.4s; --h: 55%;"></span>
+                  <span class="eq-bar" style="--d: 0.25s; --h: 95%;"></span>
+                  <span class="eq-bar" style="--d: 0.35s; --h: 75%;"></span>
+                  <span class="eq-bar" style="--d: 0.05s; --h: 60%;"></span>
+                  <span class="eq-bar" style="--d: 0.45s; --h: 88%;"></span>
+                  <span class="eq-bar" style="--d: 0.2s; --h: 45%;"></span>
+                  <span class="eq-bar" style="--d: 0.3s; --h: 80%;"></span>
+                  <span class="eq-bar" style="--d: 0.1s; --h: 68%;"></span>
+                  <span class="eq-bar" style="--d: 0.4s; --h: 92%;"></span>
+                  <span class="eq-bar" style="--d: 0.25s; --h: 50%;"></span>
+                  <span class="eq-bar" style="--d: 0.15s; --h: 78%;"></span>
+                </div>
+                <span class="spectrum-tag">● ON-AIR AUDIO &bull; -12dB FOH</span>
+              </div>
             </div>
 
-            <a
-              id="player-yt-link"
-              href="https://www.youtube.com/watch?v=gAigrossEBk"
-              target="_blank"
-              rel="noopener noreferrer"
-              class="player-yt-link"
-            >
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
-              <span>Buka di YouTube ↗</span>
-            </a>
+            <div class="player-meta-right">
+              <button
+                type="button"
+                id="btn-theater-mode"
+                class="player-theater-btn"
+                aria-label="Aktifkan Mode Bioskop Layar Lebar"
+                title="Cinema Mode (Perlebar Layar &amp; Ambient Glow)"
+              >
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M8 3H5a2 2 0 0 0-2 2v3m18 0V5a2 2 0 0 0-2-2h-3m0 18h3a2 2 0 0 0 2-2v-3M3 16v3a2 2 0 0 0 2 2h3"/></svg>
+                <span id="theater-btn-text">Cinema Mode</span>
+              </button>
+
+              <a
+                id="player-yt-link"
+                href="https://www.youtube.com/watch?v=gAigrossEBk"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="player-yt-link"
+              >
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+                <span>Buka di YouTube ↗</span>
+              </a>
+            </div>
           </div>
         </div>
+      </div>
 
         <!-- Rundown Timeline Markers Card -->
         <div class="rundown-cues-card" id="timeline-cues">
@@ -358,29 +398,36 @@
 
         <!-- Filter & Search Toolbar -->
         <div class="catalog-toolbar">
-          <div class="category-filter-pills" role="tablist" aria-label="Filter Kategori Video">
+          <div class="category-filter-pills" role="tablist" aria-label="Filter Kategori Video" id="category-filter-pills">
+            <span class="filter-glider" id="filter-glider" aria-hidden="true"></span>
             <button type="button" class="filter-pill active" data-category="all">
+              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><rect x="3" y="3" width="7" height="7"></rect><rect x="14" y="3" width="7" height="7"></rect><rect x="14" y="14" width="7" height="7"></rect><rect x="3" y="14" width="7" height="7"></rect></svg>
               <span>Semua Video</span>
               <span class="filter-pill-count">23</span>
             </button>
             <button type="button" class="filter-pill" data-category="broadcast">
-              <span>🎬 Siaran &amp; Rekap</span>
+              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><polygon points="23 7 16 12 23 17 23 7"></polygon><rect x="1" y="5" width="15" height="14" rx="2" ry="2"></rect></svg>
+              <span>Siaran &amp; Rekap</span>
               <span class="filter-pill-count">6</span>
             </button>
             <button type="button" class="filter-pill" data-category="praise">
-              <span>🔥 Pujian (Praise)</span>
+              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M8.5 14.5A2.5 2.5 0 0 0 11 12c0-1.38-.5-2-1-3-1.072-2.143-.224-4.054 2-6 .5 2.5 2 4.9 4 6.5 2 1.6 3 3.5 3 5.5a7 7 0 1 1-14 0c0-1.153.433-2.294 1-3a2.5 2.5 0 0 0 2.5 2.5z"></path></svg>
+              <span>Pujian (Praise)</span>
               <span class="filter-pill-count">4</span>
             </button>
             <button type="button" class="filter-pill" data-category="worship">
-              <span>🕊️ Penyembahan (Worship)</span>
+              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M9 18V5l12-2v13"></path><circle cx="6" cy="18" r="3"></circle><circle cx="18" cy="16" r="3"></circle></svg>
+              <span>Penyembahan (Worship)</span>
               <span class="filter-pill-count">7</span>
             </button>
             <button type="button" class="filter-pill" data-category="hymn">
-              <span>✝️ Kidung &amp; Komitmen</span>
+              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><line x1="12" y1="2" x2="12" y2="22"></line><line x1="5" y1="8" x2="19" y2="8"></line></svg>
+              <span>Kidung &amp; Komitmen</span>
               <span class="filter-pill-count">5</span>
             </button>
             <button type="button" class="filter-pill" data-category="persembahan">
-              <span>🪙 Persembahan</span>
+              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><circle cx="12" cy="12" r="10"></circle><path d="M16 8h-6a2 2 0 1 0 0 4h4a2 2 0 1 1 0 4H8"></path><line x1="12" y1="2" x2="12" y2="6"></line><line x1="12" y1="18" x2="12" y2="22"></line></svg>
+              <span>Persembahan</span>
               <span class="filter-pill-count">1</span>
             </button>
           </div>
@@ -496,6 +543,9 @@
       </div>
     </section>
   </main>
+
+  <!-- Cinema Mode Backdrop -->
+  <div id="cinema-backdrop" class="cinema-backdrop" aria-hidden="true"></div>
 
   <!-- ========================================================================= -->
   <!-- 6. FOOTER -->

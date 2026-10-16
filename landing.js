@@ -1,6 +1,7 @@
 /**
  * IP26 MEDIA OUTPUT & RECAP LANDING PAGE
  * Client Application Logic
+ * Frosted Glassmorphism, Fluid Spring Animations, Ambient Canvas & Cinema Mode
  */
 
 document.addEventListener("DOMContentLoaded", () => {
@@ -8,12 +9,114 @@ document.addEventListener("DOMContentLoaded", () => {
   const videos = playlist.videos;
 
   // =========================================================================
-  // 1. PERMANENT DARK THEME (matches archive portal)
+  // 1. PERMANENT DARK THEME
   // =========================================================================
   document.documentElement.setAttribute("data-theme", "dark");
 
   // =========================================================================
-  // 2. MOBILE NAVIGATION DRAWER
+  // 2. HERO AMBIENT AURORA & PARTICLE CANVAS
+  // =========================================================================
+  const heroCanvas = document.getElementById("hero-ambient-canvas");
+  if (heroCanvas) {
+    const ctx = heroCanvas.getContext("2d");
+    let width = 0;
+    let height = 0;
+    let mouseX = 0.5;
+    let mouseY = 0.5;
+    let targetMouseX = 0.5;
+    let targetMouseY = 0.5;
+    let animId = null;
+    let isVisible = true;
+
+    const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+    // 5 Organic Floating Aurora Blobs (Cyan, Purple, Cobalt, Amber, White Core)
+    const auroraNodes = [
+      { x: 0.25, y: 0.35, r: 380, color: "rgba(0, 210, 255, 0.16)", speed: 0.0009, phase: 0 },
+      { x: 0.75, y: 0.45, r: 420, color: "rgba(168, 85, 247, 0.12)", speed: 0.0007, phase: 2.1 },
+      { x: 0.50, y: 0.25, r: 320, color: "rgba(59, 130, 246, 0.10)", speed: 0.0012, phase: 4.3 },
+      { x: 0.35, y: 0.70, r: 280, color: "rgba(245, 158, 11, 0.07)", speed: 0.0008, phase: 1.6 },
+      { x: 0.65, y: 0.65, r: 240, color: "rgba(255, 255, 255, 0.03)", speed: 0.0010, phase: 3.2 }
+    ];
+
+    function resizeHeroCanvas() {
+      if (!heroCanvas) return;
+      const rect = heroCanvas.parentElement ? heroCanvas.parentElement.getBoundingClientRect() : { width: window.innerWidth, height: 600 };
+      const dpr = Math.min(window.devicePixelRatio || 1, 2);
+      width = heroCanvas.width = rect.width * dpr;
+      height = heroCanvas.height = rect.height * dpr;
+      ctx.scale(dpr, dpr);
+    }
+
+    window.addEventListener("resize", resizeHeroCanvas, { passive: true });
+    resizeHeroCanvas();
+
+    window.addEventListener("pointermove", (e) => {
+      targetMouseX = e.clientX / window.innerWidth;
+      targetMouseY = e.clientY / window.innerHeight;
+    }, { passive: true });
+
+    // Pause canvas render loop when offscreen
+    const heroObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        isVisible = entry.isIntersecting;
+        if (isVisible && !animId && !reducedMotion) {
+          animId = requestAnimationFrame(renderAurora);
+        } else if (!isVisible && animId) {
+          cancelAnimationFrame(animId);
+          animId = null;
+        }
+      });
+    }, { threshold: 0.05 });
+    heroObserver.observe(heroCanvas);
+
+    function renderAurora(time) {
+      if (!isVisible) {
+        animId = null;
+        return;
+      }
+
+      // Smooth mouse lerp
+      mouseX += (targetMouseX - mouseX) * 0.04;
+      mouseY += (targetMouseY - mouseY) * 0.04;
+
+      const displayW = width / Math.min(window.devicePixelRatio || 1, 2);
+      const displayH = height / Math.min(window.devicePixelRatio || 1, 2);
+
+      ctx.clearRect(0, 0, displayW, displayH);
+      ctx.globalCompositeOperation = "screen";
+
+      auroraNodes.forEach(node => {
+        const t = time || 0;
+        const offsetX = Math.sin(t * node.speed + node.phase) * 70 + (mouseX - 0.5) * 80;
+        const offsetY = Math.cos(t * node.speed + node.phase) * 45 + (mouseY - 0.5) * 60;
+        const cx = displayW * node.x + offsetX;
+        const cy = displayH * node.y + offsetY;
+
+        const grad = ctx.createRadialGradient(cx, cy, 0, cx, cy, node.r);
+        grad.addColorStop(0, node.color);
+        grad.addColorStop(1, "rgba(0, 0, 0, 0)");
+
+        ctx.fillStyle = grad;
+        ctx.beginPath();
+        ctx.arc(cx, cy, node.r, 0, Math.PI * 2);
+        ctx.fill();
+      });
+
+      if (!reducedMotion) {
+        animId = requestAnimationFrame(renderAurora);
+      }
+    }
+
+    if (!reducedMotion) {
+      animId = requestAnimationFrame(renderAurora);
+    } else {
+      renderAurora(1000);
+    }
+  }
+
+  // =========================================================================
+  // 3. MOBILE NAVIGATION DRAWER
   // =========================================================================
   const mobileToggle = document.getElementById("mobile-menu-toggle");
   const drawer = document.getElementById("mobile-nav-drawer");
@@ -53,15 +156,30 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
   // =========================================================================
-  // 3. FEATURED MASTER VIDEO PLAYER
+  // 4. FEATURED MASTER VIDEO PLAYER & AMBIENT BIAS LIGHTING
   // =========================================================================
   const playerIframe = document.getElementById("featured-player-iframe");
   const playerTitle = document.getElementById("player-active-title");
   const playerSubtitle = document.getElementById("player-active-subtitle");
   const playerYtLink = document.getElementById("player-yt-link");
   const playerTabs = document.querySelectorAll(".player-tab");
+  const playerAmbientGlow = document.getElementById("player-ambient-glow");
 
-  function setFeaturedVideo(videoId, title, artist, duration, autoPlay = true) {
+  const categoryGlowColors = {
+    broadcast: "rgba(0, 210, 255, 0.45)",
+    praise: "rgba(245, 158, 11, 0.40)",
+    worship: "rgba(16, 185, 129, 0.40)",
+    hymn: "rgba(168, 85, 247, 0.45)",
+    persembahan: "rgba(244, 63, 94, 0.40)"
+  };
+
+  function updateAmbientGlow(category = "broadcast") {
+    if (!playerAmbientGlow) return;
+    const color = categoryGlowColors[category] || categoryGlowColors.broadcast;
+    playerAmbientGlow.style.setProperty("--ambient-glow-color", color);
+  }
+
+  function setFeaturedVideo(videoId, title, artist, duration, category = "broadcast", autoPlay = true) {
     if (!playerIframe) return;
     const playParam = autoPlay ? "?autoplay=1&rel=0" : "?rel=0";
     playerIframe.src = `https://www.youtube-nocookie.com/embed/${videoId}${playParam}`;
@@ -74,12 +192,16 @@ document.addEventListener("DOMContentLoaded", () => {
       playerYtLink.href = `https://www.youtube.com/watch?v=${videoId}`;
     }
 
+    updateAmbientGlow(category);
+
     // Update active tab if matches
     playerTabs.forEach(tab => {
       if (tab.dataset.videoId === videoId) {
         tab.classList.add("active");
+        tab.setAttribute("aria-selected", "true");
       } else {
         tab.classList.remove("active");
+        tab.setAttribute("aria-selected", "false");
       }
     });
   }
@@ -90,7 +212,7 @@ document.addEventListener("DOMContentLoaded", () => {
       const title = tab.dataset.title;
       const artist = tab.dataset.artist;
       const dur = tab.dataset.duration;
-      setFeaturedVideo(vid, title, artist, dur, true);
+      setFeaturedVideo(vid, title, artist, dur, "broadcast", true);
     });
   });
 
@@ -113,20 +235,129 @@ document.addEventListener("DOMContentLoaded", () => {
         playerYtLink.href = `https://www.youtube.com/watch?v=${masterVid}&t=${timeSec}s`;
       }
 
+      updateAmbientGlow("broadcast");
+
       playerTabs.forEach(tab => {
-        if (tab.dataset.videoId === masterVid) tab.classList.add("active");
-        else tab.classList.remove("active");
+        if (tab.dataset.videoId === masterVid) {
+          tab.classList.add("active");
+          tab.setAttribute("aria-selected", "true");
+        } else {
+          tab.classList.remove("active");
+          tab.setAttribute("aria-selected", "false");
+        }
       });
 
-      // Scroll to player
+      // Smooth scroll to player
       document.getElementById("featured-live")?.scrollIntoView({ behavior: "smooth" });
     });
   });
 
   // =========================================================================
-  // 4. CATALOGUE FILTERING & SEARCH
+  // 5. CINEMA / THEATER MODE EXPANSION
   // =========================================================================
+  const theaterBtn = document.getElementById("btn-theater-mode");
+  const theaterBtnText = document.getElementById("theater-btn-text");
+  const cinemaBackdrop = document.getElementById("cinema-backdrop");
+
+  function toggleCinemaMode(forceState) {
+    const isCurrentlyActive = document.body.classList.contains("cinema-mode-active");
+    const shouldActivate = forceState !== undefined ? forceState : !isCurrentlyActive;
+
+    if (shouldActivate) {
+      document.body.classList.add("cinema-mode-active");
+      if (theaterBtn) {
+        theaterBtn.classList.add("active");
+        theaterBtn.setAttribute("aria-pressed", "true");
+      }
+      if (theaterBtnText) theaterBtnText.textContent = "Exit Cinema";
+    } else {
+      document.body.classList.remove("cinema-mode-active");
+      if (theaterBtn) {
+        theaterBtn.classList.remove("active");
+        theaterBtn.setAttribute("aria-pressed", "false");
+      }
+      if (theaterBtnText) theaterBtnText.textContent = "Cinema Mode";
+    }
+  }
+
+  if (theaterBtn) {
+    theaterBtn.addEventListener("click", () => toggleCinemaMode());
+  }
+  if (cinemaBackdrop) {
+    cinemaBackdrop.addEventListener("click", () => toggleCinemaMode(false));
+  }
+  document.addEventListener("keydown", (e) => {
+    if (e.key === "Escape" && document.body.classList.contains("cinema-mode-active")) {
+      toggleCinemaMode(false);
+    }
+  });
+
+  // =========================================================================
+  // 6. FRAMER-MOTION GLIDING PILL SLIDER
+  // =========================================================================
+  const filterPillsContainer = document.getElementById("category-filter-pills");
+  const filterGlider = document.getElementById("filter-glider");
   const filterPills = document.querySelectorAll(".filter-pill");
+
+  function updateFilterGlider(activeBtn) {
+    if (!filterPillsContainer || !filterGlider || !activeBtn) return;
+    if (window.innerWidth <= 768) return; // Disables glider on scrollable mobile dock
+
+    const containerRect = filterPillsContainer.getBoundingClientRect();
+    const btnRect = activeBtn.getBoundingClientRect();
+
+    const leftOffset = btnRect.left - containerRect.left;
+    const width = btnRect.width;
+
+    filterGlider.style.transform = `translate3d(${leftOffset}px, 0, 0)`;
+    filterGlider.style.width = `${width}px`;
+  }
+
+  // Update glider on resize
+  window.addEventListener("resize", () => {
+    const activePill = filterPillsContainer?.querySelector(".filter-pill.active");
+    if (activePill) updateFilterGlider(activePill);
+  }, { passive: true });
+
+  // =========================================================================
+  // 7. MOUSE-TRACKING SPOTLIGHT & 3D TILT CARDS
+  // =========================================================================
+  function initCardSpotlights() {
+    const isFinePointer = window.matchMedia("(hover: hover) and (pointer: fine)").matches;
+    const cards = document.querySelectorAll(".video-card, .stat-card, .pillar-card, .sim-card");
+
+    cards.forEach(card => {
+      card.addEventListener("pointermove", (e) => {
+        const rect = card.getBoundingClientRect();
+        const x = e.clientX - rect.left;
+        const y = e.clientY - rect.top;
+
+        card.style.setProperty("--mouse-x", `${x}px`);
+        card.style.setProperty("--mouse-y", `${y}px`);
+
+        // Subtle 3D tilt on video cards
+        if (isFinePointer && card.classList.contains("video-card")) {
+          const cx = rect.width / 2;
+          const cy = rect.height / 2;
+          const rotX = -((y - cy) / cy) * 4;
+          const rotY = ((x - cx) / cx) * 4;
+          card.style.transform = `perspective(900px) rotateX(${rotX.toFixed(2)}deg) rotateY(${rotY.toFixed(2)}deg) translateY(-6px) scale(1.015)`;
+        }
+      });
+
+      card.addEventListener("pointerleave", () => {
+        card.style.setProperty("--mouse-x", `-999px`);
+        card.style.setProperty("--mouse-y", `-999px`);
+        if (card.classList.contains("video-card")) {
+          card.style.transform = "";
+        }
+      });
+    });
+  }
+
+  // =========================================================================
+  // 8. CATALOGUE FILTERING & SEARCH
+  // =========================================================================
   const searchInput = document.getElementById("catalog-search-input");
   const searchClear = document.getElementById("search-clear-btn");
   const countBadge = document.getElementById("search-count-badge");
@@ -206,6 +437,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 data-title="${escapeHtml(v.displayTitle)}"
                 data-artist="${escapeHtml(v.artist)}"
                 data-duration="${v.durationFormatted}"
+                data-category="${v.category}"
                 aria-label="Putar ${escapeHtml(v.displayTitle)}"
               >
                 <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><polygon points="5 3 19 12 5 21 5 3"></polygon></svg>
@@ -238,14 +470,18 @@ document.addEventListener("DOMContentLoaded", () => {
         const title = playBtn.dataset.title;
         const artist = playBtn.dataset.artist;
         const dur = playBtn.dataset.duration;
+        const cat = playBtn.dataset.category || "broadcast";
 
-        setFeaturedVideo(vid, title, artist, dur, true);
+        setFeaturedVideo(vid, title, artist, dur, cat, true);
         document.getElementById("featured-live")?.scrollIntoView({ behavior: "smooth" });
       };
 
       if (playBtn) playBtn.addEventListener("click", handlePlay);
       if (thumb) thumb.addEventListener("click", handlePlay);
     });
+
+    // Re-initialize spotlights on newly rendered cards
+    initCardSpotlights();
   }
 
   function getCategoryLabel(cat) {
@@ -269,12 +505,13 @@ document.addEventListener("DOMContentLoaded", () => {
       .replace(/'/g, "&#039;");
   }
 
-  // Filter pills event listeners
+  // Filter pills event listeners with glider animation
   filterPills.forEach(pill => {
     pill.addEventListener("click", () => {
       filterPills.forEach(p => p.classList.remove("active"));
       pill.classList.add("active");
       activeCategory = pill.dataset.category || "all";
+      updateFilterGlider(pill);
       renderVideos();
     });
   });
@@ -302,6 +539,12 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
-  // Initial render of videos
+  // Initial render of videos & glider position
   renderVideos();
+  initCardSpotlights();
+
+  const initialActivePill = filterPillsContainer?.querySelector(".filter-pill.active");
+  if (initialActivePill) {
+    setTimeout(() => updateFilterGlider(initialActivePill), 100);
+  }
 });
