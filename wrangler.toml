@@ -1,0 +1,14 @@
+# Cloudflare Workers Static Assets config
+# Situs statis murni (HTML/CSS/JS tanpa build) — aset distaging oleh scripts/build-dist.js.
+name = "ip26-production"
+compatibility_date = "2026-10-16"
+workers_dev = true
+
+[assets]
+directory = "./dist"
+# Penanganan HTML bawaan Cloudflare: "/" menyajikan index.html, dan tautan ber-ekstensi
+# .html dinormalkan ke URL bersih (/archive.html → 307 → /archive), keduanya 200.
+not_found_handling = "404-page"
+
+[observability]
+enabled = true

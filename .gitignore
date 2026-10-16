@@ -2,3 +2,7 @@
 .env
 .env.local
 .env.*.local
+
+# Cloudflare / Wrangler build output (staged by scripts/build-dist.js)
+dist/
+.wrangler/

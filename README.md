@@ -2,10 +2,10 @@
 
 <div align="center">
 
-[![Live Web Portal](https://img.shields.io/badge/Live%20Portal-Master%20Command-brightgreen?style=for-the-badge&logo=githubpages&logoColor=white)](https://zzdree.github.io/ip26-production/)
-[![Live Inventory Mobile](https://img.shields.io/badge/Live%20Inventory-📦%20Inventaris%20Lapangan-orange?style=for-the-badge&logo=fastapi&logoColor=white)](https://zzdree.github.io/ip26-production/inventory.html)
-[![Live Switcher V1](https://img.shields.io/badge/Simulator-🎛️%20Switcher%20Cinelive%20V1-00d2ff?style=for-the-badge)](https://zzdree.github.io/ip26-production/switcher.html)
-[![Live ProPresenter](https://img.shields.io/badge/Simulator-🎶%20ProPresenter%20Live-a855f7?style=for-the-badge)](https://zzdree.github.io/ip26-production/presenter.html)
+[![Live Web Portal](https://img.shields.io/badge/Live%20Portal-Master%20Command-brightgreen?style=for-the-badge&logo=cloudflare&logoColor=white)](https://ip26-production.zzdree.workers.dev/)
+[![Live Inventory Mobile](https://img.shields.io/badge/Live%20Inventory-📦%20Inventaris%20Lapangan-orange?style=for-the-badge&logo=fastapi&logoColor=white)](https://ip26-production.zzdree.workers.dev/inventory.html)
+[![Live Switcher V1](https://img.shields.io/badge/Simulator-🎛️%20Switcher%20Cinelive%20V1-00d2ff?style=for-the-badge)](https://ip26-production.zzdree.workers.dev/switcher.html)
+[![Live ProPresenter](https://img.shields.io/badge/Simulator-🎶%20ProPresenter%20Live-a855f7?style=for-the-badge)](https://ip26-production.zzdree.workers.dev/presenter.html)
 [![Event](https://img.shields.io/badge/Event-IP26%20UKK%20UNNES-007ACC?style=for-the-badge&logo=eventstore&logoColor=white)](#)
 [![Venue](https://img.shields.io/badge/Venue-Auditorium%20Prof.%20Wuryanto%20UNNES-critical?style=for-the-badge&logo=googlemaps&logoColor=white)](#)
 [![Status](https://img.shields.io/badge/Status-100%25%20Synchronized-success?style=for-the-badge&logo=checkmarx&logoColor=white)](#)
@@ -32,11 +32,11 @@
 
 | Layanan / Modul | URL Live (GitHub Pages) | File Lokal / Direktori | Deskripsi & Fungsi |
 | :--- | :--- | :--- | :--- |
-| ⭐ **Official Media Release (Landing)** | [https://zzdree.github.io/ip26-production/](https://zzdree.github.io/ip26-production/) | [`index.html`](./index.html) + [`landing.css`](./landing.css) + [`landing.js`](./landing.js) | **Halaman utama pasca-event:** pemutar Full Live Master 4 jam, timeline rundown interaktif, katalog 23 video (filter kategori + pencarian), ekosistem produksi, & akses simulator. |
-| 📦 **Arsip Teknis Produksi** | [https://zzdree.github.io/ip26-production/archive.html](https://zzdree.github.io/ip26-production/archive.html) | [`archive.html`](./archive.html) & [`archive/`](./archive/index.html) | Arsip dokumentasi teknis pra-event: arsitektur sistem, 8 diagram sinyal, tabel 158 logistik, device matrix, & rundown master. Diawali banner status "event selesai". |
-| 📋 **Inventaris Lapangan (Mobile)** | [https://zzdree.github.io/ip26-production/inventory.html](https://zzdree.github.io/ip26-production/inventory.html) | [`inventory.html`](./inventory.html) & [`inventory/`](./inventory/index.html) | Mode taktis smartphone kru hari H: checklist inventaris alat & logistik 19 vendor, centang cepat pemasangan (*Loading-In*) & pengemasan (*Packing-Out*). |
-| 🎛️ **Switcher Cinelive V1 (Desktop)** | [https://zzdree.github.io/ip26-production/switcher/](https://zzdree.github.io/ip26-production/switcher/) atau [switcher.html](https://zzdree.github.io/ip26-production/switcher.html) | [`switcher.html`](./switcher.html) & [`switcher/`](./switcher/index.html) | Simulator hardware Cinetreak Cinelive V1 (*Desktop Only*): 1 baris tombol fisik CAM 1-4 dual tally (Merah=PGM, Hijau=PVW cue/cut), kalibrasi VU meter audio broadcast (-12dB nominal / AFV / Mute), LCD 5.5", HDMI 2 AUX Monitor (MV 6-split / ISO / PGM / PVW), T-Bar 10-LED ladder meter, rotary menu encoder OSD, CUT/AUTO, PIP, FTB. |
-| 🎶 **ProPresenter Simulator (Desktop)** | [https://zzdree.github.io/ip26-production/presenter/](https://zzdree.github.io/ip26-production/presenter/) atau [presenter.html](https://zzdree.github.io/ip26-production/presenter.html) | [`presenter.html`](./presenter.html) & [`presenter/`](./presenter/index.html) | Simulator ProPresenter 7 (*Desktop Only*): unified output preview monitor dengan screen selector tabs (`[Audience LED]`, `[Stage Display]`, `[Stream L3]`), 3-column workstation, 15 lagu dari `Assets/Lyrics/Statics`, pemutar YouTube backing track sinkron, dan slides 1-2 baris. |
+| ⭐ **Official Media Release (Landing)** | [https://ip26-production.zzdree.workers.dev/](https://ip26-production.zzdree.workers.dev/) | [`index.html`](./index.html) + [`landing.css`](./landing.css) + [`landing.js`](./landing.js) | **Halaman utama pasca-event:** pemutar Full Live Master 4 jam, timeline rundown interaktif, katalog 23 video (filter kategori + pencarian), ekosistem produksi, & akses simulator. |
+| 📦 **Arsip Teknis Produksi** | [https://ip26-production.zzdree.workers.dev/archive.html](https://ip26-production.zzdree.workers.dev/archive.html) | [`archive.html`](./archive.html) & [`archive/`](./archive/index.html) | Arsip dokumentasi teknis pra-event: arsitektur sistem, 8 diagram sinyal, tabel 158 logistik, device matrix, & rundown master. Diawali banner status "event selesai". |
+| 📋 **Inventaris Lapangan (Mobile)** | [https://ip26-production.zzdree.workers.dev/inventory.html](https://ip26-production.zzdree.workers.dev/inventory.html) | [`inventory.html`](./inventory.html) & [`inventory/`](./inventory/index.html) | Mode taktis smartphone kru hari H: checklist inventaris alat & logistik 19 vendor, centang cepat pemasangan (*Loading-In*) & pengemasan (*Packing-Out*). |
+| 🎛️ **Switcher Cinelive V1 (Desktop)** | [https://ip26-production.zzdree.workers.dev/switcher/](https://ip26-production.zzdree.workers.dev/switcher/) atau [switcher.html](https://ip26-production.zzdree.workers.dev/switcher.html) | [`switcher.html`](./switcher.html) & [`switcher/`](./switcher/index.html) | Simulator hardware Cinetreak Cinelive V1 (*Desktop Only*): 1 baris tombol fisik CAM 1-4 dual tally (Merah=PGM, Hijau=PVW cue/cut), kalibrasi VU meter audio broadcast (-12dB nominal / AFV / Mute), LCD 5.5", HDMI 2 AUX Monitor (MV 6-split / ISO / PGM / PVW), T-Bar 10-LED ladder meter, rotary menu encoder OSD, CUT/AUTO, PIP, FTB. |
+| 🎶 **ProPresenter Simulator (Desktop)** | [https://ip26-production.zzdree.workers.dev/presenter/](https://ip26-production.zzdree.workers.dev/presenter/) atau [presenter.html](https://ip26-production.zzdree.workers.dev/presenter.html) | [`presenter.html`](./presenter.html) & [`presenter/`](./presenter/index.html) | Simulator ProPresenter 7 (*Desktop Only*): unified output preview monitor dengan screen selector tabs (`[Audience LED]`, `[Stage Display]`, `[Stream L3]`), 3-column workstation, 15 lagu dari `Assets/Lyrics/Statics`, pemutar YouTube backing track sinkron, dan slides 1-2 baris. |
 
 ### 📺 Sumber Data Playlist (YouTube)
 
@@ -731,7 +731,7 @@ flowchart LR
 
 Sebagai media pelatihan operator kamera & switcher MCR sebelum gladi resik di Auditorium UNNES, portal ini menyediakan simulator hardware interaktif **Cinetreak Cinelive V1** berbasis Web Audio & HTML5 Canvas 60 FPS:
 
-- **Live URL:** [https://zzdree.github.io/ip26-production/switcher/](https://zzdree.github.io/ip26-production/switcher/) atau [https://zzdree.github.io/ip26-production/switcher.html](https://zzdree.github.io/ip26-production/switcher.html)
+- **Live URL:** [https://ip26-production.zzdree.workers.dev/switcher/](https://ip26-production.zzdree.workers.dev/switcher/) atau [https://ip26-production.zzdree.workers.dev/switcher.html](https://ip26-production.zzdree.workers.dev/switcher.html)
 - **File Lokal:** [`switcher.html`](./switcher.html) & [`switcher/index.html`](./switcher/index.html)
 - **4 Rantai Kamera IP26:**
   - **CAM 1:** Sony A6000 Wired (Stage Center Wide)
@@ -754,7 +754,7 @@ Sebagai media pelatihan operator kamera & switcher MCR sebelum gladi resik di Au
 
 Simulator live projection & broadcast lower-third terintegrasi untuk melatih operator multimedia dalam menyelaraskan lirik lagu ibadah secara presisi:
 
-- **Live URL:** [https://zzdree.github.io/ip26-production/presenter/](https://zzdree.github.io/ip26-production/presenter/) atau [https://zzdree.github.io/ip26-production/presenter.html](https://zzdree.github.io/ip26-production/presenter.html)
+- **Live URL:** [https://ip26-production.zzdree.workers.dev/presenter/](https://ip26-production.zzdree.workers.dev/presenter/) atau [https://ip26-production.zzdree.workers.dev/presenter.html](https://ip26-production.zzdree.workers.dev/presenter.html)
 - **File Lokal:** [`presenter.html`](./presenter.html) & [`presenter/index.html`](./presenter/index.html)
 - **Sumber Data Lirik:** Diparse langsung dari direktori master `X:\IP26\Assets\Lyrics\Statics` (15 lagu ibadah lengkap sesuai urutan liturgi `docs/ip26_pro3.txt`).
 - **Format Tampilan Slide:** Sesuai standar ProPresenter 7, setiap slide menampilkan **1–2 baris lirik** dengan tipografi broadcast kontras tinggi untuk menjaga keterbacaan jemaat dan penonton live stream.
