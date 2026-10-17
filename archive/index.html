@@ -8,20 +8,22 @@
   <meta name="keywords" content="IP26, UKK UNNES, Broadcast Pipeline, Live Production, Resolume Arena, ProPresenter, Audio Submixing, Sony FX3, Sony A6000, MCR" />
   <meta name="author" content="Andreas Restuawanta Christwara" />
   <meta name="robots" content="index, follow" />
-  <link rel="canonical" href="https://ip26-production.zzdree.workers.dev/" />
+  <link rel="canonical" href="https://ip26-production.zzdree.workers.dev/archive" />
 
   <!-- Open Graph / Facebook / WhatsApp -->
   <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://ip26-production.zzdree.workers.dev/" />
+  <meta property="og:url" content="https://ip26-production.zzdree.workers.dev/archive" />
   <meta property="og:site_name" content="IP26 Production Portal" />
-  <meta property="og:title" content="IP26 Live Broadcast & Multimedia Production Portal | UKK UNNES" />
-  <meta property="og:description" content="Pusat komando dan dokumentasi teknis live broadcast, video switching, LED mapping, audio submixing, dan sinkronisasi realtime inventaris logistik." />
+  <meta property="og:title" content="Arsip Teknis Master Pipeline | Ibadah Perdana UKK UNNES 2026" />
+  <meta property="og:description" content="Master documentation, system architecture, camera routing, and inventory tracking for IP26 Live Broadcast &amp; Multimedia Production at Auditorium Prof. Wuryanto UNNES." />
+  <meta property="og:image" content="https://ip26-production.zzdree.workers.dev/favicon.svg" />
   <meta property="og:locale" content="id_ID" />
 
   <!-- Twitter Card -->
-  <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="IP26 Live Broadcast & Multimedia Production Portal" />
-  <meta name="twitter:description" content="Master Pipeline & Technical Guide Ibadah Perdana UKK UNNES 2026." />
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Arsip Teknis Master Pipeline | Ibadah Perdana UKK UNNES 2026" />
+  <meta name="twitter:description" content="Master documentation, system architecture, camera routing, and inventory tracking for IP26 Live Broadcast &amp; Multimedia Production at Auditorium Prof. Wuryanto UNNES." />
+  <meta name="twitter:image" content="https://ip26-production.zzdree.workers.dev/favicon.svg" />
 
   <!-- Favicon / Web App Icon -->
   <link rel="icon" type="image/svg+xml" href="../favicon.svg" />
@@ -287,13 +289,13 @@ flowchart TD
     A["Production Lead / System Engineer<br/><b>Andreas</b>"] --> B["Mediaa Engineer<br/><b>Richard (Leader)</b>"]
     A --> C["Creative Engineer<br/><b>Jennifer (Leader)</b>"]
     
-    B --> B1["Wilfred — Video Switcher Master"]
-    B --> B2["Alex — Operator CAM 1 (Wired Steady)"]
-    B --> B3["Rania — Operator ProPresenter 1 (Side & Back LED)"]
-    
-    C --> C1["Filia — Operator ProPresenter 2 (Center Lyrics/Layer)"]
-    C --> C2["Felani — Creative Support"]
-    C --> C3["Wike — Creative Support"]
+    B --> B1["Wilfred : Video Switcher Master"]
+    B --> B2["Alex : Operator CAM 1 (Wired Steady)"]
+    B --> B3["Rania : Operator ProPresenter 1 (Side & Back LED)"]
+
+    C --> C1["Filia : Operator ProPresenter 2 (Center Lyrics/Layer)"]
+    C --> C2["Felani : Creative Support"]
+    C --> C3["Wike : Creative Support"]
           </pre>
         </div>
 
@@ -490,7 +492,7 @@ flowchart TB
     end
 
     %% SECTION: TIME KEEPER
-    subgraph S_TK["⏱️ 5. TIME KEEPER SYSTEM"]
+    subgraph S_TK["5. TIME KEEPER SYSTEM"]
         P3["Laptop ProPresenter 3 (Acara)<br/>(Acara)"]
         TV["Television (PlayStation)<br/><i>Stage Time Display</i>"]
     end
@@ -774,7 +776,7 @@ flowchart LR
                 <pre class="mermaid">
 flowchart LR
     PWR_UKK["Terminal Cable XCH (UKK)"] --> P3["Laptop ProPresenter 3 (Acara)"]
-    P3 -->|HDMI 1.5M GIA| TV["Television — Stage Timer Display"]
+    P3 -->|HDMI 1.5M GIA| TV["Television : Stage Timer Display"]
                 </pre>
               </div>
               <div class="subsystem-details-grid">
@@ -810,7 +812,7 @@ flowchart LR
               <div class="mermaid-container subsystem-diagram">
                 <pre class="mermaid">
 flowchart LR
-    SOURCE["⚡ Daya Auditorium UNNES"] --> MAIN_PANEL["Panel Distribusi Listrik"]
+    SOURCE["Daya Auditorium UNNES"] --> MAIN_PANEL["Panel Distribusi Listrik"]
     
     MAIN_PANEL --> T1["Terminal Cable XCH (Andreas)<br/><b>OBS, Workstation & IT Accessories</b>"]
     MAIN_PANEL --> T2["Terminal Cable XCH (UKK)<br/><b>Visual, Switcher, Splitter & Smoke</b>"]
@@ -878,7 +880,7 @@ flowchart LR
               <div class="cam-spec-row"><span>Converter & Kabel</span> <strong>HDMI 15M UKK ➔ Splitter GKJ ➔ HDMI 10M GKJ</strong></div>
               <div class="cam-spec-row"><span>Support</span> <strong>Tripod Camera Big (OWL)</strong></div>
             </div>
-            <div class="cam-status-pill status-ready">✅ Siap & Terverifikasi</div>
+            <div class="cam-status-pill status-ready">✓ Siap &amp; Terverifikasi</div>
           </div>
 
           <!-- CAM 2 Card -->
@@ -895,7 +897,7 @@ flowchart LR
               <div class="cam-spec-row"><span>Lensa & Media</span> <strong>18-105MM F/4 G OSS + SD 64GB (Kiel)</strong></div>
               <div class="cam-spec-row"><span>Koneksi Switcher</span> <strong>HDMI 1.5M UKK (RX to CineLive IN 2)</strong></div>
             </div>
-            <div class="cam-status-pill status-ready">✅ Siap & Terverifikasi</div>
+            <div class="cam-status-pill status-ready">✓ Siap &amp; Terverifikasi</div>
           </div>
 
           <!-- CAM 3 Card -->
@@ -912,7 +914,7 @@ flowchart LR
               <div class="cam-spec-row"><span>Lensa & Media</span> <strong>18-105MM F/4 G OSS + SD 32GB (OWL)</strong></div>
               <div class="cam-spec-row"><span>Support</span> <strong>Tripod Camera Big (GIA)</strong></div>
             </div>
-            <div class="cam-status-pill status-ready">✅ Siap & Terverifikasi</div>
+            <div class="cam-status-pill status-ready">✓ Siap &amp; Terverifikasi</div>
           </div>
 
           <!-- CAM 4 Card -->
@@ -929,7 +931,7 @@ flowchart LR
               <div class="cam-spec-row"><span>Koneksi</span> <strong>Micro HDMI Conv OWL + HDMI 10M UKK</strong></div>
               <div class="cam-spec-row"><span>Support</span> <strong>Tripod Camera Big (UKK)</strong></div>
             </div>
-            <div class="cam-status-pill status-ready">✅ Siap & Terverifikasi</div>
+            <div class="cam-status-pill status-ready">✓ Siap &amp; Terverifikasi</div>
           </div>
 
         </div>
@@ -949,7 +951,7 @@ flowchart LR
               <div class="cam-spec-row"><span>Memory</span> <strong>SD Card 32GB (OWL)</strong></div>
               <div class="cam-spec-row"><span>Operasional</span> <strong>Foto Mobile, Ibadah, & Usher</strong></div>
             </div>
-            <div class="cam-status-pill status-ready">✅ Siap & Terverifikasi</div>
+            <div class="cam-status-pill status-ready">✓ Siap &amp; Terverifikasi</div>
           </div>
 
           <div class="cam-card">
@@ -965,7 +967,7 @@ flowchart LR
               <div class="cam-spec-row"><span>Memory</span> <strong>SD Card 32GB (OWL)</strong></div>
               <div class="cam-spec-row"><span>Operasional</span> <strong>Video Dokumentasi & Aftermovie</strong></div>
             </div>
-            <div class="cam-status-pill status-ready">✅ Siap & Terverifikasi</div>
+            <div class="cam-status-pill status-ready">✓ Siap &amp; Terverifikasi</div>
           </div>
 
           <div class="cam-card">
@@ -979,7 +981,7 @@ flowchart LR
               <div class="cam-spec-row"><span>Output</span> <strong>Instagram Story, Reels, Live Feed</strong></div>
               <div class="cam-spec-row"><span>Akses</span> <strong>Dokumentasi Cepat Panitia & Sosmed</strong></div>
             </div>
-            <div class="cam-status-pill status-ready">✅ Siap & Terverifikasi</div>
+            <div class="cam-status-pill status-ready">✓ Siap &amp; Terverifikasi</div>
           </div>
 
         </div>
@@ -1012,73 +1014,73 @@ flowchart LR
                 <td><strong>Mixer 1 (FOH Master)</strong></td>
                 <td>Yamaha QL5 (Auditorium UNNES)</td>
                 <td><span class="user-tag">Jordan / Yosua</span></td>
-                <td><span class="badge badge-emerald">✅ Terverifikasi</span></td>
+                <td><span class="badge badge-emerald">✓ Terverifikasi</span></td>
               </tr>
               <tr>
                 <td><strong>Mixer 2 (Sub-Mix Streaming)</strong></td>
                 <td>NewBaxs CT80S (GIA Deliksari) + Power Adaptor (GIA)</td>
                 <td><span class="user-tag">Andreas</span></td>
-                <td><span class="badge badge-emerald">✅ Terverifikasi</span></td>
+                <td><span class="badge badge-emerald">✓ Terverifikasi</span></td>
               </tr>
               <tr>
                 <td><strong>Virtual Mixer 1 + 2 + Monitor</strong></td>
                 <td>MacBook (Jordan) + iPad (Filia) + Monitor (Evan)</td>
                 <td><span class="user-tag">Jordan</span></td>
-                <td><span class="badge badge-emerald">✅ Terverifikasi</span></td>
+                <td><span class="badge badge-emerald">✓ Terverifikasi</span></td>
               </tr>
               <tr>
                 <td><strong>Virtual Mixer 3</strong></td>
                 <td>iPad (Jennifer)</td>
                 <td><span class="user-tag">Jordan</span></td>
-                <td><span class="badge badge-emerald">✅ Terverifikasi</span></td>
+                <td><span class="badge badge-emerald">✓ Terverifikasi</span></td>
               </tr>
               <tr>
                 <td><strong>Virtual Mixer 4</strong></td>
                 <td>iPad (Alex)</td>
                 <td><span class="user-tag">Yosua</span></td>
-                <td><span class="badge badge-emerald">✅ Terverifikasi</span></td>
+                <td><span class="badge badge-emerald">✓ Terverifikasi</span></td>
               </tr>
               <tr>
                 <td><strong>Resolume Arena (Center LED)</strong></td>
                 <td>Laptop (Bayu) + Power Adaptor LTP (Bayu)</td>
                 <td><span class="user-tag">Andreas</span></td>
-                <td><span class="badge badge-emerald">✅ Terverifikasi</span></td>
+                <td><span class="badge badge-emerald">✓ Terverifikasi</span></td>
               </tr>
               <tr>
                 <td><strong>ProPresenter 1 (Playback & Splitter)</strong></td>
                 <td>Laptop (Nico) + Power Adaptor LTP (Nico)</td>
                 <td><span class="user-tag">Rania</span></td>
-                <td><span class="badge badge-emerald">✅ Terverifikasi</span></td>
+                <td><span class="badge badge-emerald">✓ Terverifikasi</span></td>
               </tr>
               <tr>
                 <td><strong>ProPresenter 2 (Center Lyrics)</strong></td>
                 <td>Laptop (Wilfred) + Power Adaptor LTP (Wilfred)</td>
                 <td><span class="user-tag">Filia</span></td>
-                <td><span class="badge badge-emerald">✅ Terverifikasi</span></td>
+                <td><span class="badge badge-emerald">✓ Terverifikasi</span></td>
               </tr>
               <tr>
-                <td><strong>⏱️ ProPresenter 3 (Time Keeper Stage)</strong></td>
+                <td><strong>ProPresenter 3 (Time Keeper Stage)</strong></td>
                 <td>Laptop (Acara) + Television (PlayStation)</td>
                 <td><span class="user-tag">Acara</span></td>
-                <td><span class="badge badge-emerald">✅ Terverifikasi</span></td>
+                <td><span class="badge badge-emerald">✓ Terverifikasi</span></td>
               </tr>
               <tr>
                 <td><strong>Switcher + Multiview Monitor</strong></td>
                 <td>Cinetreak Cinelive V1 (OWL) + Monitor (Jordan)</td>
                 <td><span class="user-tag">Wilfred</span></td>
-                <td><span class="badge badge-emerald">✅ Terverifikasi</span></td>
+                <td><span class="badge badge-emerald">✓ Terverifikasi</span></td>
               </tr>
               <tr>
                 <td><strong>OBS Studio (Stream & LED Wing)</strong></td>
                 <td>Laptop (Andreas) + Power Adaptor LTP (Andreas)</td>
                 <td><span class="user-tag">Andreas</span></td>
-                <td><span class="badge badge-emerald">✅ Terverifikasi</span></td>
+                <td><span class="badge badge-emerald">✓ Terverifikasi</span></td>
               </tr>
               <tr>
                 <td><strong>Backup Workstation</strong></td>
                 <td>Laptop + Adaptor LTP (Kiel)</td>
                 <td><span class="user-tag">Kiel</span></td>
-                <td><span class="badge badge-slate">☑️ Standby Cadangan</span></td>
+                <td><span class="badge badge-slate">Standby Cadangan</span></td>
               </tr>
             </tbody>
           </table>
@@ -1144,7 +1146,7 @@ flowchart LR
           <div class="cloud-sync-header">
             <div class="sync-status-indicator">
               <span class="status-pulse-dot" id="sync-status-dot"></span>
-              <span class="sync-status-text" id="sync-status-text">🟡 Memeriksa Koneksi Database...</span>
+              <span class="sync-status-text" id="sync-status-text">Memeriksa Koneksi Database...</span>
               <span class="presence-badge" id="presence-badge"><strong id="online-crew-count">1</strong> Kru Aktif</span>
             </div>
             <div class="sync-actions">
@@ -1199,9 +1201,9 @@ flowchart LR
         <div class="inventory-summary-bar">
           <span>Menampilkan <strong id="inv-count-display">150</strong> entri barang</span>
           <span class="legend-badges">
-            <span class="badge badge-emerald">✅ Aktif Terpasang</span>
-            <span class="badge badge-amber">⚠️ Sebagian / Perhatian</span>
-            <span class="badge badge-slate">☑️ Standby Storage</span>
+            <span class="badge badge-emerald">✓ Aktif Terpasang</span>
+            <span class="badge badge-amber">Sebagian / Perhatian</span>
+            <span class="badge badge-slate">Standby Storage</span>
           </span>
         </div>
 
@@ -1216,24 +1218,24 @@ flowchart LR
                   <tr><th>Nama Barang</th><th>Jumlah</th><th>Status</th><th>Keterangan Penggunaan</th></tr>
                 </thead>
                 <tbody>
-                  <tr data-name="Sony A6000"><td>Sony A6000</td><td>2 Unit</td><td><span class="badge badge-emerald">✅</span></td><td>1x CAM 1 Wired, 1x CAM 3 Wireless</td></tr>
-                  <tr data-name="Sony A6400"><td>Sony A6400</td><td>1 Unit</td><td><span class="badge badge-emerald">✅</span></td><td>CAM 5 Photo Dokumentasi</td></tr>
-                  <tr data-name="Sony ZV-E10"><td>Sony ZV-E10</td><td>1 Unit</td><td><span class="badge badge-emerald">✅</span></td><td>CAM 6 Video Dokumentasi</td></tr>
-                  <tr data-name="Lens 18-105MM"><td>Lens 18-105MM</td><td>3 Unit</td><td><span class="badge badge-emerald">✅</span></td><td>1x CAM 1, 1x CAM 2, 1x CAM 3</td></tr>
-                  <tr data-name="Lens 50MM"><td>Lens 50MM</td><td>1 Unit</td><td><span class="badge badge-emerald">✅</span></td><td>CAM 5 Photo Dokumentasi</td></tr>
-                  <tr data-name="Lens 16-50MM Kit"><td>Lens 16-50MM Kit</td><td>2 Unit</td><td><span class="badge badge-slate">☑️</span></td><td>Cadangan lensa kit</td></tr>
-                  <tr data-name="Battery"><td>Battery</td><td>8 Unit</td><td><span class="badge badge-emerald">✅</span></td><td>8 Unit aktif terpakai (CAM 1, 3, 5, 6 @ 2 unit)</td></tr>
-                  <tr data-name="Charger"><td>Charger</td><td>1 Pack</td><td><span class="badge badge-emerald">✅</span></td><td>Station pengisian daya baterai kamera</td></tr>
-                  <tr data-name="Memory Card 32GB"><td>Memory Card 32GB</td><td>4 Unit</td><td><span class="badge badge-emerald">✅</span></td><td>4 Unit aktif terpakai (CAM 1, 3, 5, 6)</td></tr>
-                  <tr data-name="Cinetreak Cinelive V1"><td>Cinetreak Cinelive V1</td><td>1 Pack</td><td><span class="badge badge-emerald">✅</span></td><td>Video Switcher Master Broadcast</td></tr>
-                  <tr data-name="Power Adaptor MIX"><td>Power Adaptor MIX</td><td>1 Unit</td><td><span class="badge badge-emerald">✅</span></td><td>Power Switcher Cinetreak Cinelive V1</td></tr>
-                  <tr data-name="Hollyland Pyro H"><td>Hollyland Pyro H</td><td>1 Pack</td><td><span class="badge badge-emerald">✅</span></td><td>TX & RX Wireless CAM 3 Mobile</td></tr>
-                  <tr data-name="Hollyland Pyro S"><td>Hollyland Pyro S</td><td>1 Pack</td><td><span class="badge badge-emerald">✅</span></td><td>TX & RX Wireless CAM 2 Mobile</td></tr>
-                  <tr data-name="Battery WIR"><td>Battery WIR</td><td>4 Unit</td><td><span class="badge badge-emerald">✅</span></td><td>2 Unit Pyro S, 2 Unit Pyro H</td></tr>
-                  <tr data-name="Tripod Camera Big"><td>Tripod Camera Big</td><td>1 Unit</td><td><span class="badge badge-emerald">✅</span></td><td>Tripod CAM 1 Broadcast</td></tr>
-                  <tr data-name="HDMI to Micro HDMI Converter"><td>HDMI to Micro HDMI Converter</td><td>2 Unit</td><td><span class="badge badge-emerald">✅</span></td><td>1x CAM 1 Wired, 1x CAM 4 Wired</td></tr>
-                  <tr data-name="HDMI to Micro HDMI Cable 30CM"><td>HDMI to Micro HDMI Cable 30CM</td><td>2 Unit</td><td><span class="badge badge-emerald">✅</span></td><td>1x CAM 2 ke Pyro S TX, 1x CAM 3 ke Pyro H TX</td></tr>
-                  <tr data-name="HDMI Capture"><td>HDMI Capture</td><td>2 Unit</td><td><span class="badge badge-amber">⚠️ 1/2</span></td><td>1 Unit di Resolume (dari ProPresenter 2), 1 Unit standby</td></tr>
+                  <tr data-name="Sony A6000"><td>Sony A6000</td><td>2 Unit</td><td><span class="badge badge-emerald">✓</span></td><td>1x CAM 1 Wired, 1x CAM 3 Wireless</td></tr>
+                  <tr data-name="Sony A6400"><td>Sony A6400</td><td>1 Unit</td><td><span class="badge badge-emerald">✓</span></td><td>CAM 5 Photo Dokumentasi</td></tr>
+                  <tr data-name="Sony ZV-E10"><td>Sony ZV-E10</td><td>1 Unit</td><td><span class="badge badge-emerald">✓</span></td><td>CAM 6 Video Dokumentasi</td></tr>
+                  <tr data-name="Lens 18-105MM"><td>Lens 18-105MM</td><td>3 Unit</td><td><span class="badge badge-emerald">✓</span></td><td>1x CAM 1, 1x CAM 2, 1x CAM 3</td></tr>
+                  <tr data-name="Lens 50MM"><td>Lens 50MM</td><td>1 Unit</td><td><span class="badge badge-emerald">✓</span></td><td>CAM 5 Photo Dokumentasi</td></tr>
+                  <tr data-name="Lens 16-50MM Kit"><td>Lens 16-50MM Kit</td><td>2 Unit</td><td><span class="badge badge-slate">Standby</span></td><td>Cadangan lensa kit</td></tr>
+                  <tr data-name="Battery"><td>Battery</td><td>8 Unit</td><td><span class="badge badge-emerald">✓</span></td><td>8 Unit aktif terpakai (CAM 1, 3, 5, 6 @ 2 unit)</td></tr>
+                  <tr data-name="Charger"><td>Charger</td><td>1 Pack</td><td><span class="badge badge-emerald">✓</span></td><td>Station pengisian daya baterai kamera</td></tr>
+                  <tr data-name="Memory Card 32GB"><td>Memory Card 32GB</td><td>4 Unit</td><td><span class="badge badge-emerald">✓</span></td><td>4 Unit aktif terpakai (CAM 1, 3, 5, 6)</td></tr>
+                  <tr data-name="Cinetreak Cinelive V1"><td>Cinetreak Cinelive V1</td><td>1 Pack</td><td><span class="badge badge-emerald">✓</span></td><td>Video Switcher Master Broadcast</td></tr>
+                  <tr data-name="Power Adaptor MIX"><td>Power Adaptor MIX</td><td>1 Unit</td><td><span class="badge badge-emerald">✓</span></td><td>Power Switcher Cinetreak Cinelive V1</td></tr>
+                  <tr data-name="Hollyland Pyro H"><td>Hollyland Pyro H</td><td>1 Pack</td><td><span class="badge badge-emerald">✓</span></td><td>TX & RX Wireless CAM 3 Mobile</td></tr>
+                  <tr data-name="Hollyland Pyro S"><td>Hollyland Pyro S</td><td>1 Pack</td><td><span class="badge badge-emerald">✓</span></td><td>TX & RX Wireless CAM 2 Mobile</td></tr>
+                  <tr data-name="Battery WIR"><td>Battery WIR</td><td>4 Unit</td><td><span class="badge badge-emerald">✓</span></td><td>2 Unit Pyro S, 2 Unit Pyro H</td></tr>
+                  <tr data-name="Tripod Camera Big"><td>Tripod Camera Big</td><td>1 Unit</td><td><span class="badge badge-emerald">✓</span></td><td>Tripod CAM 1 Broadcast</td></tr>
+                  <tr data-name="HDMI to Micro HDMI Converter"><td>HDMI to Micro HDMI Converter</td><td>2 Unit</td><td><span class="badge badge-emerald">✓</span></td><td>1x CAM 1 Wired, 1x CAM 4 Wired</td></tr>
+                  <tr data-name="HDMI to Micro HDMI Cable 30CM"><td>HDMI to Micro HDMI Cable 30CM</td><td>2 Unit</td><td><span class="badge badge-emerald">✓</span></td><td>1x CAM 2 ke Pyro S TX, 1x CAM 3 ke Pyro H TX</td></tr>
+                  <tr data-name="HDMI Capture"><td>HDMI Capture</td><td>2 Unit</td><td><span class="badge badge-amber">1/2</span></td><td>1 Unit di Resolume (dari ProPresenter 2), 1 Unit standby</td></tr>
                 </tbody>
               </table>
             </div>
@@ -1248,9 +1250,9 @@ flowchart LR
                   <tr><th>Nama Barang</th><th>Jumlah</th><th>Status</th><th>Keterangan Penggunaan</th></tr>
                 </thead>
                 <tbody>
-                  <tr data-name="Lens 35MM"><td>Lens 35MM</td><td>1 Unit</td><td><span class="badge badge-emerald">✅</span></td><td>CAM 6 Video Dokumentasi</td></tr>
-                  <tr data-name="DJI Ronin RS3 Pro"><td>DJI Ronin RS3 Pro</td><td>1 Unit</td><td><span class="badge badge-emerald">✅</span></td><td>Gimbal Stabilizer CAM 6 Video Dokumentasi</td></tr>
-                  <tr data-name="HDMI Capture"><td>HDMI Capture</td><td>2 Unit</td><td><span class="badge badge-emerald">✅</span></td><td>1x Splitter ➔ OBS, 1x Splitter ➔ Resolume</td></tr>
+                  <tr data-name="Lens 35MM"><td>Lens 35MM</td><td>1 Unit</td><td><span class="badge badge-emerald">✓</span></td><td>CAM 6 Video Dokumentasi</td></tr>
+                  <tr data-name="DJI Ronin RS3 Pro"><td>DJI Ronin RS3 Pro</td><td>1 Unit</td><td><span class="badge badge-emerald">✓</span></td><td>Gimbal Stabilizer CAM 6 Video Dokumentasi</td></tr>
+                  <tr data-name="HDMI Capture"><td>HDMI Capture</td><td>2 Unit</td><td><span class="badge badge-emerald">✓</span></td><td>1x Splitter ➔ OBS, 1x Splitter ➔ Resolume</td></tr>
                 </tbody>
               </table>
             </div>
@@ -1265,59 +1267,59 @@ flowchart LR
                   <tr><th>Nama Barang</th><th>Jumlah</th><th>Status</th><th>Keterangan Penggunaan</th></tr>
                 </thead>
                 <tbody>
-                  <tr data-name="Laptop"><td>Laptop</td><td>1 Unit</td><td><span class="badge badge-emerald">✅</span></td><td>Workstation OBS Studio & Live Streaming</td></tr>
-                  <tr data-name="Power Adaptor LTP"><td>Power Adaptor LTP</td><td>1 Unit</td><td><span class="badge badge-emerald">✅</span></td><td>Adaptor Laptop OBS Studio</td></tr>
-                  <tr data-name="Fan Cooler"><td>Fan Cooler</td><td>1 Unit</td><td><span class="badge badge-emerald">✅</span></td><td>Pendingin Laptop OBS Studio</td></tr>
-                  <tr data-name="Mouse Pad"><td>Mouse Pad</td><td>1 Unit</td><td><span class="badge badge-emerald">✅</span></td><td>Alas mouse meja Resolume Arena</td></tr>
-                  <tr data-name="Keyboard Ext"><td>Keyboard Ext</td><td>1 Unit</td><td><span class="badge badge-slate">☑️</span></td><td>Keyboard eksternal cadangan</td></tr>
-                  <tr data-name="Mouse Ext"><td>Mouse Ext</td><td>1 Unit</td><td><span class="badge badge-emerald">✅</span></td><td>Mouse eksternal meja Resolume Arena</td></tr>
-                  <tr data-name="Powerbank"><td>Powerbank</td><td>1 Unit</td><td><span class="badge badge-slate">☑️</span></td><td>Daya darurat aksesoris</td></tr>
-                  <tr data-name="Fan Desk"><td>Fan Desk</td><td>1 Pack</td><td><span class="badge badge-emerald">✅</span></td><td>Kipas meja operator Resolume Arena</td></tr>
-                  <tr data-name="Light Desk"><td>Light Desk</td><td>1 Pack</td><td><span class="badge badge-emerald">✅</span></td><td>Lampu kerja meja Resolume Arena</td></tr>
-                  <tr data-name="Power Adaptor USB A"><td>Power Adaptor USB A</td><td>9 Unit</td><td><span class="badge badge-amber">⚠️ 2/9</span></td><td>1x Meja Resolume, 1x Meja OBS, 7x standby</td></tr>
-                  <tr data-name="Power Adaptor USB A x C"><td>Power Adaptor USB A x C</td><td>1 Unit</td><td><span class="badge badge-slate">☑️</span></td><td>Charger cepat dual-port</td></tr>
-                  <tr data-name="Power Adaptor USB C"><td>Power Adaptor USB C</td><td>1 Unit</td><td><span class="badge badge-slate">☑️</span></td><td>Charger perangkat Type-C</td></tr>
-                  <tr data-name="USB A to USB B Data Cable"><td>USB A to USB B Data Cable</td><td>1 Unit</td><td><span class="badge badge-slate">☑️</span></td><td>Cadangan koneksi audio/printer</td></tr>
-                  <tr data-name="USB A to USB Micro B Data Cable"><td>USB A to USB Micro B Data Cable</td><td>2 Unit</td><td><span class="badge badge-slate">☑️</span></td><td>Cadangan koneksi perangkat legacy</td></tr>
-                  <tr data-name="USB A to USB C Data Cable"><td>USB A to USB C Data Cable</td><td>1 Unit</td><td><span class="badge badge-emerald">✅</span></td><td>Switcher Cinetreak ➔ Laptop ProPresenter 1</td></tr>
-                  <tr data-name="USB A to USB C Charge Cable"><td>USB A to USB C Charge Cable</td><td>3 Unit</td><td><span class="badge badge-amber">⚠️ 2/3</span></td><td>1x Meja Resolume, 1x Meja OBS, 1x standby</td></tr>
-                  <tr data-name="USB C to USB C Charge Cable"><td>USB C to USB C Charge Cable</td><td>1 Unit</td><td><span class="badge badge-slate">☑️</span></td><td>Pengisian daya Type-C</td></tr>
-                  <tr data-name="USB A to USB A Extender 30CM"><td>USB A to USB A Extender 30CM</td><td>2 Unit</td><td><span class="badge badge-slate">☑️</span></td><td>Sambungan pendek USB</td></tr>
-                  <tr data-name="USB A to USB A Extender 2M"><td>USB A to USB A Extender 2M</td><td>1 Unit</td><td><span class="badge badge-slate">☑️</span></td><td>Sambungan panjang USB</td></tr>
-                  <tr data-name="USB A to USB C Male Converter"><td>USB A to USB C Male Converter</td><td>4 Unit</td><td><span class="badge badge-slate">☑️</span></td><td>Converter port USB-C</td></tr>
-                  <tr data-name="USB A to USB C Female Converter"><td>USB A to USB C Female Converter</td><td>2 Unit</td><td><span class="badge badge-emerald">✅</span></td><td>1x Meja Resolume, 1x Meja OBS</td></tr>
-                  <tr data-name="USB A to Mini USB Cable"><td>USB A to Mini USB Cable</td><td>1 Unit</td><td><span class="badge badge-slate">☑️</span></td><td>Cadangan koneksi mini-USB</td></tr>
-                  <tr data-name="USB A Splitter 3CH"><td>USB A Splitter 3CH</td><td>1 Unit</td><td><span class="badge badge-slate">☑️</span></td><td>Ekspansi port USB</td></tr>
-                  <tr data-name="USB A Splitter 4CH"><td>USB A Splitter 4CH</td><td>1 Unit</td><td><span class="badge badge-slate">☑️</span></td><td>Ekspansi port USB</td></tr>
-                  <tr data-name="USB C DAC Hanason AB17X"><td>USB C DAC Hanason AB17X</td><td>1 Unit</td><td><span class="badge badge-emerald">✅</span></td><td>Audio DAC Laptop ProPresenter 1 ➔ Mixer Yamaha QL5</td></tr>
-                  <tr data-name="USB C DAC Oraimo OAA310"><td>USB C DAC Oraimo OAA310</td><td>1 Unit</td><td><span class="badge badge-emerald">✅</span></td><td>Cadangan terverifikasi Audio DAC</td></tr>
-                  <tr data-name="In Ear Monitor QKZ Hi7T"><td>In Ear Monitor QKZ Hi7T</td><td>1 Pack</td><td><span class="badge badge-slate">☑️</span></td><td>Monitoring audio operator</td></tr>
-                  <tr data-name="In Ear Monitor KZ EDX Pro"><td>In Ear Monitor KZ EDX Pro</td><td>1 Pack</td><td><span class="badge badge-slate">☑️</span></td><td>Monitoring audio operator</td></tr>
-                  <tr data-name="Fastdrive Vgen SSD 128GB"><td>Fastdrive Vgen SSD 128GB</td><td>1 Pack</td><td><span class="badge badge-slate">☑️</span></td><td>Penyimpanan cepat materi visual</td></tr>
-                  <tr data-name="Fastdrive Toshiba HDD 1TB"><td>Fastdrive Toshiba HDD 1TB</td><td>1 Pack</td><td><span class="badge badge-slate">☑️</span></td><td>Penyimpanan arsip video & asset besar</td></tr>
-                  <tr data-name="Flashdrive Toshiba 8GB"><td>Flashdrive Toshiba 8GB</td><td>1 Unit</td><td><span class="badge badge-slate">☑️</span></td><td>Transfer materi presentasi</td></tr>
-                  <tr data-name="Flashdrive Sandisk 16GB"><td>Flashdrive Sandisk 16GB</td><td>1 Unit</td><td><span class="badge badge-slate">☑️</span></td><td>Transfer materi presentasi</td></tr>
-                  <tr data-name="Flashdrive Toshiba 32GB"><td>Flashdrive Toshiba 32GB</td><td>1 Unit</td><td><span class="badge badge-slate">☑️</span></td><td>Backup materi video / audio</td></tr>
-                  <tr data-name="Flashdrive Toshiba 64GB"><td>Flashdrive Toshiba 64GB</td><td>1 Unit</td><td><span class="badge badge-slate">☑️</span></td><td>Backup master file rundown</td></tr>
-                  <tr data-name="HDMI to Mini HDMI Converter"><td>HDMI to Mini HDMI Converter</td><td>1 Unit</td><td><span class="badge badge-slate">☑️</span></td><td>Cadangan konverter video</td></tr>
-                  <tr data-name="Mini HDMI to Mini HDMI Cable 1,5M"><td>Mini HDMI to Mini HDMI Cable 1,5M</td><td>1 Unit</td><td><span class="badge badge-slate">☑️</span></td><td>Cadangan kabel video</td></tr>
-                  <tr data-name="HDMI to HDMI Cable 1,5M"><td>HDMI to HDMI Cable 1,5M</td><td>3 Unit</td><td><span class="badge badge-emerald">✅</span></td><td>1x Splitter ➔ OBS, 1x Splitter ➔ RES, 1x Pro2 ➔ RES</td></tr>
-                  <tr data-name="VGA to HDMI Converter"><td>VGA to HDMI Converter</td><td>3 Unit</td><td><span class="badge badge-slate">☑️</span></td><td>Cadangan display legacy</td></tr>
-                  <tr data-name="VGA to VGA Cable 1,5M"><td>VGA to VGA Cable 1,5M</td><td>1 Unit</td><td><span class="badge badge-slate">☑️</span></td><td>Cadangan monitor</td></tr>
-                  <tr data-name="Power Cable 3PIN"><td>Power Cable 3PIN</td><td>3 Unit</td><td><span class="badge badge-slate">☑️</span></td><td>Kabel power PC / Monitor / Mixer</td></tr>
-                  <tr data-name="Power Cable 2PIN"><td>Power Cable 2PIN</td><td>1 Unit</td><td><span class="badge badge-slate">☑️</span></td><td>Kabel power adaptor TV / Device</td></tr>
-                  <tr data-name="Terminal Cable 4CH"><td>Terminal Cable 4CH</td><td>3 Unit</td><td><span class="badge badge-slate">☑️</span></td><td>Distribusi colokan meja teknis</td></tr>
-                  <tr data-name="Terminal Cable 3CH"><td>Terminal Cable 3CH</td><td>2 Unit</td><td><span class="badge badge-slate">☑️</span></td><td>Distribusi colokan meja teknis</td></tr>
-                  <tr data-name="Terminal Cable 2CH"><td>Terminal Cable 2CH</td><td>1 Unit</td><td><span class="badge badge-slate">☑️</span></td><td>Distribusi colokan meja teknis</td></tr>
-                  <tr data-name="Terminal Cable XCH"><td>Terminal Cable XCH</td><td>X Unit</td><td><span class="badge badge-emerald">✅</span></td><td>Distribusi listrik jalur utama Andreas</td></tr>
-                  <tr data-name="Terminal T"><td>Terminal T</td><td>8 Unit</td><td><span class="badge badge-slate">☑️</span></td><td>Percabangan colokan listrik</td></tr>
-                  <tr data-name="Addon Box"><td>Addon Box</td><td>1 Pack</td><td><span class="badge badge-slate">☑️</span></td><td>Perlengkapan & tools tambahan</td></tr>
-                  <tr data-name="Jack Box"><td>Jack Box</td><td>1 Pack</td><td><span class="badge badge-slate">☑️</span></td><td>Kumpulan jack audio & converter</td></tr>
-                  <tr data-name="Screw Box"><td>Screw Box</td><td>1 Pack</td><td><span class="badge badge-slate">☑️</span></td><td>Baut rigging & plate kamera/tripod</td></tr>
-                  <tr data-name="Ties Box"><td>Ties Box</td><td>1 Pack</td><td><span class="badge badge-slate">☑️</span></td><td>Cable ties untuk manajemen kabel</td></tr>
-                  <tr data-name="Tool Box"><td>Tool Box</td><td>2 Pack</td><td><span class="badge badge-slate">☑️</span></td><td>Obeng, tang, gunting, tespen, multimeter</td></tr>
-                  <tr data-name="Cable"><td>Cable</td><td>1 Pack</td><td><span class="badge badge-slate">☑️</span></td><td>Wadah cadangan perkabelan</td></tr>
-                  <tr data-name="Tape"><td>Tape</td><td>1 Pack</td><td><span class="badge badge-slate">☑️</span></td><td>Lakban kain, isolasi hitam, double tape</td></tr>
+                  <tr data-name="Laptop"><td>Laptop</td><td>1 Unit</td><td><span class="badge badge-emerald">✓</span></td><td>Workstation OBS Studio & Live Streaming</td></tr>
+                  <tr data-name="Power Adaptor LTP"><td>Power Adaptor LTP</td><td>1 Unit</td><td><span class="badge badge-emerald">✓</span></td><td>Adaptor Laptop OBS Studio</td></tr>
+                  <tr data-name="Fan Cooler"><td>Fan Cooler</td><td>1 Unit</td><td><span class="badge badge-emerald">✓</span></td><td>Pendingin Laptop OBS Studio</td></tr>
+                  <tr data-name="Mouse Pad"><td>Mouse Pad</td><td>1 Unit</td><td><span class="badge badge-emerald">✓</span></td><td>Alas mouse meja Resolume Arena</td></tr>
+                  <tr data-name="Keyboard Ext"><td>Keyboard Ext</td><td>1 Unit</td><td><span class="badge badge-slate">Standby</span></td><td>Keyboard eksternal cadangan</td></tr>
+                  <tr data-name="Mouse Ext"><td>Mouse Ext</td><td>1 Unit</td><td><span class="badge badge-emerald">✓</span></td><td>Mouse eksternal meja Resolume Arena</td></tr>
+                  <tr data-name="Powerbank"><td>Powerbank</td><td>1 Unit</td><td><span class="badge badge-slate">Standby</span></td><td>Daya darurat aksesoris</td></tr>
+                  <tr data-name="Fan Desk"><td>Fan Desk</td><td>1 Pack</td><td><span class="badge badge-emerald">✓</span></td><td>Kipas meja operator Resolume Arena</td></tr>
+                  <tr data-name="Light Desk"><td>Light Desk</td><td>1 Pack</td><td><span class="badge badge-emerald">✓</span></td><td>Lampu kerja meja Resolume Arena</td></tr>
+                  <tr data-name="Power Adaptor USB A"><td>Power Adaptor USB A</td><td>9 Unit</td><td><span class="badge badge-amber">2/9</span></td><td>1x Meja Resolume, 1x Meja OBS, 7x standby</td></tr>
+                  <tr data-name="Power Adaptor USB A x C"><td>Power Adaptor USB A x C</td><td>1 Unit</td><td><span class="badge badge-slate">Standby</span></td><td>Charger cepat dual-port</td></tr>
+                  <tr data-name="Power Adaptor USB C"><td>Power Adaptor USB C</td><td>1 Unit</td><td><span class="badge badge-slate">Standby</span></td><td>Charger perangkat Type-C</td></tr>
+                  <tr data-name="USB A to USB B Data Cable"><td>USB A to USB B Data Cable</td><td>1 Unit</td><td><span class="badge badge-slate">Standby</span></td><td>Cadangan koneksi audio/printer</td></tr>
+                  <tr data-name="USB A to USB Micro B Data Cable"><td>USB A to USB Micro B Data Cable</td><td>2 Unit</td><td><span class="badge badge-slate">Standby</span></td><td>Cadangan koneksi perangkat legacy</td></tr>
+                  <tr data-name="USB A to USB C Data Cable"><td>USB A to USB C Data Cable</td><td>1 Unit</td><td><span class="badge badge-emerald">✓</span></td><td>Switcher Cinetreak ➔ Laptop ProPresenter 1</td></tr>
+                  <tr data-name="USB A to USB C Charge Cable"><td>USB A to USB C Charge Cable</td><td>3 Unit</td><td><span class="badge badge-amber">2/3</span></td><td>1x Meja Resolume, 1x Meja OBS, 1x standby</td></tr>
+                  <tr data-name="USB C to USB C Charge Cable"><td>USB C to USB C Charge Cable</td><td>1 Unit</td><td><span class="badge badge-slate">Standby</span></td><td>Pengisian daya Type-C</td></tr>
+                  <tr data-name="USB A to USB A Extender 30CM"><td>USB A to USB A Extender 30CM</td><td>2 Unit</td><td><span class="badge badge-slate">Standby</span></td><td>Sambungan pendek USB</td></tr>
+                  <tr data-name="USB A to USB A Extender 2M"><td>USB A to USB A Extender 2M</td><td>1 Unit</td><td><span class="badge badge-slate">Standby</span></td><td>Sambungan panjang USB</td></tr>
+                  <tr data-name="USB A to USB C Male Converter"><td>USB A to USB C Male Converter</td><td>4 Unit</td><td><span class="badge badge-slate">Standby</span></td><td>Converter port USB-C</td></tr>
+                  <tr data-name="USB A to USB C Female Converter"><td>USB A to USB C Female Converter</td><td>2 Unit</td><td><span class="badge badge-emerald">✓</span></td><td>1x Meja Resolume, 1x Meja OBS</td></tr>
+                  <tr data-name="USB A to Mini USB Cable"><td>USB A to Mini USB Cable</td><td>1 Unit</td><td><span class="badge badge-slate">Standby</span></td><td>Cadangan koneksi mini-USB</td></tr>
+                  <tr data-name="USB A Splitter 3CH"><td>USB A Splitter 3CH</td><td>1 Unit</td><td><span class="badge badge-slate">Standby</span></td><td>Ekspansi port USB</td></tr>
+                  <tr data-name="USB A Splitter 4CH"><td>USB A Splitter 4CH</td><td>1 Unit</td><td><span class="badge badge-slate">Standby</span></td><td>Ekspansi port USB</td></tr>
+                  <tr data-name="USB C DAC Hanason AB17X"><td>USB C DAC Hanason AB17X</td><td>1 Unit</td><td><span class="badge badge-emerald">✓</span></td><td>Audio DAC Laptop ProPresenter 1 ➔ Mixer Yamaha QL5</td></tr>
+                  <tr data-name="USB C DAC Oraimo OAA310"><td>USB C DAC Oraimo OAA310</td><td>1 Unit</td><td><span class="badge badge-emerald">✓</span></td><td>Cadangan terverifikasi Audio DAC</td></tr>
+                  <tr data-name="In Ear Monitor QKZ Hi7T"><td>In Ear Monitor QKZ Hi7T</td><td>1 Pack</td><td><span class="badge badge-slate">Standby</span></td><td>Monitoring audio operator</td></tr>
+                  <tr data-name="In Ear Monitor KZ EDX Pro"><td>In Ear Monitor KZ EDX Pro</td><td>1 Pack</td><td><span class="badge badge-slate">Standby</span></td><td>Monitoring audio operator</td></tr>
+                  <tr data-name="Fastdrive Vgen SSD 128GB"><td>Fastdrive Vgen SSD 128GB</td><td>1 Pack</td><td><span class="badge badge-slate">Standby</span></td><td>Penyimpanan cepat materi visual</td></tr>
+                  <tr data-name="Fastdrive Toshiba HDD 1TB"><td>Fastdrive Toshiba HDD 1TB</td><td>1 Pack</td><td><span class="badge badge-slate">Standby</span></td><td>Penyimpanan arsip video & asset besar</td></tr>
+                  <tr data-name="Flashdrive Toshiba 8GB"><td>Flashdrive Toshiba 8GB</td><td>1 Unit</td><td><span class="badge badge-slate">Standby</span></td><td>Transfer materi presentasi</td></tr>
+                  <tr data-name="Flashdrive Sandisk 16GB"><td>Flashdrive Sandisk 16GB</td><td>1 Unit</td><td><span class="badge badge-slate">Standby</span></td><td>Transfer materi presentasi</td></tr>
+                  <tr data-name="Flashdrive Toshiba 32GB"><td>Flashdrive Toshiba 32GB</td><td>1 Unit</td><td><span class="badge badge-slate">Standby</span></td><td>Backup materi video / audio</td></tr>
+                  <tr data-name="Flashdrive Toshiba 64GB"><td>Flashdrive Toshiba 64GB</td><td>1 Unit</td><td><span class="badge badge-slate">Standby</span></td><td>Backup master file rundown</td></tr>
+                  <tr data-name="HDMI to Mini HDMI Converter"><td>HDMI to Mini HDMI Converter</td><td>1 Unit</td><td><span class="badge badge-slate">Standby</span></td><td>Cadangan konverter video</td></tr>
+                  <tr data-name="Mini HDMI to Mini HDMI Cable 1,5M"><td>Mini HDMI to Mini HDMI Cable 1,5M</td><td>1 Unit</td><td><span class="badge badge-slate">Standby</span></td><td>Cadangan kabel video</td></tr>
+                  <tr data-name="HDMI to HDMI Cable 1,5M"><td>HDMI to HDMI Cable 1,5M</td><td>3 Unit</td><td><span class="badge badge-emerald">✓</span></td><td>1x Splitter ➔ OBS, 1x Splitter ➔ RES, 1x Pro2 ➔ RES</td></tr>
+                  <tr data-name="VGA to HDMI Converter"><td>VGA to HDMI Converter</td><td>3 Unit</td><td><span class="badge badge-slate">Standby</span></td><td>Cadangan display legacy</td></tr>
+                  <tr data-name="VGA to VGA Cable 1,5M"><td>VGA to VGA Cable 1,5M</td><td>1 Unit</td><td><span class="badge badge-slate">Standby</span></td><td>Cadangan monitor</td></tr>
+                  <tr data-name="Power Cable 3PIN"><td>Power Cable 3PIN</td><td>3 Unit</td><td><span class="badge badge-slate">Standby</span></td><td>Kabel power PC / Monitor / Mixer</td></tr>
+                  <tr data-name="Power Cable 2PIN"><td>Power Cable 2PIN</td><td>1 Unit</td><td><span class="badge badge-slate">Standby</span></td><td>Kabel power adaptor TV / Device</td></tr>
+                  <tr data-name="Terminal Cable 4CH"><td>Terminal Cable 4CH</td><td>3 Unit</td><td><span class="badge badge-slate">Standby</span></td><td>Distribusi colokan meja teknis</td></tr>
+                  <tr data-name="Terminal Cable 3CH"><td>Terminal Cable 3CH</td><td>2 Unit</td><td><span class="badge badge-slate">Standby</span></td><td>Distribusi colokan meja teknis</td></tr>
+                  <tr data-name="Terminal Cable 2CH"><td>Terminal Cable 2CH</td><td>1 Unit</td><td><span class="badge badge-slate">Standby</span></td><td>Distribusi colokan meja teknis</td></tr>
+                  <tr data-name="Terminal Cable XCH"><td>Terminal Cable XCH</td><td>X Unit</td><td><span class="badge badge-emerald">✓</span></td><td>Distribusi listrik jalur utama Andreas</td></tr>
+                  <tr data-name="Terminal T"><td>Terminal T</td><td>8 Unit</td><td><span class="badge badge-slate">Standby</span></td><td>Percabangan colokan listrik</td></tr>
+                  <tr data-name="Addon Box"><td>Addon Box</td><td>1 Pack</td><td><span class="badge badge-slate">Standby</span></td><td>Perlengkapan & tools tambahan</td></tr>
+                  <tr data-name="Jack Box"><td>Jack Box</td><td>1 Pack</td><td><span class="badge badge-slate">Standby</span></td><td>Kumpulan jack audio & converter</td></tr>
+                  <tr data-name="Screw Box"><td>Screw Box</td><td>1 Pack</td><td><span class="badge badge-slate">Standby</span></td><td>Baut rigging & plate kamera/tripod</td></tr>
+                  <tr data-name="Ties Box"><td>Ties Box</td><td>1 Pack</td><td><span class="badge badge-slate">Standby</span></td><td>Cable ties untuk manajemen kabel</td></tr>
+                  <tr data-name="Tool Box"><td>Tool Box</td><td>2 Pack</td><td><span class="badge badge-slate">Standby</span></td><td>Obeng, tang, gunting, tespen, multimeter</td></tr>
+                  <tr data-name="Cable"><td>Cable</td><td>1 Pack</td><td><span class="badge badge-slate">Standby</span></td><td>Wadah cadangan perkabelan</td></tr>
+                  <tr data-name="Tape"><td>Tape</td><td>1 Pack</td><td><span class="badge badge-slate">Standby</span></td><td>Lakban kain, isolasi hitam, double tape</td></tr>
                 </tbody>
               </table>
             </div>
@@ -1332,19 +1334,19 @@ flowchart LR
                   <tr><th>Nama Barang</th><th>Jumlah</th><th>Status</th><th>Keterangan Penggunaan</th></tr>
                 </thead>
                 <tbody>
-                  <tr data-name="Mixer NewBaxs CT80S"><td>Mixer NewBaxs CT80S</td><td>1 Unit</td><td><span class="badge badge-emerald">✅</span></td><td>Mixer 2 (Sub-Mix Audio Streaming ke OBS)</td></tr>
-                  <tr data-name="Power Adaptor MIX"><td>Power Adaptor MIX</td><td>1 Pack</td><td><span class="badge badge-emerald">✅</span></td><td>Power Adaptor Mixer NewBaxs CT80S</td></tr>
-                  <tr data-name="Soundcard TaffStudio"><td>Soundcard TaffStudio</td><td>1 Unit</td><td><span class="badge badge-slate">☑️</span></td><td>Cadangan soundcard audio</td></tr>
-                  <tr data-name="Converter 3.5 Female to 6.5 TRS Male"><td>Converter 3.5 Female to 6.5 TRS Male</td><td>4 Unit</td><td><span class="badge badge-slate">☑️</span></td><td>Converter audio jack</td></tr>
-                  <tr data-name="Converter 3.5 Female to 6.5 TS Male"><td>Converter 3.5 Female to 6.5 TS Male</td><td>2 Unit</td><td><span class="badge badge-slate">☑️</span></td><td>Converter audio jack mono</td></tr>
-                  <tr data-name="Cable 3.5 Male to 3.5 Male 30CM"><td>Cable 3.5 Male to 3.5 Male 30CM</td><td>3 Unit</td><td><span class="badge badge-slate">☑️</span></td><td>Kabel aux patch pendek</td></tr>
-                  <tr data-name="Cable 3.5 Male to 3.5 Female 3M"><td>Cable 3.5 Male to 3.5 Female 3M</td><td>5 Unit</td><td><span class="badge badge-slate">☑️</span></td><td>Kabel perpanjangan aux 3.5mm</td></tr>
-                  <tr data-name="XLR Female to Male Cable 3M"><td>XLR Female to Male Cable 3M</td><td>2 Unit</td><td><span class="badge badge-slate">☑️</span></td><td>Cadangan kabel audio balance</td></tr>
-                  <tr data-name="USB A to USB C Data Cable"><td>USB A to USB C Data Cable</td><td>1 Unit</td><td><span class="badge badge-emerald">✅</span></td><td>Mixer NewBaxs CT80S ➔ Laptop OBS Studio</td></tr>
-                  <tr data-name="Tripod Camera Big"><td>Tripod Camera Big</td><td>1 Unit</td><td><span class="badge badge-emerald">✅</span></td><td>Tripod CAM 3 Broadcast</td></tr>
-                  <tr data-name="HDMI Splitter 2CH"><td>HDMI Splitter 2CH</td><td>1 Unit</td><td><span class="badge badge-slate">☑️</span></td><td>Cadangan Video Splitter 2 Channel</td></tr>
-                  <tr data-name="Power Adaptor SPL"><td>Power Adaptor SPL</td><td>1 Pack</td><td><span class="badge badge-slate">☑️</span></td><td>Power Adaptor Splitter GIA</td></tr>
-                  <tr data-name="HDMI to HDMI Cable 1,5M"><td>HDMI to HDMI Cable 1,5M</td><td>3 Unit</td><td><span class="badge badge-emerald">✅</span></td><td>1x Switcher ➔ Monitor, 1x Pro1 ➔ Splitter, 1x Pro3 ➔ TV Stage</td></tr>
+                  <tr data-name="Mixer NewBaxs CT80S"><td>Mixer NewBaxs CT80S</td><td>1 Unit</td><td><span class="badge badge-emerald">✓</span></td><td>Mixer 2 (Sub-Mix Audio Streaming ke OBS)</td></tr>
+                  <tr data-name="Power Adaptor MIX"><td>Power Adaptor MIX</td><td>1 Pack</td><td><span class="badge badge-emerald">✓</span></td><td>Power Adaptor Mixer NewBaxs CT80S</td></tr>
+                  <tr data-name="Soundcard TaffStudio"><td>Soundcard TaffStudio</td><td>1 Unit</td><td><span class="badge badge-slate">Standby</span></td><td>Cadangan soundcard audio</td></tr>
+                  <tr data-name="Converter 3.5 Female to 6.5 TRS Male"><td>Converter 3.5 Female to 6.5 TRS Male</td><td>4 Unit</td><td><span class="badge badge-slate">Standby</span></td><td>Converter audio jack</td></tr>
+                  <tr data-name="Converter 3.5 Female to 6.5 TS Male"><td>Converter 3.5 Female to 6.5 TS Male</td><td>2 Unit</td><td><span class="badge badge-slate">Standby</span></td><td>Converter audio jack mono</td></tr>
+                  <tr data-name="Cable 3.5 Male to 3.5 Male 30CM"><td>Cable 3.5 Male to 3.5 Male 30CM</td><td>3 Unit</td><td><span class="badge badge-slate">Standby</span></td><td>Kabel aux patch pendek</td></tr>
+                  <tr data-name="Cable 3.5 Male to 3.5 Female 3M"><td>Cable 3.5 Male to 3.5 Female 3M</td><td>5 Unit</td><td><span class="badge badge-slate">Standby</span></td><td>Kabel perpanjangan aux 3.5mm</td></tr>
+                  <tr data-name="XLR Female to Male Cable 3M"><td>XLR Female to Male Cable 3M</td><td>2 Unit</td><td><span class="badge badge-slate">Standby</span></td><td>Cadangan kabel audio balance</td></tr>
+                  <tr data-name="USB A to USB C Data Cable"><td>USB A to USB C Data Cable</td><td>1 Unit</td><td><span class="badge badge-emerald">✓</span></td><td>Mixer NewBaxs CT80S ➔ Laptop OBS Studio</td></tr>
+                  <tr data-name="Tripod Camera Big"><td>Tripod Camera Big</td><td>1 Unit</td><td><span class="badge badge-emerald">✓</span></td><td>Tripod CAM 3 Broadcast</td></tr>
+                  <tr data-name="HDMI Splitter 2CH"><td>HDMI Splitter 2CH</td><td>1 Unit</td><td><span class="badge badge-slate">Standby</span></td><td>Cadangan Video Splitter 2 Channel</td></tr>
+                  <tr data-name="Power Adaptor SPL"><td>Power Adaptor SPL</td><td>1 Pack</td><td><span class="badge badge-slate">Standby</span></td><td>Power Adaptor Splitter GIA</td></tr>
+                  <tr data-name="HDMI to HDMI Cable 1,5M"><td>HDMI to HDMI Cable 1,5M</td><td>3 Unit</td><td><span class="badge badge-emerald">✓</span></td><td>1x Switcher ➔ Monitor, 1x Pro1 ➔ Splitter, 1x Pro3 ➔ TV Stage</td></tr>
                 </tbody>
               </table>
             </div>
@@ -1359,14 +1361,14 @@ flowchart LR
                   <tr><th>Nama Barang</th><th>Jumlah</th><th>Status</th><th>Keterangan Penggunaan</th></tr>
                 </thead>
                 <tbody>
-                  <tr data-name="Stand Lighting Small"><td>Stand Lighting Small</td><td>1 Unit</td><td><span class="badge badge-slate">☑️</span></td><td>Cadangan stand wireless receiver / lighting</td></tr>
-                  <tr data-name="HDMI Cable 15M"><td>HDMI Cable 15M</td><td>1 Unit</td><td><span class="badge badge-emerald">✅</span></td><td>Output Laptop Resolume ➔ HDMI Capture PC UNNES</td></tr>
-                  <tr data-name="HDMI Cable 10M"><td>HDMI Cable 10M</td><td>1 Unit</td><td><span class="badge badge-emerald">✅</span></td><td>CAM 1 Wired ➔ Switcher Cinetreak</td></tr>
-                  <tr data-name="HDMI Cable 5M"><td>HDMI Cable 5M</td><td>1 Unit</td><td><span class="badge badge-slate">☑️</span></td><td>Cadangan kabel HDMI jarak menengah</td></tr>
-                  <tr data-name="HDMI Cable 1,5M"><td>HDMI Cable 1,5M</td><td>1 Unit</td><td><span class="badge badge-slate">☑️</span></td><td>Cadangan kabel patch HDMI</td></tr>
-                  <tr data-name="HDMI Capture"><td>HDMI Capture</td><td>1 Unit</td><td><span class="badge badge-emerald">✅</span></td><td>Input ke PC UNNES dari Laptop Resolume</td></tr>
-                  <tr data-name="HDMI Splitter 4CH"><td>HDMI Splitter 4CH</td><td>1 Unit</td><td><span class="badge badge-emerald">✅</span></td><td>Splitter CAM 1 Wired (Active Booster)</td></tr>
-                  <tr data-name="Power Adaptor SPL"><td>Power Adaptor SPL</td><td>1 Pack</td><td><span class="badge badge-emerald">✅</span></td><td>Power Adaptor Splitter GKJ</td></tr>
+                  <tr data-name="Stand Lighting Small"><td>Stand Lighting Small</td><td>1 Unit</td><td><span class="badge badge-slate">Standby</span></td><td>Cadangan stand wireless receiver / lighting</td></tr>
+                  <tr data-name="HDMI Cable 15M"><td>HDMI Cable 15M</td><td>1 Unit</td><td><span class="badge badge-emerald">✓</span></td><td>Output Laptop Resolume ➔ HDMI Capture PC UNNES</td></tr>
+                  <tr data-name="HDMI Cable 10M"><td>HDMI Cable 10M</td><td>1 Unit</td><td><span class="badge badge-emerald">✓</span></td><td>CAM 1 Wired ➔ Switcher Cinetreak</td></tr>
+                  <tr data-name="HDMI Cable 5M"><td>HDMI Cable 5M</td><td>1 Unit</td><td><span class="badge badge-slate">Standby</span></td><td>Cadangan kabel HDMI jarak menengah</td></tr>
+                  <tr data-name="HDMI Cable 1,5M"><td>HDMI Cable 1,5M</td><td>1 Unit</td><td><span class="badge badge-slate">Standby</span></td><td>Cadangan kabel patch HDMI</td></tr>
+                  <tr data-name="HDMI Capture"><td>HDMI Capture</td><td>1 Unit</td><td><span class="badge badge-emerald">✓</span></td><td>Input ke PC UNNES dari Laptop Resolume</td></tr>
+                  <tr data-name="HDMI Splitter 4CH"><td>HDMI Splitter 4CH</td><td>1 Unit</td><td><span class="badge badge-emerald">✓</span></td><td>Splitter CAM 1 Wired (Active Booster)</td></tr>
+                  <tr data-name="Power Adaptor SPL"><td>Power Adaptor SPL</td><td>1 Pack</td><td><span class="badge badge-emerald">✓</span></td><td>Power Adaptor Splitter GKJ</td></tr>
                 </tbody>
               </table>
             </div>
@@ -1381,20 +1383,20 @@ flowchart LR
                   <tr><th>Nama Barang</th><th>Jumlah</th><th>Status</th><th>Keterangan Penggunaan</th></tr>
                 </thead>
                 <tbody>
-                  <tr data-name="XLR Female to Male Cable 10M"><td>XLR Female to Male Cable 10M</td><td>3 Unit</td><td><span class="badge badge-slate">☑️</span></td><td>Cadangan kabel audio balance</td></tr>
-                  <tr data-name="Stand Lighting Small"><td>Stand Lighting Small</td><td>4 Unit</td><td><span class="badge badge-amber">⚠️ 2/4</span></td><td>1x Holder RX Pyro S (CAM 2), 1x Holder RX Pyro H (CAM 3), 2x standby</td></tr>
-                  <tr data-name="Tripod Camera Big"><td>Tripod Camera Big</td><td>1 Unit</td><td><span class="badge badge-emerald">✅</span></td><td>Tripod CAM 4 Broadcast</td></tr>
-                  <tr data-name="HDMI to Mini HDMI Cable 2,5M"><td>HDMI to Mini HDMI Cable 2,5M</td><td>1 Unit</td><td><span class="badge badge-slate">☑️</span></td><td>Cadangan kabel video</td></tr>
-                  <tr data-name="HDMI Cable 15M"><td>HDMI Cable 15M</td><td>1 Unit</td><td><span class="badge badge-emerald">✅</span></td><td>CAM 1 Wired ➔ Splitter GKJ</td></tr>
-                  <tr data-name="HDMI Cable 10M"><td>HDMI Cable 10M</td><td>1 Unit</td><td><span class="badge badge-emerald">✅</span></td><td>CAM 4 Wired ➔ Switcher Cinetreak</td></tr>
-                  <tr data-name="HDMI Cable 1,5M"><td>HDMI Cable 1,5M</td><td>2 Unit</td><td><span class="badge badge-emerald">✅</span></td><td>1x Pyro S RX ➔ Switcher, 1x Pyro H RX ➔ Switcher</td></tr>
-                  <tr data-name="HDMI Splitter 4CH"><td>HDMI Splitter 4CH</td><td>1 Unit</td><td><span class="badge badge-emerald">✅</span></td><td>Splitter Utama Distribusi ProPresenter 1 ➔ OBS & RES</td></tr>
-                  <tr data-name="Power Adaptor SPL"><td>Power Adaptor SPL</td><td>1 Pack</td><td><span class="badge badge-emerald">✅</span></td><td>Power Adaptor Splitter UKK</td></tr>
-                  <tr data-name="VGA to VGA Cable 1,5M"><td>VGA to VGA Cable 1,5M</td><td>1 Unit</td><td><span class="badge badge-slate">☑️</span></td><td>Cadangan kabel monitor</td></tr>
-                  <tr data-name="VGA to VGA Cable 2,5M"><td>VGA to VGA Cable 2,5M</td><td>1 Unit</td><td><span class="badge badge-slate">☑️</span></td><td>Cadangan kabel monitor</td></tr>
-                  <tr data-name="VGA to HDMI Converter"><td>VGA to HDMI Converter</td><td>2 Unit</td><td><span class="badge badge-slate">☑️</span></td><td>Cadangan converter display</td></tr>
-                  <tr data-name="Power Cable XPIN"><td>Power Cable XPIN</td><td>X Unit</td><td><span class="badge badge-slate">☑️</span></td><td>Cadangan kabel power</td></tr>
-                  <tr data-name="Terminal Cable XCH"><td>Terminal Cable XCH</td><td>X Unit</td><td><span class="badge badge-emerald">✅</span></td><td>Distribusi listrik jalur UKK</td></tr>
+                  <tr data-name="XLR Female to Male Cable 10M"><td>XLR Female to Male Cable 10M</td><td>3 Unit</td><td><span class="badge badge-slate">Standby</span></td><td>Cadangan kabel audio balance</td></tr>
+                  <tr data-name="Stand Lighting Small"><td>Stand Lighting Small</td><td>4 Unit</td><td><span class="badge badge-amber">2/4</span></td><td>1x Holder RX Pyro S (CAM 2), 1x Holder RX Pyro H (CAM 3), 2x standby</td></tr>
+                  <tr data-name="Tripod Camera Big"><td>Tripod Camera Big</td><td>1 Unit</td><td><span class="badge badge-emerald">✓</span></td><td>Tripod CAM 4 Broadcast</td></tr>
+                  <tr data-name="HDMI to Mini HDMI Cable 2,5M"><td>HDMI to Mini HDMI Cable 2,5M</td><td>1 Unit</td><td><span class="badge badge-slate">Standby</span></td><td>Cadangan kabel video</td></tr>
+                  <tr data-name="HDMI Cable 15M"><td>HDMI Cable 15M</td><td>1 Unit</td><td><span class="badge badge-emerald">✓</span></td><td>CAM 1 Wired ➔ Splitter GKJ</td></tr>
+                  <tr data-name="HDMI Cable 10M"><td>HDMI Cable 10M</td><td>1 Unit</td><td><span class="badge badge-emerald">✓</span></td><td>CAM 4 Wired ➔ Switcher Cinetreak</td></tr>
+                  <tr data-name="HDMI Cable 1,5M"><td>HDMI Cable 1,5M</td><td>2 Unit</td><td><span class="badge badge-emerald">✓</span></td><td>1x Pyro S RX ➔ Switcher, 1x Pyro H RX ➔ Switcher</td></tr>
+                  <tr data-name="HDMI Splitter 4CH"><td>HDMI Splitter 4CH</td><td>1 Unit</td><td><span class="badge badge-emerald">✓</span></td><td>Splitter Utama Distribusi ProPresenter 1 ➔ OBS & RES</td></tr>
+                  <tr data-name="Power Adaptor SPL"><td>Power Adaptor SPL</td><td>1 Pack</td><td><span class="badge badge-emerald">✓</span></td><td>Power Adaptor Splitter UKK</td></tr>
+                  <tr data-name="VGA to VGA Cable 1,5M"><td>VGA to VGA Cable 1,5M</td><td>1 Unit</td><td><span class="badge badge-slate">Standby</span></td><td>Cadangan kabel monitor</td></tr>
+                  <tr data-name="VGA to VGA Cable 2,5M"><td>VGA to VGA Cable 2,5M</td><td>1 Unit</td><td><span class="badge badge-slate">Standby</span></td><td>Cadangan kabel monitor</td></tr>
+                  <tr data-name="VGA to HDMI Converter"><td>VGA to HDMI Converter</td><td>2 Unit</td><td><span class="badge badge-slate">Standby</span></td><td>Cadangan converter display</td></tr>
+                  <tr data-name="Power Cable XPIN"><td>Power Cable XPIN</td><td>X Unit</td><td><span class="badge badge-slate">Standby</span></td><td>Cadangan kabel power</td></tr>
+                  <tr data-name="Terminal Cable XCH"><td>Terminal Cable XCH</td><td>X Unit</td><td><span class="badge badge-emerald">✓</span></td><td>Distribusi listrik jalur UKK</td></tr>
                 </tbody>
               </table>
             </div>
@@ -1409,19 +1411,19 @@ flowchart LR
                   <tr><th>Nama Barang</th><th>Jumlah</th><th>Status</th><th>Keterangan Penggunaan</th></tr>
                 </thead>
                 <tbody>
-                  <tr data-name="MacBook Pro"><td>MacBook Pro</td><td>1 Unit</td><td><span class="badge badge-emerald">✅</span></td><td>Workstation Virtual Mixer 1</td></tr>
-                  <tr data-name="Power Adaptor MAC"><td>Power Adaptor MAC</td><td>1 Pack</td><td><span class="badge badge-emerald">✅</span></td><td>Power Adaptor MacBook Virtual Mixer 1</td></tr>
-                  <tr data-name="Sony A6000"><td>Sony A6000</td><td>1 Unit</td><td><span class="badge badge-emerald">✅</span></td><td>CAM 4 Broadcast Wired</td></tr>
-                  <tr data-name="Lens 16-50MM Kit"><td>Lens 16-50MM Kit</td><td>1 Unit</td><td><span class="badge badge-emerald">✅</span></td><td>Lensa CAM 4 Broadcast</td></tr>
-                  <tr data-name="Battery"><td>Battery</td><td>2 Unit</td><td><span class="badge badge-emerald">✅</span></td><td>Baterai CAM 4 Broadcast</td></tr>
-                  <tr data-name="Charger"><td>Charger</td><td>1 Pack</td><td><span class="badge badge-emerald">✅</span></td><td>Charger baterai kamera</td></tr>
-                  <tr data-name="Memory Card 32GB"><td>Memory Card 32GB</td><td>1 Unit</td><td><span class="badge badge-emerald">✅</span></td><td>SD Card CAM 4 Broadcast</td></tr>
-                  <tr data-name="Card Reader"><td>Card Reader</td><td>1 Pack</td><td><span class="badge badge-slate">☑️</span></td><td>Card reader cadangan</td></tr>
-                  <tr data-name="XLR Cable 30M"><td>XLR Cable 30M</td><td>1 Unit</td><td><span class="badge badge-emerald">✅</span></td><td>Output Yamaha QL5 ➔ Input Mixer NewBaxs CT80S</td></tr>
-                  <tr data-name="HDMI Capture"><td>HDMI Capture</td><td>1 Unit</td><td><span class="badge badge-slate">☑️</span></td><td>Cadangan video capture</td></tr>
-                  <tr data-name="USB A to USB B Cable"><td>USB A to USB B Cable</td><td>1 Unit</td><td><span class="badge badge-slate">☑️</span></td><td>Cadangan koneksi perangkat</td></tr>
-                  <tr data-name="Monitor"><td>Monitor</td><td>1 Unit</td><td><span class="badge badge-emerald">✅</span></td><td>Monitor Multiview Switcher Cinetreak</td></tr>
-                  <tr data-name="Power Adaptor MON"><td>Power Adaptor MON</td><td>1 Pack</td><td><span class="badge badge-emerald">✅</span></td><td>Power Adaptor Monitor Multiview</td></tr>
+                  <tr data-name="MacBook Pro"><td>MacBook Pro</td><td>1 Unit</td><td><span class="badge badge-emerald">✓</span></td><td>Workstation Virtual Mixer 1</td></tr>
+                  <tr data-name="Power Adaptor MAC"><td>Power Adaptor MAC</td><td>1 Pack</td><td><span class="badge badge-emerald">✓</span></td><td>Power Adaptor MacBook Virtual Mixer 1</td></tr>
+                  <tr data-name="Sony A6000"><td>Sony A6000</td><td>1 Unit</td><td><span class="badge badge-emerald">✓</span></td><td>CAM 4 Broadcast Wired</td></tr>
+                  <tr data-name="Lens 16-50MM Kit"><td>Lens 16-50MM Kit</td><td>1 Unit</td><td><span class="badge badge-emerald">✓</span></td><td>Lensa CAM 4 Broadcast</td></tr>
+                  <tr data-name="Battery"><td>Battery</td><td>2 Unit</td><td><span class="badge badge-emerald">✓</span></td><td>Baterai CAM 4 Broadcast</td></tr>
+                  <tr data-name="Charger"><td>Charger</td><td>1 Pack</td><td><span class="badge badge-emerald">✓</span></td><td>Charger baterai kamera</td></tr>
+                  <tr data-name="Memory Card 32GB"><td>Memory Card 32GB</td><td>1 Unit</td><td><span class="badge badge-emerald">✓</span></td><td>SD Card CAM 4 Broadcast</td></tr>
+                  <tr data-name="Card Reader"><td>Card Reader</td><td>1 Pack</td><td><span class="badge badge-slate">Standby</span></td><td>Card reader cadangan</td></tr>
+                  <tr data-name="XLR Cable 30M"><td>XLR Cable 30M</td><td>1 Unit</td><td><span class="badge badge-emerald">✓</span></td><td>Output Yamaha QL5 ➔ Input Mixer NewBaxs CT80S</td></tr>
+                  <tr data-name="HDMI Capture"><td>HDMI Capture</td><td>1 Unit</td><td><span class="badge badge-slate">Standby</span></td><td>Cadangan video capture</td></tr>
+                  <tr data-name="USB A to USB B Cable"><td>USB A to USB B Cable</td><td>1 Unit</td><td><span class="badge badge-slate">Standby</span></td><td>Cadangan koneksi perangkat</td></tr>
+                  <tr data-name="Monitor"><td>Monitor</td><td>1 Unit</td><td><span class="badge badge-emerald">✓</span></td><td>Monitor Multiview Switcher Cinetreak</td></tr>
+                  <tr data-name="Power Adaptor MON"><td>Power Adaptor MON</td><td>1 Pack</td><td><span class="badge badge-emerald">✓</span></td><td>Power Adaptor Monitor Multiview</td></tr>
                 </tbody>
               </table>
             </div>
@@ -1436,14 +1438,14 @@ flowchart LR
                   <tr><th>Nama Barang</th><th>Jumlah</th><th>Status</th><th>Keterangan Penggunaan</th></tr>
                 </thead>
                 <tbody>
-                  <tr data-name="Sony ZV-E10"><td>Sony ZV-E10</td><td>1 Unit</td><td><span class="badge badge-emerald">✅</span></td><td>CAM 2 Broadcast Wireless</td></tr>
-                  <tr data-name="Lens 16-50MM Kit"><td>Lens 16-50MM Kit</td><td>1 Unit</td><td><span class="badge badge-slate">☑️</span></td><td>Cadangan lensa kit</td></tr>
-                  <tr data-name="Lens 50MM Fix"><td>Lens 50MM Fix</td><td>1 Unit</td><td><span class="badge badge-slate">☑️</span></td><td>Cadangan lensa portrait/low-light</td></tr>
-                  <tr data-name="Battery"><td>Battery</td><td>2 Unit</td><td><span class="badge badge-emerald">✅</span></td><td>Baterai CAM 2 Broadcast</td></tr>
-                  <tr data-name="Charger"><td>Charger</td><td>1 Pack</td><td><span class="badge badge-emerald">✅</span></td><td>Charger baterai kamera</td></tr>
-                  <tr data-name="Memory Card 64GB"><td>Memory Card 64GB</td><td>1 Unit</td><td><span class="badge badge-emerald">✅</span></td><td>SD Card CAM 2 Broadcast</td></tr>
-                  <tr data-name="Memory Card 128GB"><td>Memory Card 128GB</td><td>1 Unit</td><td><span class="badge badge-slate">☑️</span></td><td>Cadangan storage resolusi tinggi</td></tr>
-                  <tr data-name="Card Reader USB A"><td>Card Reader USB A</td><td>1 Unit</td><td><span class="badge badge-slate">☑️</span></td><td>Card reader transfer data</td></tr>
+                  <tr data-name="Sony ZV-E10"><td>Sony ZV-E10</td><td>1 Unit</td><td><span class="badge badge-emerald">✓</span></td><td>CAM 2 Broadcast Wireless</td></tr>
+                  <tr data-name="Lens 16-50MM Kit"><td>Lens 16-50MM Kit</td><td>1 Unit</td><td><span class="badge badge-slate">Standby</span></td><td>Cadangan lensa kit</td></tr>
+                  <tr data-name="Lens 50MM Fix"><td>Lens 50MM Fix</td><td>1 Unit</td><td><span class="badge badge-slate">Standby</span></td><td>Cadangan lensa portrait/low-light</td></tr>
+                  <tr data-name="Battery"><td>Battery</td><td>2 Unit</td><td><span class="badge badge-emerald">✓</span></td><td>Baterai CAM 2 Broadcast</td></tr>
+                  <tr data-name="Charger"><td>Charger</td><td>1 Pack</td><td><span class="badge badge-emerald">✓</span></td><td>Charger baterai kamera</td></tr>
+                  <tr data-name="Memory Card 64GB"><td>Memory Card 64GB</td><td>1 Unit</td><td><span class="badge badge-emerald">✓</span></td><td>SD Card CAM 2 Broadcast</td></tr>
+                  <tr data-name="Memory Card 128GB"><td>Memory Card 128GB</td><td>1 Unit</td><td><span class="badge badge-slate">Standby</span></td><td>Cadangan storage resolusi tinggi</td></tr>
+                  <tr data-name="Card Reader USB A"><td>Card Reader USB A</td><td>1 Unit</td><td><span class="badge badge-slate">Standby</span></td><td>Card reader transfer data</td></tr>
                 </tbody>
               </table>
             </div>
@@ -1458,12 +1460,12 @@ flowchart LR
                   <tr><th>Nama Barang</th><th>Jumlah</th><th>Status</th><th>Keterangan Penggunaan</th></tr>
                 </thead>
                 <tbody>
-                  <tr data-name="Laptop"><td>Laptop</td><td>1 Unit</td><td><span class="badge badge-emerald">✅</span></td><td>Workstation ProPresenter 1 (Operator: Rania)</td></tr>
-                  <tr data-name="Power Adaptor LTP"><td>Power Adaptor LTP</td><td>1 Unit</td><td><span class="badge badge-emerald">✅</span></td><td>Power Adaptor Laptop ProPresenter 1</td></tr>
-                  <tr data-name="Fan Cooler"><td>Fan Cooler</td><td>1 Unit</td><td><span class="badge badge-emerald">✅</span></td><td>Pendingin Laptop Resolume Arena</td></tr>
-                  <tr data-name="Mouse Ext"><td>Mouse Ext</td><td>1 Unit</td><td><span class="badge badge-emerald">✅</span></td><td>Mouse eksternal operator</td></tr>
-                  <tr data-name="Card Reader USB A"><td>Card Reader USB A</td><td>1 Unit</td><td><span class="badge badge-slate">☑️</span></td><td>Card reader USB-A</td></tr>
-                  <tr data-name="Card Reader USB C"><td>Card Reader USB C</td><td>1 Unit</td><td><span class="badge badge-slate">☑️</span></td><td>Card reader USB-C</td></tr>
+                  <tr data-name="Laptop"><td>Laptop</td><td>1 Unit</td><td><span class="badge badge-emerald">✓</span></td><td>Workstation ProPresenter 1 (Operator: Rania)</td></tr>
+                  <tr data-name="Power Adaptor LTP"><td>Power Adaptor LTP</td><td>1 Unit</td><td><span class="badge badge-emerald">✓</span></td><td>Power Adaptor Laptop ProPresenter 1</td></tr>
+                  <tr data-name="Fan Cooler"><td>Fan Cooler</td><td>1 Unit</td><td><span class="badge badge-emerald">✓</span></td><td>Pendingin Laptop Resolume Arena</td></tr>
+                  <tr data-name="Mouse Ext"><td>Mouse Ext</td><td>1 Unit</td><td><span class="badge badge-emerald">✓</span></td><td>Mouse eksternal operator</td></tr>
+                  <tr data-name="Card Reader USB A"><td>Card Reader USB A</td><td>1 Unit</td><td><span class="badge badge-slate">Standby</span></td><td>Card reader USB-A</td></tr>
+                  <tr data-name="Card Reader USB C"><td>Card Reader USB C</td><td>1 Unit</td><td><span class="badge badge-slate">Standby</span></td><td>Card reader USB-C</td></tr>
                 </tbody>
               </table>
             </div>
@@ -1478,7 +1480,7 @@ flowchart LR
                   <tr><th>Nama Barang</th><th>Jumlah</th><th>Status</th><th>Keterangan Penggunaan</th></tr>
                 </thead>
                 <tbody>
-                  <tr data-name="HDMI Cable 1,5M"><td>HDMI Cable 1,5M</td><td>1 Unit</td><td><span class="badge badge-slate">☑️</span></td><td>Cadangan kabel patch HDMI</td></tr>
+                  <tr data-name="HDMI Cable 1,5M"><td>HDMI Cable 1,5M</td><td>1 Unit</td><td><span class="badge badge-slate">Standby</span></td><td>Cadangan kabel patch HDMI</td></tr>
                 </tbody>
               </table>
             </div>
@@ -1493,7 +1495,7 @@ flowchart LR
                   <tr><th>Nama Barang</th><th>Jumlah</th><th>Status</th><th>Keterangan Penggunaan</th></tr>
                 </thead>
                 <tbody>
-                  <tr data-name="Memory Card 8GB"><td>Memory Card 8GB</td><td>1 Unit</td><td><span class="badge badge-slate">☑️</span></td><td>Penyimpanan file cadangan</td></tr>
+                  <tr data-name="Memory Card 8GB"><td>Memory Card 8GB</td><td>1 Unit</td><td><span class="badge badge-slate">Standby</span></td><td>Penyimpanan file cadangan</td></tr>
                 </tbody>
               </table>
             </div>
@@ -1508,8 +1510,8 @@ flowchart LR
                   <tr><th>Nama Barang</th><th>Jumlah</th><th>Status</th><th>Keterangan Penggunaan</th></tr>
                 </thead>
                 <tbody>
-                  <tr data-name="HP iPhone 15"><td>HP iPhone 15</td><td>1 Unit</td><td><span class="badge badge-emerald">✅</span></td><td>CAM 7 Dokumentasi Live Story / Reels / Sosmed</td></tr>
-                  <tr data-name="TAB iPad"><td>TAB iPad</td><td>1 Unit</td><td><span class="badge badge-emerald">✅</span></td><td>iPad Virtual Mixer 3 (Operator: Jordan)</td></tr>
+                  <tr data-name="HP iPhone 15"><td>HP iPhone 15</td><td>1 Unit</td><td><span class="badge badge-emerald">✓</span></td><td>CAM 7 Dokumentasi Live Story / Reels / Sosmed</td></tr>
+                  <tr data-name="TAB iPad"><td>TAB iPad</td><td>1 Unit</td><td><span class="badge badge-emerald">✓</span></td><td>iPad Virtual Mixer 3 (Operator: Jordan)</td></tr>
                 </tbody>
               </table>
             </div>
@@ -1524,7 +1526,7 @@ flowchart LR
                   <tr><th>Nama Barang</th><th>Jumlah</th><th>Status</th><th>Keterangan Penggunaan</th></tr>
                 </thead>
                 <tbody>
-                  <tr data-name="TAB iPad"><td>TAB iPad</td><td>1 Unit</td><td><span class="badge badge-emerald">✅</span></td><td>iPad Virtual Mixer 2 (Operator: Jordan)</td></tr>
+                  <tr data-name="TAB iPad"><td>TAB iPad</td><td>1 Unit</td><td><span class="badge badge-emerald">✓</span></td><td>iPad Virtual Mixer 2 (Operator: Jordan)</td></tr>
                 </tbody>
               </table>
             </div>
@@ -1539,7 +1541,7 @@ flowchart LR
                   <tr><th>Nama Barang</th><th>Jumlah</th><th>Status</th><th>Keterangan Penggunaan</th></tr>
                 </thead>
                 <tbody>
-                  <tr data-name="TAB iPad"><td>TAB iPad</td><td>1 Unit</td><td><span class="badge badge-emerald">✅</span></td><td>iPad Virtual Mixer 4 (Operator: Yosua)</td></tr>
+                  <tr data-name="TAB iPad"><td>TAB iPad</td><td>1 Unit</td><td><span class="badge badge-emerald">✓</span></td><td>iPad Virtual Mixer 4 (Operator: Yosua)</td></tr>
                 </tbody>
               </table>
             </div>
@@ -1554,8 +1556,8 @@ flowchart LR
                   <tr><th>Nama Barang</th><th>Jumlah</th><th>Status</th><th>Keterangan Penggunaan</th></tr>
                 </thead>
                 <tbody>
-                  <tr data-name="Laptop"><td>Laptop</td><td>1 Unit</td><td><span class="badge badge-emerald">✅</span></td><td>Workstation Resolume Arena (Operator: Andreas)</td></tr>
-                  <tr data-name="Power Adaptor LTP"><td>Power Adaptor LTP</td><td>1 Unit</td><td><span class="badge badge-emerald">✅</span></td><td>Power Adaptor Laptop Resolume Arena</td></tr>
+                  <tr data-name="Laptop"><td>Laptop</td><td>1 Unit</td><td><span class="badge badge-emerald">✓</span></td><td>Workstation Resolume Arena (Operator: Andreas)</td></tr>
+                  <tr data-name="Power Adaptor LTP"><td>Power Adaptor LTP</td><td>1 Unit</td><td><span class="badge badge-emerald">✓</span></td><td>Power Adaptor Laptop Resolume Arena</td></tr>
                 </tbody>
               </table>
             </div>
@@ -1570,8 +1572,8 @@ flowchart LR
                   <tr><th>Nama Barang</th><th>Jumlah</th><th>Status</th><th>Keterangan Penggunaan</th></tr>
                 </thead>
                 <tbody>
-                  <tr data-name="Laptop"><td>Laptop</td><td>1 Unit</td><td><span class="badge badge-emerald">✅</span></td><td>Workstation ProPresenter 2 (Operator: Filia)</td></tr>
-                  <tr data-name="Power Adaptor LTP"><td>Power Adaptor LTP</td><td>1 Unit</td><td><span class="badge badge-emerald">✅</span></td><td>Power Adaptor Laptop ProPresenter 2</td></tr>
+                  <tr data-name="Laptop"><td>Laptop</td><td>1 Unit</td><td><span class="badge badge-emerald">✓</span></td><td>Workstation ProPresenter 2 (Operator: Filia)</td></tr>
+                  <tr data-name="Power Adaptor LTP"><td>Power Adaptor LTP</td><td>1 Unit</td><td><span class="badge badge-emerald">✓</span></td><td>Power Adaptor Laptop ProPresenter 2</td></tr>
                 </tbody>
               </table>
             </div>
@@ -1586,8 +1588,8 @@ flowchart LR
                   <tr><th>Nama Barang</th><th>Jumlah</th><th>Status</th><th>Keterangan Penggunaan</th></tr>
                 </thead>
                 <tbody>
-                  <tr data-name="Monitor"><td>Monitor</td><td>1 Unit</td><td><span class="badge badge-emerald">✅</span></td><td>Monitor FOH Virtual Mixer 2 (Evan)</td></tr>
-                  <tr data-name="Power Adaptor MON"><td>Power Adaptor MON</td><td>1 Pack</td><td><span class="badge badge-emerald">✅</span></td><td>Power Adaptor Monitor FOH Evan</td></tr>
+                  <tr data-name="Monitor"><td>Monitor</td><td>1 Unit</td><td><span class="badge badge-emerald">✓</span></td><td>Monitor FOH Virtual Mixer 2 (Evan)</td></tr>
+                  <tr data-name="Power Adaptor MON"><td>Power Adaptor MON</td><td>1 Pack</td><td><span class="badge badge-emerald">✓</span></td><td>Power Adaptor Monitor FOH Evan</td></tr>
                 </tbody>
               </table>
             </div>
@@ -1602,8 +1604,8 @@ flowchart LR
                   <tr><th>Nama Barang</th><th>Jumlah</th><th>Status</th><th>Keterangan Penggunaan</th></tr>
                 </thead>
                 <tbody>
-                  <tr data-name="Television"><td>Television</td><td>1 Unit</td><td><span class="badge badge-emerald">✅</span></td><td>TV Stage Display Time Keeper (ProPresenter 3)</td></tr>
-                  <tr data-name="Power Adaptor TV"><td>Power Adaptor TV</td><td>1 Pack</td><td><span class="badge badge-emerald">✅</span></td><td>Power Adaptor TV Time Keeper Stage</td></tr>
+                  <tr data-name="Television"><td>Television</td><td>1 Unit</td><td><span class="badge badge-emerald">✓</span></td><td>TV Stage Display Time Keeper (ProPresenter 3)</td></tr>
+                  <tr data-name="Power Adaptor TV"><td>Power Adaptor TV</td><td>1 Pack</td><td><span class="badge badge-emerald">✓</span></td><td>Power Adaptor TV Time Keeper Stage</td></tr>
                 </tbody>
               </table>
             </div>
@@ -1618,8 +1620,8 @@ flowchart LR
                   <tr><th>Nama Barang</th><th>Jumlah</th><th>Status</th><th>Keterangan Penggunaan</th></tr>
                 </thead>
                 <tbody>
-                  <tr data-name="HDMI to Micro HDMI Converter"><td>HDMI to Micro HDMI Converter</td><td>2 Unit</td><td><span class="badge badge-emerald">✅</span></td><td>Cadangan terverifikasi port kamera</td></tr>
-                  <tr data-name="Terminal Cable XCH"><td>Terminal Cable XCH</td><td>X Unit</td><td><span class="badge badge-emerald">✅</span></td><td>Distribusi listrik jalur utama Panitia</td></tr>
+                  <tr data-name="HDMI to Micro HDMI Converter"><td>HDMI to Micro HDMI Converter</td><td>2 Unit</td><td><span class="badge badge-emerald">✓</span></td><td>Cadangan terverifikasi port kamera</td></tr>
+                  <tr data-name="Terminal Cable XCH"><td>Terminal Cable XCH</td><td>X Unit</td><td><span class="badge badge-emerald">✓</span></td><td>Distribusi listrik jalur utama Panitia</td></tr>
                 </tbody>
               </table>
             </div>
@@ -1690,7 +1692,7 @@ flowchart LR
           <div class="timeline-phase phase-active">
             <div class="phase-header">
               <span class="phase-badge badge badge-emerald">SESI 2</span>
-              <h3 class="phase-title">⛪ Main Ibadah (Main Event)</h3>
+              <h3 class="phase-title">Main Ibadah (Main Event)</h3>
             </div>
             <div class="table-responsive">
               <table class="data-table">
@@ -1741,14 +1743,14 @@ flowchart LR
                   </tr>
                   <tr>
                     <td><strong>Overture</strong></td>
-                    <td><em>Oceans (Where Feet May Fail)</em> — Hillsong UNITED</td>
+                    <td><em>Oceans (Where Feet May Fail)</em> &bull; Hillsong UNITED</td>
                     <td><span class="badge badge-emerald">Camera + Lyric</span></td>
                     <td><span class="badge badge-purple">Background + Lyric</span></td>
                     <td><code>Fresnel ON (Fade Dim) | Par (Blue x Cyan) | Beam (White Prism)</code></td>
                   </tr>
                   <tr>
                     <td><strong>Worship Song 1</strong></td>
-                    <td><em>KumilikMu</em> — JPCC Worship Youth</td>
+                    <td><em>KumilikMu</em> &bull; JPCC Worship Youth</td>
                     <td><span class="badge badge-emerald">Camera + Lyric</span></td>
                     <td><span class="badge badge-purple">Background + Lyric</span></td>
                     <td><code>Fresnel ON | Par (Purple Fade Chase) | Beam (White Prism Mekrok)</code></td>
@@ -1783,7 +1785,7 @@ flowchart LR
                   </tr>
                   <tr>
                     <td><strong>Respon Firman</strong></td>
-                    <td><em>Kuberikan Hatiku</em> — Franky Sihombing</td>
+                    <td><em>Kuberikan Hatiku</em> &bull; Franky Sihombing</td>
                     <td><span class="badge badge-emerald">Camera + Lyric</span></td>
                     <td><span class="badge badge-purple">Background + Lyric</span></td>
                     <td><code>Fresnel ON | Par (White Solid) | Beam (White Prism Mekrok)</code></td>
@@ -1797,14 +1799,14 @@ flowchart LR
                   </tr>
                   <tr>
                     <td><strong>Persembahan 1</strong></td>
-                    <td><em>Bri Syukur</em> — Viona Paays</td>
+                    <td><em>Bri Syukur</em> &bull; Viona Paays</td>
                     <td><span class="badge badge-emerald">Camera + Lyric</span></td>
                     <td><span class="badge badge-slate">Persembahan Pict</span></td>
                     <td><code>All Lamp ON | Fresnel ON | Par (Green Solid) | Beam (White Lurus)</code></td>
                   </tr>
                   <tr>
                     <td><strong>Persembahan 2</strong></td>
-                    <td><em>Aku Diberkati</em> — Yehuda Singers</td>
+                    <td><em>Aku Diberkati</em> &bull; Yehuda Singers</td>
                     <td><span class="badge badge-emerald">Camera + Lyric</span></td>
                     <td><span class="badge badge-slate">Persembahan Pict</span></td>
                     <td><code>All Lamp ON | Fresnel ON | Par (Orange Solid) | Beam (White Lurus)</code></td>
@@ -1888,35 +1890,35 @@ flowchart LR
                   </tr>
                   <tr>
                     <td><strong>Praise Song 1</strong></td>
-                    <td><em>Dengar Dia Panggil Nama Saya</em> — Yehuda Singers</td>
+                    <td><em>Dengar Dia Panggil Nama Saya</em> &bull; Yehuda Singers</td>
                     <td><span class="badge badge-emerald">Camera + Lyric</span></td>
                     <td><span class="badge badge-purple">Background + Lyric</span></td>
                     <td><code>Fresnel ON | Par (Blue Ocean Fade Chase) | Beam (White Lurus)</code></td>
                   </tr>
                   <tr>
                     <td><strong>Praise Song 2</strong></td>
-                    <td><em>Ajaib Kau Tuhan</em> — JPCC Worship</td>
+                    <td><em>Ajaib Kau Tuhan</em> &bull; JPCC Worship</td>
                     <td><span class="badge badge-emerald">Camera + Lyric</span></td>
                     <td><span class="badge badge-purple">Background + Animated Lyric</span></td>
                     <td><code>Fresnel ON | Par (Blue + Purple) | Beam (Yellow Mekrok)</code></td>
                   </tr>
                   <tr>
                     <td><strong>Praise Song 3</strong></td>
-                    <td><em>Di Badai Topan Dunia</em> — KJ 440</td>
+                    <td><em>Di Badai Topan Dunia</em> &bull; KJ 440</td>
                     <td><span class="badge badge-emerald">Camera + Lyric</span></td>
                     <td><span class="badge badge-purple">Background + Lyric</span></td>
                     <td><code>Fresnel ON | Par (White Solid) | Beam (White Mekrok)</code></td>
                   </tr>
                   <tr>
                     <td><strong>Praise Song 4</strong></td>
-                    <td><em>Setinggi-tingginya Langit</em> — Talenta Singers</td>
+                    <td><em>Setinggi-tingginya Langit</em> &bull; Talenta Singers</td>
                     <td><span class="badge badge-emerald">Camera + Lyric</span></td>
                     <td><span class="badge badge-purple">Background + Animated Lyric</span></td>
                     <td><code>Fresnel ON | Par (RGB Chase Dim) | Beam (White Lurus)</code></td>
                   </tr>
                   <tr>
                     <td><strong>Praise Song 5</strong></td>
-                    <td><em>Ku Berbahagia</em> — KJ 392</td>
+                    <td><em>Ku Berbahagia</em> &bull; KJ 392</td>
                     <td><span class="badge badge-emerald">Camera + Lyric</span></td>
                     <td><span class="badge badge-purple">Background + Lyric</span></td>
                     <td><code>Fresnel ON | Par (Yellow + Green) | Beam (White Mekrok)</code></td>
@@ -1937,14 +1939,14 @@ flowchart LR
                   </tr>
                   <tr>
                     <td><strong>Encore Praise 1</strong></td>
-                    <td><em>Nyalakan ApiMu</em> — GMS Live</td>
+                    <td><em>Nyalakan ApiMu</em> &bull; GMS Live</td>
                     <td><span class="badge badge-emerald">Camera + Lyric</span></td>
                     <td><span class="badge badge-purple">Background + Animated Lyric</span></td>
                     <td><code>Fresnel ON | Par (Orange + Red Fade Chase) | Beam (White Lurus/Mekrok)</code></td>
                   </tr>
                   <tr>
                     <td><strong>Encore Praise 2</strong></td>
-                    <td><em>Kumenang</em> — Symphony Worship</td>
+                    <td><em>Kumenang</em> &bull; Symphony Worship</td>
                     <td><span class="badge badge-emerald">Camera + Lyric</span></td>
                     <td><span class="badge badge-purple">Background + Animated Lyric</span></td>
                     <td><code>Fresnel ON | Par (Blue + Cyan Fade Chase) | Beam (White Lurus/Mekrok)</code></td>
@@ -1958,7 +1960,7 @@ flowchart LR
                   </tr>
                   <tr>
                     <td><strong>Praise Penutup</strong></td>
-                    <td><em>Kumenang Menang</em> — Hosana Singers</td>
+                    <td><em>Kumenang Menang</em> &bull; Hosana Singers</td>
                     <td><span class="badge badge-emerald">Camera + Lyric</span></td>
                     <td><span class="badge badge-purple">Background + Animated Lyric</span></td>
                     <td><code>Fresnel ON | Par (Blue + Cyan Fade Chase) | Beam (White Lurus/Mekrok)</code></td>
@@ -2140,20 +2142,20 @@ All Rights Reserved.
   <!-- ========================================================================= -->
   <nav class="mobile-bottom-dock" aria-label="Mobile Navigation">
     <div class="dock-container">
-      <a href="../index.html" class="dock-item active">
-        <span class="dock-icon">🏠</span>
+      <a href="../index.html" class="dock-item">
+        <span class="dock-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path><polyline points="9 22 9 12 15 12 15 22"></polyline></svg></span>
         <span class="dock-label">Home</span>
       </a>
       <a href="../inventory.html" class="dock-item">
-        <span class="dock-icon">📦</span>
+        <span class="dock-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"></path><rect x="8" y="2" width="8" height="4" rx="1" ry="1"></rect><line x1="9" y1="11" x2="15" y2="11"></line><line x1="9" y1="15" x2="13" y2="15"></line></svg></span>
         <span class="dock-label">Inventory</span>
       </a>
       <a href="../switcher.html" class="dock-item">
-        <span class="dock-icon">🎛️</span>
+        <span class="dock-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="4" y1="21" x2="4" y2="14"></line><line x1="4" y1="10" x2="4" y2="3"></line><line x1="12" y1="21" x2="12" y2="12"></line><line x1="12" y1="8" x2="12" y2="3"></line><line x1="20" y1="21" x2="20" y2="16"></line><line x1="20" y1="12" x2="20" y2="3"></line><line x1="1" y1="14" x2="7" y2="14"></line><line x1="9" y1="8" x2="15" y2="8"></line><line x1="17" y1="16" x2="23" y2="16"></line></svg></span>
         <span class="dock-label">Switcher</span>
       </a>
       <a href="../presenter.html" class="dock-item">
-        <span class="dock-icon">🎶</span>
+        <span class="dock-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18V5l12-2v13"></path><circle cx="6" cy="18" r="3"></circle><circle cx="18" cy="16" r="3"></circle></svg></span>
         <span class="dock-label">Presenter</span>
       </a>
     </div>
@@ -2178,7 +2180,7 @@ All Rights Reserved.
             <ul class="drawer-nav-list">
         <li>
           <a href="../index.html" class="drawer-nav-link">
-            <span class="drawer-link-icon">🏠</span>
+            <span class="drawer-link-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path><polyline points="9 22 9 12 15 12 15 22"></polyline></svg></span>
             <div class="drawer-link-text">
               <strong>Home</strong>
               <small>Hasil Siaran &amp; Playlist Video</small>
@@ -2186,8 +2188,8 @@ All Rights Reserved.
           </a>
         </li>
         <li>
-          <a href="../archive.html" class="drawer-nav-link active">
-            <span class="drawer-link-icon">📦</span>
+          <a href="index.html" class="drawer-nav-link active">
+            <span class="drawer-link-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="21 8 21 21 3 21 3 8"></polyline><rect x="1" y="3" width="22" height="5"></rect><line x1="10" y1="12" x2="14" y2="12"></line></svg></span>
             <div class="drawer-link-text">
               <strong>Archive</strong>
               <small>Arsip Teknis &amp; Sistem Produksi</small>
@@ -2196,7 +2198,7 @@ All Rights Reserved.
         </li>
         <li>
           <a href="../inventory.html" class="drawer-nav-link">
-            <span class="drawer-link-icon">📋</span>
+            <span class="drawer-link-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"></path><rect x="8" y="2" width="8" height="4" rx="1" ry="1"></rect><line x1="9" y1="11" x2="15" y2="11"></line><line x1="9" y1="15" x2="13" y2="15"></line></svg></span>
             <div class="drawer-link-text">
               <strong>Inventory</strong>
               <small>Checklist Lapangan 19 Vendor</small>
@@ -2205,7 +2207,7 @@ All Rights Reserved.
         </li>
         <li>
           <a href="../switcher.html" class="drawer-nav-link">
-            <span class="drawer-link-icon">🎛️</span>
+            <span class="drawer-link-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="4" y1="21" x2="4" y2="14"></line><line x1="4" y1="10" x2="4" y2="3"></line><line x1="12" y1="21" x2="12" y2="12"></line><line x1="12" y1="8" x2="12" y2="3"></line><line x1="20" y1="21" x2="20" y2="16"></line><line x1="20" y1="12" x2="20" y2="3"></line><line x1="1" y1="14" x2="7" y2="14"></line><line x1="9" y1="8" x2="15" y2="8"></line><line x1="17" y1="16" x2="23" y2="16"></line></svg></span>
             <div class="drawer-link-text">
               <strong>Switcher</strong>
               <small>Simulator Cinelive V1 Desktop</small>
@@ -2214,7 +2216,7 @@ All Rights Reserved.
         </li>
         <li>
           <a href="../presenter.html" class="drawer-nav-link">
-            <span class="drawer-link-icon">🎶</span>
+            <span class="drawer-link-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18V5l12-2v13"></path><circle cx="6" cy="18" r="3"></circle><circle cx="18" cy="16" r="3"></circle></svg></span>
             <div class="drawer-link-text">
               <strong>Presenter</strong>
               <small>Simulator ProPresenter 7</small>

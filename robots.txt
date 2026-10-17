@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://ip26-production.zzdree.workers.dev/sitemap.xml

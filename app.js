@@ -29,19 +29,21 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  // =========================================================================
-  // 1. TOAST NOTIFICATION SYSTEM (Magic Motion & a11y)
+  // 1. Toast Notification System (Magic Motion & a11y)
   // Suppressed in Inventory mobile mode for fast, distraction-free checklist operations
-  // =========================================================================
   const toastContainer = document.getElementById('toast-container');
 
   function showToast(title, message, type = 'info') {
     if (isInventoryPage || !toastContainer) return;
     const toast = document.createElement('div');
     toast.className = `toast-item ${type === 'success' ? 'toast-success' : type === 'warning' ? 'toast-warning' : ''}`;
-    
-    const icon = type === 'success' ? '✅' : type === 'warning' ? '⚠️' : '⚡';
-    
+
+    const icon = type === 'success'
+      ? '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>'
+      : type === 'warning'
+        ? '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"></path><line x1="12" y1="9" x2="12" y2="13"></line><line x1="12" y1="17" x2="12.01" y2="17"></line></svg>'
+        : '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon></svg>';
+
     toast.innerHTML = `
       <span class="toast-icon">${icon}</span>
       <div class="toast-content">
@@ -59,18 +61,16 @@ document.addEventListener('DOMContentLoaded', () => {
     }, 4000);
   }
 
-  // =========================================================================
-  // 2. THEME ENGINE (Default & Strictly Permanent Dark Mode)
-  // =========================================================================
+  // 2. Theme Engine (Default & Permanent Dark Mode)
   const root = document.documentElement;
   root.setAttribute('data-theme', 'dark');
   try {
     localStorage.setItem('ip26_theme', 'dark');
-  } catch (_) {}
+  } catch (err) {
+    void err; // Storage restricted in private mode
+  }
 
-  // =========================================================================
-  // 3. REALTIME CLOUD DATABASE & INVENTORY SYNC ENGINE (Supabase)
-  // =========================================================================
+  // 3. Realtime Cloud Database & Inventory Sync Engine (Supabase)
   let supabaseClient = null;
   let realtimeChannel = null;
   let presenceChannel = null;
@@ -104,12 +104,16 @@ document.addEventListener('DOMContentLoaded', () => {
       const parsed = JSON.parse(cachedState);
       Object.assign(inventoryState, parsed);
     }
-  } catch (_) {}
+  } catch (err) {
+    void err; // Fallback to empty inventoryState when localStorage unavailable
+  }
 
   function persistLocalState() {
     try {
       localStorage.setItem('ip26_inventory_state', JSON.stringify(inventoryState));
-    } catch (_) {}
+    } catch (err) {
+      void err; // Local quota or restricted storage
+    }
   }
 
   // Crew Identity Management (Sticky on Device)
@@ -118,12 +122,16 @@ document.addEventListener('DOMContentLoaded', () => {
     try {
       const savedCrew = localStorage.getItem('ip26_crew_name');
       if (savedCrew) crewNameInput.value = savedCrew;
-    } catch (_) {}
+    } catch (err) {
+      void err;
+    }
     crewNameInput.addEventListener('input', () => {
       const val = crewNameInput.value.trim();
       try {
         if (val) localStorage.setItem('ip26_crew_name', val);
-      } catch (_) {}
+      } catch (err) {
+        void err;
+      }
     });
   }
 
@@ -134,7 +142,9 @@ document.addEventListener('DOMContentLoaded', () => {
     try {
       const savedCrew = localStorage.getItem('ip26_crew_name');
       if (savedCrew) return savedCrew;
-    } catch (_) {}
+    } catch (err) {
+      void err;
+    }
     return 'Crew';
   }
 
@@ -149,7 +159,6 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   // Augment Inventory Tables with Checklist Columns
-  // Augment Inventory Tables with Checklist Columns
   const vendorBlocks = document.querySelectorAll('.vendor-block');
   vendorBlocks.forEach((block) => {
     const vendor = block.getAttribute('data-vendor') || 'Unknown';
@@ -162,11 +171,11 @@ document.addEventListener('DOMContentLoaded', () => {
       const thCols = headerRow.children;
       const thLoading = document.createElement('th');
       thLoading.className = 'th-sync';
-      thLoading.innerHTML = '📦 Pasang';
+      thLoading.textContent = 'Pasang';
 
       const thPacking = document.createElement('th');
       thPacking.className = 'th-sync';
-      thPacking.innerHTML = '🧳 Kemas';
+      thPacking.textContent = 'Kemas';
 
       if (thCols.length >= 4) {
         headerRow.insertBefore(thLoading, thCols[3]);
@@ -368,7 +377,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // 2. Layer 1: Push to Supabase Cloud Database
     if (supabaseClient) {
-      setSyncStatus('syncing', '🔵 Menyinkronkan ke Cloud (Supabase + ntfy)...');
+      setSyncStatus('syncing', 'Menyinkronkan ke Cloud (Supabase + ntfy)...');
       try {
         const { error } = await supabaseClient
           .from('inventory_items')
@@ -388,10 +397,10 @@ document.addEventListener('DOMContentLoaded', () => {
         if (error) {
           console.warn('Supabase upsert warning:', error.message);
         }
-        setSyncStatus('connected', '🟢 Cloud Live (Supabase + ntfy.sh)');
+        setSyncStatus('connected', 'Cloud Live (Supabase + ntfy.sh)');
       } catch (err) {
         console.error('Supabase sync error:', err);
-        setSyncStatus('connected', '🟢 Cloud Live (Supabase + ntfy.sh)');
+        setSyncStatus('connected', 'Cloud Live (Supabase + ntfy.sh)');
       }
     }
   }
@@ -423,20 +432,20 @@ document.addEventListener('DOMContentLoaded', () => {
         });
       });
 
-      const summaryText = `📊 *RINGKASAN LOGISTIK IP26 - MULTIMEDIA & BROADCAST*\n` +
-        `🕒 Update: ${new Date().toLocaleTimeString()} WIB\n\n` +
-        `📦 *Loading In*: ${loadedCount} / ${total} (${Math.round((loadedCount / total) * 100)}%)\n` +
-        `🧳 *Packing Out*: ${packedCount} / ${total} (${Math.round((packedCount / total) * 100)}%)\n\n` +
-        `⚠️ *Barang Belum Siap Loading (${pendingLoadList.length})*:\n` +
+      const summaryText = `*RINGKASAN LOGISTIK IP26 - MULTIMEDIA & BROADCAST*\n` +
+        `Update: ${new Date().toLocaleTimeString()} WIB\n\n` +
+        `*Loading In*: ${loadedCount} / ${total} (${Math.round((loadedCount / total) * 100)}%)\n` +
+        `*Packing Out*: ${packedCount} / ${total} (${Math.round((packedCount / total) * 100)}%)\n\n` +
+        `*Barang Belum Siap Loading (${pendingLoadList.length})*:\n` +
         (pendingLoadList.slice(0, 10).join('\n') || 'Semua barang sudah terpasang!') +
         (pendingLoadList.length > 10 ? `\n...dan ${pendingLoadList.length - 10} barang lainnya.` : '') +
-        `\n\n🌐 Cek live portal: https://zzdree.github.io/ip26-production/`;
+        `\n\nPortal: https://ip26-production.zzdree.workers.dev/`;
 
       navigator.clipboard.writeText(summaryText)
         .then(() => {
           if (isInventoryPage) {
             const originalHtml = btnCopySummary.innerHTML;
-            btnCopySummary.innerHTML = '✅ Tersalin!';
+            btnCopySummary.innerHTML = '✓ Tersalin!';
             setTimeout(() => {
               btnCopySummary.innerHTML = originalHtml;
             }, 2000);
@@ -447,7 +456,7 @@ document.addEventListener('DOMContentLoaded', () => {
         .catch(() => {
           if (isInventoryPage) {
             const originalHtml = btnCopySummary.innerHTML;
-            btnCopySummary.innerHTML = '⚠️ Gagal';
+            btnCopySummary.innerHTML = 'Gagal Menyalin';
             setTimeout(() => {
               btnCopySummary.innerHTML = originalHtml;
             }, 2000);
@@ -458,15 +467,14 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  // Initialize Supabase Client & Realtime WebSocket
   function initSupabase(url, key) {
     if (!url || !key || typeof window.supabase === 'undefined') {
-      setSyncStatus('offline', '🟡 Mode Offline (Penyimpanan Lokal)');
+      setSyncStatus('offline', 'Mode Offline (Penyimpanan Lokal)');
       return;
     }
 
     try {
-      setSyncStatus('syncing', '🔵 Menghubungkan ke Supabase...');
+      setSyncStatus('syncing', 'Menghubungkan ke Supabase...');
       supabaseClient = window.supabase.createClient(url, key);
 
       // 1. Initial Fetch all existing items from database
@@ -492,10 +500,10 @@ document.addEventListener('DOMContentLoaded', () => {
             updateProgressMeters();
             filterInventory();
           }
-          setSyncStatus('connected', '🟢 Terhubung Supabase Cloud (Live Multi-Device)');
+          setSyncStatus('connected', 'Terhubung Supabase Cloud (Live Multi-Device)');
         })
         .catch(() => {
-          setSyncStatus('connected', '🟢 Terhubung Supabase Cloud (Live Multi-Device)');
+          setSyncStatus('connected', 'Terhubung Supabase Cloud (Live Multi-Device)');
         });
 
       // 2. Subscribe to Realtime PostgreSQL CDC Changes
@@ -529,9 +537,9 @@ document.addEventListener('DOMContentLoaded', () => {
         )
         .subscribe((status) => {
           if (status === 'SUBSCRIBED') {
-            setSyncStatus('connected', '🟢 Cloud Live (Layer 1: Supabase + Layer 2: ntfy.sh)');
+            setSyncStatus('connected', 'Cloud Live (Layer 1: Supabase + Layer 2: ntfy.sh)');
           } else if (status === 'CHANNEL_ERROR' || status === 'TIMED_OUT') {
-            setSyncStatus('syncing', '🟡 Menghubungkan Cloud (ntfy Relay Aktif)...');
+            setSyncStatus('syncing', 'Menghubungkan Cloud (ntfy Relay Aktif)...');
           }
         });
 
@@ -574,9 +582,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const DEFAULT_SUPABASE_URL = 'https://ssbkhhnnzwuykyeznpwd.supabase.co';
   const DEFAULT_SUPABASE_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InNzYmtoaG5uend1eWt5ZXpucHdkIiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODc0MDQ1NzcsImV4cCI6MjEwMjk4MDU3N30.-zGe_xWDTBmo604VS39jl8o7YvhEQYb3fZvCV-fcEbk';
 
-  // =========================================================================
-  // CLOUD LAYER 2: ntfy.sh Realtime Cloud Relay (SSE Pub/Sub Zero-Setup)
-  // =========================================================================
+  // Layer 2: ntfy.sh Realtime Cloud Relay (SSE Pub/Sub Zero-Setup)
   const NTFY_TOPIC = "ip26_checklist_sync_2026";
   const NTFY_PUB_URL = `https://ntfy.sh/${NTFY_TOPIC}`;
   const NTFY_SSE_URL = `https://ntfy.sh/${NTFY_TOPIC}/sse`;
@@ -594,7 +600,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
       ntfyEventSource.onopen = () => {
         isNtfyConnected = true;
-        console.log('[ntfy.sh] Cloud Relay Layer 2 connected (SSE stream active)');
       };
 
       ntfyEventSource.onmessage = (event) => {
@@ -604,14 +609,16 @@ document.addEventListener('DOMContentLoaded', () => {
             const payload = JSON.parse(raw.message);
             handleNtfyIncomingEvent(payload);
           }
-        } catch (err) {}
+        } catch (err) {
+          void err; // Incomplete SSE frame chunk ignored
+        }
       };
 
       ntfyEventSource.onerror = () => {
         isNtfyConnected = false;
       };
     } catch (err) {
-      console.warn('[ntfy.sh] Relay initialization note:', err);
+      void err;
     }
   }
 
@@ -622,10 +629,10 @@ document.addEventListener('DOMContentLoaded', () => {
         body: JSON.stringify(payload),
         headers: { 'Content-Type': 'application/json' }
       }).catch((err) => {
-        console.warn('[ntfy.sh] Broadcast note:', err);
+        void err; // Network offline or ntfy unreachable
       });
     } catch (err) {
-      console.warn('[ntfy.sh] Broadcast failed:', err);
+      void err;
     }
   }
 
@@ -787,17 +794,17 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     if (supabaseClient && rowsToUpsert.length > 0) {
-      setSyncStatus('syncing', '🔵 Menyinkronkan aksi massal ke Cloud...');
+      setSyncStatus('syncing', 'Menyinkronkan aksi massal ke Cloud...');
       try {
         const chunkSize = 80;
         for (let i = 0; i < rowsToUpsert.length; i += chunkSize) {
           const chunk = rowsToUpsert.slice(i, i + chunkSize);
           await supabaseClient.from('inventory_items').upsert(chunk, { onConflict: 'item_id' });
         }
-        setSyncStatus('connected', '🟢 Cloud Live (Layer 1: Supabase + Layer 2: ntfy.sh)');
+        setSyncStatus('connected', 'Cloud Live (Layer 1: Supabase + Layer 2: ntfy.sh)');
       } catch (err) {
         console.error('Supabase batch error:', err);
-        setSyncStatus('connected', '🟢 Cloud Live (Layer 1: Supabase + Layer 2: ntfy.sh)');
+        setSyncStatus('connected', 'Cloud Live (Layer 1: Supabase + Layer 2: ntfy.sh)');
       }
     }
   }
@@ -824,9 +831,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  // =========================================================================
-  // 4. LIVE MULTI-DIMENSIONAL SEARCH & DUAL FILTER ENGINE
-  // =========================================================================
+  // 4. Live Multi-Dimensional Search & Dual Filter Engine
   const searchInput = document.getElementById('inv-search-input');
   const clearSearchBtn = document.getElementById('clear-search-btn');
   const filterPills = document.querySelectorAll('.filter-pill');
@@ -926,9 +931,7 @@ document.addEventListener('DOMContentLoaded', () => {
   // Initial filter run
   filterInventory();
 
-  // =========================================================================
-  // 5. SCROLL PROGRESS & SCROLLSPY NAVIGATION
-  // =========================================================================
+  // 5. Scroll Progress & Scrollspy Navigation
   const scrollProgressBar = document.getElementById('scroll-progress-bar');
   const sections = document.querySelectorAll('section[id], header[id]');
   const desktopLinks = document.querySelectorAll('.desktop-nav .nav-link');
@@ -1044,9 +1047,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   });
 
-  // =========================================================================
-  // 6. HERO AMBIENT 3D WAVE & PARTICLE TELEMETRY SIMULATION
-  // =========================================================================
+  // 6. Hero Ambient Wave & Particle Simulation
   const canvas = document.getElementById('hero-ambient-canvas');
   if (canvas) {
     const ctx = canvas.getContext('2d');
@@ -1162,12 +1163,7 @@ document.addEventListener('DOMContentLoaded', () => {
     renderAmbientMesh();
   }
 
-  // =========================================================================
-  // 7. INITIALIZE MERMAID FLOWCHARTS (DARK/LIGHT ADAPTIVE)
-  // =========================================================================
-  // =========================================================================
-  // 7. INITIALIZE & DYNAMIC MERMAID ENGINE (TRANSPARENT & THEME-ADAPTIVE)
-  // =========================================================================
+  // 7. Dynamic Mermaid Engine (Transparent & Theme-Adaptive)
   let mermaidRenderCounter = 0;
 
   async function renderAllMermaid() {

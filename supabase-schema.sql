@@ -1,8 +1,6 @@
--- ============================================================================
--- IP26 PRODUCTION PORTAL — SUPABASE REALTIME INVENTORY SCHEMA
+-- IP26 PRODUCTION PORTAL | SUPABASE REALTIME INVENTORY SCHEMA
 -- Database: PostgreSQL (Supabase)
 -- Realtime: Enabled for instant bi-directional mobile sync
--- ============================================================================
 
 -- 1. Create table for inventory items status
 create table if not exists public.inventory_items (

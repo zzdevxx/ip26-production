@@ -1,5 +1,5 @@
 # Cloudflare Workers Static Assets config
-# Situs statis murni (HTML/CSS/JS tanpa build) — aset distaging oleh scripts/build-dist.js.
+# Situs statis murni (HTML/CSS/JS tanpa build) | aset distaging oleh scripts/build-dist.js.
 name = "ip26-production"
 compatibility_date = "2026-10-16"
 workers_dev = true

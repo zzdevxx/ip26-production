@@ -33,6 +33,9 @@ const RUNTIME = [
   'data/playlist.js',
   'data/playlist.json',
   'data/songs.js',
+  'scripts/songs_data.json',
+  'robots.txt',
+  'sitemap.xml',
 ];
 
 // Optional files: copied when present, skipped silently otherwise.
