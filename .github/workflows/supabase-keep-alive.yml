@@ -17,7 +17,10 @@ jobs:
           SUPABASE_KEY: ${{ secrets.SUPABASE_KEY }}
         run: |
           echo "Sending keep-alive ping to Supabase Database..."
-          RESPONSE=$(curl -s -w "\n%{http_code}" -X GET "$SUPABASE_URL/rest/v1/inventory_items?select=id&limit=1" \
+          # The primary key is item_id, not id. Selecting a column that does not
+          # exist returns 400/42703, which failed this job on every run while the
+          # database itself was healthy.
+          RESPONSE=$(curl -s -w "\n%{http_code}" -X GET "$SUPABASE_URL/rest/v1/inventory_items?select=item_id&limit=1" \
             -H "apikey: $SUPABASE_KEY" \
             -H "Authorization: Bearer $SUPABASE_KEY")
           
