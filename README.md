@@ -30,7 +30,9 @@
 
 ## 📌 Repository Live Deployments & Quick Access Links
 
-| Layanan / Modul | URL Live (GitHub Pages) | File Lokal / Direktori | Deskripsi & Fungsi |
+> 🌐 **Akses Live:** Tersedia melalui Cloudflare Edge Worker [https://ip26-production.zzdree.workers.dev/](https://ip26-production.zzdree.workers.dev/) dan mirror GitHub Pages [https://zzdevxx.github.io/ip26-production/](https://zzdevxx.github.io/ip26-production/).
+
+| Layanan / Modul | URL Live (Cloudflare & GitHub Pages) | File Lokal / Direktori | Deskripsi & Fungsi |
 | :--- | :--- | :--- | :--- |
 | ⭐ **Official Media Release (Landing)** | [https://ip26-production.zzdree.workers.dev/](https://ip26-production.zzdree.workers.dev/) | [`index.html`](./index.html) + [`landing.css`](./landing.css) + [`landing.js`](./landing.js) | **Halaman utama pasca-event:** pemutar Full Live Master 4 jam, timeline rundown interaktif, katalog 23 video (filter kategori + pencarian), ekosistem produksi, & akses simulator. |
 | 📦 **Arsip Teknis Produksi** | [https://ip26-production.zzdree.workers.dev/archive.html](https://ip26-production.zzdree.workers.dev/archive.html) | [`archive.html`](./archive.html) & [`archive/`](./archive/index.html) | Arsip dokumentasi teknis pra-event: arsitektur sistem, 8 diagram sinyal, tabel 158 logistik, device matrix, & rundown master. Diawali banner status "event selesai". |
